@@ -37,7 +37,14 @@ function transformProduct(p: PrismaProduct): Product {
     name: { nl: p.nameNl, en: p.nameEn },
     description: { nl: p.descNl, en: p.descEn },
     price: p.price,
-    images: JSON.parse(p.images),
+    images: (() => {
+      try {
+        return JSON.parse(p.images);
+      } catch (e) {
+        console.error("JSON parse error for product images:", p.slug);
+        return [];
+      }
+    })(),
     stock: p.stock,
     category: { nl: p.categoryNl, en: p.categoryEn },
     variants: (p as any).variants?.map((v: any) => ({
