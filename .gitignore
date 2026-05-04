@@ -26,11 +26,17 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
-# vercel
-.vercel
+# database
+dev.db
+*.db-journal
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# logs
+lint_results.txt
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+/scratch/

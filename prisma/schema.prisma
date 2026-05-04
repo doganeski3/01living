@@ -1,0 +1,179 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  nameNl      String
+  nameEn      String
+  descNl      String
+  descEn      String
+  price       Float
+  images      String   // Stored as JSON string
+  stock       Int      @default(0)
+  categoryNl  String
+  categoryEn  String
+  isArchived  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  variants    ProductVariant[]
+}
+
+model ProductVariant {
+  id          String   @id @default(cuid())
+  productId   String
+  nameNl      String?  // Keep as fallback
+  nameEn      String?  // Keep as fallback
+  colorNl     String?
+  colorEn     String?
+  sizeNl      String?
+  sizeEn      String?
+  price       Float
+  stock       Int      @default(0)
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  password      String?   // For credentials login
+  image         String?
+  role          String    @default("USER") // USER, ADMIN
+  
+  // Dutch Address Structure
+  street        String?
+  houseNumber   String?
+  addition      String?
+  postalCode    String?
+  city          String?
+  country       String?   @default("Nederland")
+  phone         String?
+  
+  // Billing Info
+  companyName   String?
+  vatNumber     String?
+
+  accounts      Account[]
+  sessions      Session[]
+  orders        Order[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  orderNumber     String   @unique
+  userId          String?  
+  customerName    String
+  customerEmail   String
+  customerPhone   String?
+  
+  // Shipping Address
+  street          String
+  houseNumber     String
+  addition        String?
+  postalCode      String
+  city            String
+  country         String   @default("Nederland")
+  
+  // Billing Info
+  billingSameAsShipping Boolean @default(true)
+  billingStreet         String?
+  billingHouseNumber    String?
+  billingAddition       String?
+  billingPostalCode     String?
+  billingCity           String?
+  companyName           String?
+  vatNumber             String?
+
+  totalAmount     Float
+  status          String   @default("pending") // pending, paid, cancelled
+  stockAdjusted   Boolean  @default(false)
+  molliePaymentId String?  @unique
+  trackingCode    String?
+  shippingCarrier String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  locale          String   @default("nl")
+  items           OrderItem[]
+  user            User?    @relation(fields: [userId], references: [id])
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String
+  productId String
+  productName String   @default("Product")
+  variantId   String?
+  variantName String?
+  quantity  Int
+  price     Float
+  order     Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Settings {
+  id                String   @id @default("site-settings")
+  siteName          String   @default("01 Living")
+  contactEmail      String   @default("info@01living.nl")
+  contactPhone      String   @default("+31 00 000 00 00")
+  address           String   @default("Amsterdam, Nederland")
+  
+  // Shipping & Taxes
+  freeShippingThreshold Float @default(0)
+  shippingFee          Float @default(0)
+  vatRate              Float @default(21)
+  
+  // Social Media
+  instagramUrl      String?
+  pinterestUrl      String?
+  facebookUrl       String?
+  
+  updatedAt         DateTime @updatedAt
+}

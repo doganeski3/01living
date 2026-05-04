@@ -1,0 +1,445 @@
+{
+  "Navbar": {
+    "collections": "Collections",
+    "showroom": "Showroom",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "Home": {
+    "metaTitle": "01 Living | Timeless Design for Modern Living",
+    "metaDescription": "Discover our exclusive collection of handmade furniture. Luxury and minimalist designs.",
+    "featuredTitle": "Featured Categories",
+    "bestSellers": {
+      "badge": "Most Loved",
+      "title": "Bestsellers",
+      "viewAll": "View All"
+    },
+    "editorial": {
+      "title": "Purity in every line",
+      "desc": "We believe that luxury doesn’t scream. It speaks through the silence of perfect proportions and the honesty of natural materials.",
+      "label": "Editorial 2026 / No. 01"
+    },
+    "brandStory": {
+      "badge": "Our Story",
+      "title": "More than furniture. A legacy.",
+      "cta": "More about us",
+      "sections": [
+        {
+          "title": "Craftsmanship without compromise",
+          "text": "Every piece of furniture by 01 Living is handcrafted by master artisans. We select only the most sustainable wood species — oak, walnut and teak — to create timeless pieces that last for generations."
+        },
+        {
+          "title": "Design that tells a story",
+          "text": "Our collections are more than furniture. Every piece is an expression of identity. From minimalist lines to organic shapes — we design interior pieces that transform your space."
+        }
+      ]
+    },
+    "visitShowroom": {
+      "badge": "Visit Us",
+      "title": "Experience craftsmanship in our showrooms",
+      "desc": "Discover the textures, the weight, and the pure quality of our furniture in person. Our advisors are ready to help you create your dream interior.",
+      "cta": "Schedule a visit"
+    }
+  },
+  "Marquee": {
+    "tags": ["Handmade", "Timeless Design", "Sustainable Wood", "The Hague", "Schiedam", "Masterful Craftsmanship", "Exclusive", "Dutch Interior", "Luxury Furniture"]
+  },
+  "Hero": {
+    "title": "Timeless Design for Modern Living",
+    "subtitle": "Discover our exclusive collection of handmade furniture.",
+    "cta": "View Collection",
+    "ourStory": "Our Story"
+  },
+  "Collecties": {
+    "metaTitle": "Collections | 01 Living",
+    "metaDescription": "View all our exclusive collections.",
+    "title": "Our Collections",
+    "allProducts": "All Products",
+    "backToCollections": "Back to collections",
+    "filters": {
+      "title": "Filters",
+      "material": "Material",
+      "price": "Price",
+      "results": "{count} Results",
+      "clearFilters": "Clear all",
+      "searchPlaceholder": "Search...",
+      "priceRange": "Price Range",
+      "sortBy": "Sort by",
+      "sortOptions": {
+        "newest": "Newest",
+        "priceLowHigh": "Price: Low to High",
+        "priceHighLow": "Price: High to Low"
+      },
+      "colors": "Colors",
+      "selected": "selected",
+      "refineSelection": "Refine your selection to find the perfect balance in your interior.",
+      "showCategoryResults": "View Results",
+      "showResults": "Show {count} Results",
+      "noProductsFound": "No products found",
+      "resetFilters": "Reset filters"
+    },
+    "categories": {
+      "seating": "Seating",
+      "tables": "Tables",
+      "lighting": "Lighting",
+      "showroom": "Showroom"
+    }
+  },
+  "OverOns": {
+    "metaTitle": "About Us | 01 Living",
+    "metaDescription": "Design philosophy, our vision and mission.",
+    "title": "Design Philosophy",
+    "philosophyP1": "MY GLOBAL MOBİLYA was founded in 2018 in Adana and expanded to Europe in 2021 with a branch in the Netherlands. With the 01LIVING brand, we bring together quality, modern design, and customer satisfaction in Turkey, Europe, and America. Our goal is to improve the quality of life by making living spaces more stylish, comfortable, and functional.",
+    "philosophyP2": "With modern kitchens, we add aesthetics and functionality to the heart of your home. Our furniture range includes seating groups, bedroom furniture, TV units, storage solutions, and office furniture, catering to all the needs of living spaces. Thanks to our turn-key project applications, we design your home, office, cafe, and commercial spaces from start to finish, carefully managing every process from production to assembly.",
+    "philosophyP3": "01LIVING combines advanced technology with design, adding value to your living spaces with modern kitchens, seating groups, furniture solutions, and project applications.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be an organization that continuously develops based on people's needs in terms of design, comfort, and quality; sets an example with its quality and designs; and attaches great importance to after-sales customer satisfaction.",
+    "missionTitle": "Our Mission",
+    "missionText": "In a constantly changing and developing technological environment, 01LIVING strives to make the spaces where people spend most of their time more comfortable and user-friendly. We aim to be a leading and exemplary company in this sector.",
+    "ctaTitle": "Begin Your Journey",
+    "ctaText": "Discover our collections and bring timeless design into your living space.",
+    "ctaBtn": "View Collections",
+    "feature1Title": "Global Roots, Local Craft",
+    "feature2Title": "Turn-key Excellence",
+    "futureBadge": "Future",
+    "targetBadge": "Goal"
+  },
+  "Contact": {
+    "metaTitle": "Contact | 01 Living",
+    "metaDescription": "Get in touch with us for inquiries or visits.",
+    "title": "Get in Touch",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send Message"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "info": {
+      "title": "Our Locations",
+      "warehouse": "Warehouse",
+      "showroomDenHaag": "THE HAGUE SHOWROOM",
+      "showroomSchiedam": "SCHIEDAM SHOWROOM",
+      "phoneMobile": "Mobile",
+      "phoneFixed": "Landline"
+    }
+  },
+  "Footer": {
+    "brand": "01 LIVING",
+    "description": "Timeless design, masterful craftsmanship, and sustainable materials. Exclusive handmade furniture from the Netherlands.",
+    "quickLinks": "Quick Links",
+    "collections": "Collections",
+    "about": "About Us",
+    "contact": "Contact",
+    "showroomTitle": "Showroom The Hague",
+    "showroomDesc": "Experience craftsmanship and design in our flagship showroom. Our advisors are ready to realize your dream interior.",
+    "bookAppointment": "Schedule a Consultation",
+    "social": "Follow Us",
+    "legal": "Legal",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "shipping": "Shipping & Returns",
+    "cookies": "Cookie Policy",
+    "copyright": "© 2026 01 Living. All rights reserved."
+  },
+  "Product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "discover": "Discover"
+  },
+  "Cart": {
+    "title": "Shopping Cart",
+    "empty": "Your shopping cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping",
+    "showroomNotice": "Make an appointment in our showroom for free delivery.",
+    "showroomCTA": "Book an appointment"
+  },
+  "ProductDetail": {
+    "backToCollections": "Back to Collections",
+    "addToCart": "Add to Shopping Cart",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "category": "Category",
+    "metaDescription": "View product details.",
+    "added": "Added!",
+    "color": "Color",
+    "size": "Size",
+    "select": "Select",
+    "quantity": "Quantity",
+    "bookAppointment": "Book Showroom Appointment",
+    "showroomStatus": "Showroom Item",
+    "bespokeTitle": "PROJECT DESIGN OR CUSTOM MADE?",
+    "bespokeDesc": "For orders of more than 5 pieces or specific project inquiries, we are happy to work on a custom basis. Please contact our design studio.",
+    "bespokeContact": "GET IN TOUCH"
+  },
+  "Checkout": {
+    "metaTitle": "Checkout | 01 Living",
+    "title": "Checkout",
+    "orderSummary": "Order Summary",
+    "personalInfo": "Personal Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "emptyCart": "Your shopping cart is empty",
+    "goToShop": "Go to Collection",
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "addressRequired": "Address is required",
+      "cityRequired": "City is required",
+      "postalCodeRequired": "Postal code is required"
+    },
+    "confirmation": {
+      "title": "Thank you for your order!",
+      "subtitle": "Your order has been received and is being processed.",
+      "orderNumber": "Order number",
+      "continueShopping": "Continue Shopping"
+    }
+  },
+  "Account": {
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email Address",
+    "security": "Security (Change Password)",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "updateProfile": "Update Profile",
+    "shippingAddress": "Shipping Address",
+    "street": "Street Name",
+    "houseNumber": "House No.",
+    "addition": "Add.",
+    "postalCode": "Postal Code",
+    "city": "City",
+    "country": "Country",
+    "billingDetails": "Billing Details (Business)",
+    "companyName": "Company Name (Optional)",
+    "vatNumber": "VAT Number (Optional)",
+    "contactDetails": "Contact Details",
+    "phone": "Phone Number",
+    "saveSettings": "Save Settings",
+    "processing": "Processing...",
+    "saved": "Saved",
+    "orderHistory": "Order History",
+    "orderHistorySubtitle": "An overview of all your orders at 01 Living.",
+    "orderNumber": "Order Number",
+    "orderDate": "Date",
+    "orderStatus": "Status",
+    "orderItems": "Items",
+    "orderAddress": "Shipping Address",
+    "orderTotal": "Total Paid",
+    "orderTracking": "Track Order",
+    "orderTrackingCarrier": "Shipping Carrier",
+    "orderTrackingLink": "Track Package →",
+    "noOrders": "No orders found",
+    "noOrdersSubtitle": "You haven't placed any orders in our webshop yet.",
+    "viewCollection": "View Collection",
+    "myAccount": "My Account",
+    "welcome": "Welcome, {name}",
+    "articleNr": "Article No",
+    "sidebar": {
+      "orders": "Orders",
+      "address": "Address Details",
+      "profile": "Profile"
+    },
+    "status": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "shipped": "On the way",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "error": "An error occurred. Please try again.",
+    "success": "Settings saved successfully.",
+    "leaveBlank": "Leave blank to keep unchanged",
+    "addressSubtitle": "Manage your personal shipping details for a seamless experience.",
+    "profileSubtitle": "Manage your personal information and security settings."
+  },
+  "ProjectInquiry": {
+    "title": "Project or Custom Request?",
+    "description": "For orders of more than 5 pieces or specific project inquiries, we would love to work on a custom basis. Contact our design studio.",
+    "cta": "Contact us"
+  },
+  "Showroom": {
+    "metaTitle": "Showroom The Hague | 01 Living - Bespoke Luxury Kitchens",
+    "metaDescription": "Visit our exclusive kitchen showroom in The Hague. Discover handmade kitchens, premium materials and receive personalized advice for your dream interior.",
+    "hero": {
+      "badge": "The Ultimate Kitchen Experience",
+      "title": "Exclusive Design in The Hague",
+      "subtitle": "Step into the world of 01 Living. Where innovative kitchen concepts and masterful craftsmanship meet for a timeless interior."
+    },
+    "intro": {
+      "badge": "Welcome to 01 Living",
+      "title": "Your Partner for Bespoke Luxury Kitchens",
+      "p1": "At 01 Living, we believe the kitchen is more than just a place to cook; it is the beating heart of your home. Our showroom in The Hague is designed to inspire you with the latest trends in modern kitchen design and high-end interior solutions.",
+      "p2": "Whether you are looking for a minimalist cooking island, a classic wooden kitchen with a modern twist, or a completely bespoke interior project, our team of expert designers is ready to realize your vision. We combine years of experience with a passion for detail and quality."
+    },
+    "features": {
+      "materials": {
+        "title": "Exclusive Materials",
+        "desc": "From high-end marble to sustainable oak, we select only the very best materials."
+      },
+      "design": {
+        "title": "Bespoke Design",
+        "desc": "Our designers translate your personal wishes into a functional masterpiece."
+      },
+      "quality": {
+        "title": "German Quality",
+        "desc": "We combine Dutch design with the precision of German manufacturers."
+      },
+      "advice": {
+        "title": "Personalized Advice",
+        "desc": "In our showroom, you get extensive time and attention from our experts."
+      }
+    },
+    "process": {
+      "badge": "Our Process",
+      "title": "From Inspiration to Realization",
+      "step1": {
+        "title": "Inspiration & Introduction",
+        "text": "You visit our showroom in The Hague. Together we explore your wishes, the space, and your personal style."
+      },
+      "step2": {
+        "title": "Design & Materialization",
+        "text": "Our designers create a photo-realistic 3D design and we select the materials that bring your vision to life."
+      },
+      "step3": {
+        "title": "Production & Installation",
+        "text": "Your kitchen is produced with extreme precision in Germany and professionally installed by our team."
+      }
+    },
+    "materials": {
+      "badge": "Masterful Craftsmanship",
+      "title": "Materials that Tell a Story",
+      "p1": "The quality of a 01 Living kitchen is felt in every detail. We work exclusively with suppliers who meet our strict requirements.",
+      "p2": "In our showroom, you can experience the textures yourself, from silky lacquer finishes to natural oak grains.",
+      "cta": "View Our Collections"
+    },
+    "consultation": {
+      "badge": "Tailored Advice",
+      "title": "A Space for Creativity",
+      "p1": "Our showroom in The Hague is more than an exhibition space; it is a place where ideas come to life.",
+      "p2": "With advanced 3D planning software, we immediately visualize your new kitchen for a perfect image."
+    },
+    "contact": {
+      "badge": "Visit Us",
+      "title": "Showroom The Hague",
+      "address": "Address",
+      "phone": "Phone",
+      "hours": "Opening Hours",
+      "findUs": "Find Us"
+    },
+    "cta": {
+      "title": "Start Your Dream Interior Today",
+      "subtitle": "Make an appointment for a personalized consultation in our showroom.",
+      "btn": "Make an Appointment",
+      "call": "Call Direct"
+    }
+  },
+  "Auth": {
+    "login": {
+      "title": "Log In",
+      "subtitle": "Welcome back to 01 Living.",
+      "email": "Email Address",
+      "password": "Password",
+      "passwordPlaceholder": "Your password",
+      "submit": "Log In",
+      "noAccount": "Don't have an account yet?",
+      "registerLink": "Register",
+      "error": "Invalid email address or password.",
+      "unknownError": "An unknown error has occurred."
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create an account for an exclusive experience.",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "password": "Password",
+      "passwordPlaceholder": "Minimum 6 characters",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log In",
+      "error": "Something went wrong."
+    }
+  },
+  "Legal": {
+    "lastUpdated": "Last updated: May 1, 2026",
+    "contactSupport": "Questions about our terms? Contact us at info@01living.nl",
+    "terms": {
+      "title": "Terms & Conditions",
+      "intro": "These terms and conditions apply to every offer from 01 Living and to every agreement concluded between the entrepreneur and the consumer. We recommend that you read these terms carefully.",
+      "sections": [
+        { "title": "1. Applicability", "content": "These general terms and conditions apply to every offer from 01 Living and to every distance agreement concluded between 01 Living and the consumer. Before the distance agreement is concluded, the text of these general terms and conditions will be made available to the consumer." },
+        { "title": "2. The Offer", "content": "If an offer has a limited period of validity or is made subject to conditions, this will be explicitly stated in the offer. The offer contains a complete and accurate description of the products offered. Obvious mistakes or errors in the offer do not bind 01 Living." },
+        { "title": "3. The Agreement", "content": "The agreement is concluded at the moment the consumer accepts the offer and complies with the conditions set. 01 Living will immediately confirm receipt of the acceptance of the offer electronically." },
+        { "title": "4. Right of Withdrawal", "content": "When purchasing products, the consumer has the option to dissolve the agreement without giving reasons for 14 days. This reflection period starts on the day after receipt of the product by the consumer. During this period, the consumer will handle the product and packaging with care." },
+        { "title": "5. Exclusion of Withdrawal", "content": "The right of withdrawal does not apply to products manufactured according to the consumer's specifications (custom-made), which are clearly personal in nature, or which by their nature cannot be returned." },
+        { "title": "6. Price and Payment", "content": "During the validity period stated in the offer, the prices of the products offered will not be increased, except for price changes resulting from changes in VAT rates. Payment must be made via the payment methods offered on the website." },
+        { "title": "7. Conformity and Warranty", "content": "01 Living guarantees that the products comply with the agreement, the specifications stated in the offer, the reasonable requirements of reliability and/or usability, and the legal provisions existing on the date the agreement was concluded." }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "01 Living respects the privacy of all users of its site and ensures that the personal information you provide to us is treated confidentially. We use your data to process orders as quickly and easily as possible.",
+      "sections": [
+        { "title": "1. Use of Personal Data", "content": "When you visit our website or place an order, we collect data such as your name, address, email address, and payment method. Important: Your credit card details or other sensitive payment information are processed directly by our secure partner Mollie; 01 Living does not store this information in its own systems under any circumstances." },
+        { "title": "2. Purposes of Processing", "content": "We process your data for the following purposes: handling your payment, being able to call or email you if necessary to carry out our services, and informing you about changes to our services and products." },
+        { "title": "3. Retention Period", "content": "01 Living does not store your personal data longer than strictly necessary to achieve the purposes for which your data is collected, in accordance with legal retention periods." },
+        { "title": "4. Sharing with Third Parties", "content": "We do not sell your data to third parties and only provide it if necessary for the execution of our agreement with you (e.g., delivery services) or to comply with a legal obligation." },
+        { "title": "5. View, Modify, or Delete Data", "content": "You have the right to view, correct, or delete your personal data. You also have the right to withdraw your consent for data processing or object to the processing of your personal data by 01 Living." }
+      ]
+    },
+    "shipping": {
+      "title": "Shipping & Returns",
+      "intro": "We strive for perfect delivery of your handmade furniture. Below you will find our guidelines for shipping and the return process.",
+      "sections": [
+        { "title": "1. Delivery and Execution", "content": "01 Living will take the greatest possible care when receiving and executing orders for products. The delivery address is the address that the consumer has made known to the company." },
+        { "title": "2. Delivery Times", "content": "We aim to deliver orders within 2-5 business days, provided they are in stock. For custom products, a different delivery time applies, which is explicitly communicated to the customer." },
+        { "title": "3. Shipping Costs", "content": "Orders over €500 are shipped free of charge within the Netherlands. For orders below this amount, we apply standard shipping costs visible in the checkout process." },
+        { "title": "4. Returns", "content": "You have the right to cancel your order up to 14 days after receipt without giving a reason. After cancellation, you have another 14 days to return your product. The product must be returned with all accessories and – if reasonably possible – in its original state and packaging." },
+        { "title": "5. Return Exceptions", "content": "Please note: Custom-made products manufactured according to your specifications cannot be returned. This also applies to products that are not suitable for return for hygiene reasons." }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "intro": "We use cookies to optimize the website and improve your user experience.",
+      "sections": [
+        { "title": "1. What are cookies?", "content": "A cookie is a small text file that is stored in the browser of your computer, tablet, or smartphone when you first visit this website." },
+        { "title": "2. Functional Cookies", "content": "These cookies ensure that the website works properly and that, for example, your preferred settings are remembered. These cookies are also used to make the website work well and to optimize it." },
+        { "title": "3. Analytical Cookies", "content": "We use Google Analytics to track how users use the website. The information obtained, including your computer's IP address, is transferred to and stored by Google on servers." },
+        { "title": "4. Opting out of Cookies", "content": "You can opt out of cookies by setting your internet browser so that it no longer stores cookies. You can also delete all information previously stored via your browser settings." }
+      ],
+      "banner": {
+        "text": "We use cookies to improve your experience. By continuing on our site, you agree to our {link}.",
+        "link": "cookie policy",
+        "accept": "Accept"
+      }
+    }
+  },
+  "WhatsApp": {
+    "tooltip": "Contact us on WhatsApp",
+    "message": "Hello, I have a question about a product."
+  }
+}
