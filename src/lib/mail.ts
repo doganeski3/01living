@@ -1,35 +1,78 @@
-import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import OrderConfirmationEmail from '@/emails/OrderConfirmation';
 import AdminNotificationEmail from '@/emails/AdminNotification';
 import OrderStatusEmail from '@/emails/OrderStatusEmail';
 import WelcomeEmail from '@/emails/WelcomeEmail';
 
-// Dynamic Transporter to ensure .env is loaded first
-const getTransporter = () => {
-  const isSecure = process.env.SMTP_PORT === '465';
-  const config = {
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '465'),
-    secure: isSecure, 
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-    connectionTimeout: 30000, // 30 seconds
-    greetingTimeout: 30000,
-    socketTimeout: 30000,
-    tls: {
-      rejectUnauthorized: false,
-      minVersion: 'TLSv1.2'
+// SendPulse API Helpers
+let accessToken: string | null = null;
+let tokenExpiry: number = 0;
+
+async function getSendPulseToken() {
+  const now = Date.now();
+  if (accessToken && now < tokenExpiry) return accessToken;
+
+  const response = await fetch('https://api.sendpulse.com/oauth/access_token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      grant_type: 'client_credentials',
+      client_id: process.env.SENDPULSE_API_ID,
+      client_secret: process.env.SENDPULSE_API_SECRET,
+    }),
+  });
+
+  const data = await response.json();
+  if (!response.ok) throw new Error(`Failed to get SendPulse token: ${JSON.stringify(data)}`);
+
+  accessToken = data.access_token;
+  tokenExpiry = now + (data.expires_in - 60) * 1000;
+  return accessToken;
+}
+
+async function sendEmailViaAPI(options: { to: string; subject: string; html: string; fromName?: string; fromEmail?: string; replyTo?: string }) {
+  if (!process.env.SENDPULSE_API_ID || !process.env.SENDPULSE_API_SECRET) {
+    console.warn('[MAIL] SENDPULSE_API_ID or SECRET is missing. Skipping email.');
+    return;
+  }
+
+  try {
+    const token = await getSendPulseToken();
+    const response = await fetch('https://api.sendpulse.com/smtp/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        email: {
+          html: Buffer.from(options.html).toString('base64'),
+          subject: options.subject,
+          from: {
+            name: options.fromName || "01 Living",
+            email: options.fromEmail || process.env.SMTP_USER || "info@01living.nl"
+          },
+          to: [
+            {
+              email: options.to
+            }
+          ]
+        }
+      })
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+      console.error('[MAIL] SendPulse API Error:', result);
+    } else {
+      console.log('[MAIL] Email sent successfully via API to:', options.to);
     }
-  };
+  } catch (error) {
+    console.error('[MAIL] SendPulse API Exception:', error);
+  }
+}
 
-  console.log(`[SMTP] Attempting connection to ${config.host}:${config.port} (Secure: ${config.secure})`);
-  return nodemailer.createTransport(config);
-};
-
-const FROM_EMAIL = 'doganeski47@gmail.com'; // Changed for testing connection
+const FROM_EMAIL = process.env.SMTP_USER || 'info@01living.nl'; 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@01living.nl'; 
 
 interface Order {
@@ -41,16 +84,11 @@ interface Order {
 }
 
 export async function sendOrderEmails(order: Order) {
-  if (!process.env.SMTP_HOST) {
-    console.log('[SMTP] MOCK MODE: No SMTP config found.');
-    return;
-  }
-
   const locale = order.locale || 'nl';
   const isEn = locale === 'en';
 
   try {
-    console.log(`[SMTP] Rendering & Sending emails for #${order.orderNumber} (Locale: ${locale})...`);
+    console.log(`[MAIL] Preparing order emails for #${order.orderNumber}...`);
     
     const customerHtml = await render(OrderConfirmationEmail({
       customerName: order.customerName,
@@ -59,7 +97,7 @@ export async function sendOrderEmails(order: Order) {
       locale: locale,
     }));
 
-    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXTAUTH_URL || 'https://01living.nl';
 
     const adminHtml = await render(AdminNotificationEmail({
       customerName: order.customerName,
@@ -68,28 +106,27 @@ export async function sendOrderEmails(order: Order) {
       baseUrl: baseUrl,
     }));
 
-    // 1. Send to Customer
-    getTransporter().sendMail({
-      from: `"01 Living" <${FROM_EMAIL}>`,
+    // Send to Customer
+    sendEmailViaAPI({
       to: order.customerEmail,
+      fromEmail: FROM_EMAIL,
       subject: isEn 
         ? `Order Confirmation - 01 Living - #${order.orderNumber}`
         : `Bedankt voor uw bestelling bij 01 Living - #${order.orderNumber}`,
       html: customerHtml,
-    }).then(() => console.log('[SMTP] CUSTOMER EMAIL SUCCESS'))
-      .catch(err => console.error('[SMTP] CUSTOMER EMAIL FAILED:', err));
+    });
 
-    // 2. Send to Admin
-    getTransporter().sendMail({
-      from: `"01 Living System" <${FROM_EMAIL}>`,
+    // Send to Admin
+    sendEmailViaAPI({
       to: ADMIN_EMAIL,
+      fromEmail: FROM_EMAIL,
+      fromName: "01 Living System",
       subject: `Nieuwe Bestelling: #${order.orderNumber}`,
       html: adminHtml,
-    }).then(() => console.log('[SMTP] ADMIN EMAIL SUCCESS'))
-      .catch(err => console.error('[SMTP] ADMIN EMAIL FAILED:', err));
+    });
 
   } catch (error) {
-    console.error('[SMTP] FATAL EXCEPTION:', error);
+    console.error('[MAIL] Rendering Error:', error);
   }
 }
 
@@ -99,8 +136,6 @@ export async function sendOrderStatusEmail(
   trackingNumber?: string,
   shippingCarrier?: string
 ) {
-  if (!process.env.SMTP_HOST) return;
-
   const locale = order.locale || 'nl';
   const isEn = locale === 'en';
 
@@ -120,41 +155,35 @@ export async function sendOrderStatusEmail(
       locale: locale,
     }));
 
-    getTransporter().sendMail({
-      from: `"01 Living" <${FROM_EMAIL}>`,
+    sendEmailViaAPI({
       to: order.customerEmail,
+      fromEmail: FROM_EMAIL,
       subject: subjects[status],
       html: html,
-    }).then(() => console.log(`[SMTP] Status email (${status}) sent for #${order.orderNumber}`))
-      .catch(err => console.error(`[SMTP] Failed to send ${status} email:`, err));
+    });
   } catch (error) {
-    console.error(`[SMTP] Failed to render ${status} email:`, error);
+    console.error(`[MAIL] Failed to render ${status} email:`, error);
   }
 }
 
 export async function sendWelcomeEmail(email: string, name: string, locale: string = 'nl') {
-  if (!process.env.SMTP_HOST) return;
-
   const isEn = locale === 'en';
 
   try {
     const html = await render(WelcomeEmail({ customerName: name, locale: locale }));
     
-    await getTransporter().sendMail({
-      from: `"01 Living" <${FROM_EMAIL}>`,
+    sendEmailViaAPI({
       to: email,
+      fromEmail: FROM_EMAIL,
       subject: isEn ? 'Welcome to 01 Living' : 'Welkom bij 01 Living',
       html: html,
     });
-    console.log(`[SMTP] Welcome email sent to ${email}`);
   } catch (error) {
-    console.error('[SMTP] Failed to send welcome email:', error);
+    console.error('[MAIL] Failed to render welcome email:', error);
   }
 }
 
 export async function sendContactEmail(formData: { name: string; email: string; message: string }) {
-  if (!process.env.SMTP_HOST) return { success: false, error: 'SMTP Host is not configured.' };
-
   try {
     const html = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
@@ -170,18 +199,17 @@ export async function sendContactEmail(formData: { name: string; email: string; 
       </div>
     `;
 
-    await getTransporter().sendMail({
-      from: `"01 Living Contact" <${FROM_EMAIL}>`,
+    await sendEmailViaAPI({
       to: ADMIN_EMAIL,
-      replyTo: formData.email,
+      fromEmail: FROM_EMAIL,
+      fromName: `Contact: ${formData.name}`,
       subject: `Nieuw Contactbericht: ${formData.name}`,
       html: html,
     });
 
-    console.log(`[SMTP] Contact email sent from ${formData.email}`);
     return { success: true };
   } catch (error: any) {
-    console.error('[SMTP] Failed to send contact email:', error);
+    console.error('[MAIL] Failed to send contact email:', error);
     return { success: false, error: error.message || 'Er is bir hata oluştu.' };
   }
 }
