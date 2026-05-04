@@ -10,6 +10,8 @@ type Props = {
 
 import { getProductBySlug, getProducts } from '@/lib/products';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   const products = await getProducts();
   return products.map((p) => ({ slug: p.slug }));
