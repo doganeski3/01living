@@ -7,7 +7,7 @@ import WelcomeEmail from '@/emails/WelcomeEmail';
 
 // Dynamic Transporter to ensure .env is loaded first
 const getTransporter = () => {
-  return nodemailer.createTransport({
+  const config = {
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: process.env.SMTP_PORT === '465', 
@@ -15,7 +15,12 @@ const getTransporter = () => {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
-  });
+    connectionTimeout: 10000, // 10 seconds
+    greetingTimeout: 10000,
+  };
+
+  console.log(`[SMTP] Attempting connection to ${config.host}:${config.port} (Secure: ${config.secure})`);
+  return nodemailer.createTransport(config);
 };
 
 const FROM_EMAIL = 'info@01living.nl'; 
