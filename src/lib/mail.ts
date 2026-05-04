@@ -29,7 +29,8 @@ const getTransporter = () => {
   return nodemailer.createTransport(config);
 };
 
-const FROM_EMAIL = 'doganeski47@gmail.com'; // Changed for testing connectionconst ADMIN_EMAIL = 'info@01living.nl'; 
+const FROM_EMAIL = 'doganeski47@gmail.com'; // Changed for testing connection
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@01living.nl'; 
 
 interface Order {
   orderNumber: string;
