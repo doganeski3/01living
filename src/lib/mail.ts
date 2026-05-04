@@ -72,7 +72,7 @@ async function sendEmailViaAPI(options: { to: string; subject: string; html: str
   }
 }
 
-const FROM_EMAIL = process.env.SMTP_USER || 'info@01living.nl'; 
+const FROM_EMAIL = process.env.FROM_EMAIL || 'info@01living.nl'; 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@01living.nl'; 
 
 interface Order {
