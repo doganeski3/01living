@@ -7,18 +7,21 @@ import WelcomeEmail from '@/emails/WelcomeEmail';
 
 // Dynamic Transporter to ensure .env is loaded first
 const getTransporter = () => {
+  const isSecure = process.env.SMTP_PORT === '465';
   const config = {
     host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_PORT === '465', 
+    port: parseInt(process.env.SMTP_PORT || '465'),
+    secure: isSecure, 
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
-    connectionTimeout: 20000, // 20 seconds
-    greetingTimeout: 20000,
+    connectionTimeout: 30000, // 30 seconds
+    greetingTimeout: 30000,
+    socketTimeout: 30000,
     tls: {
-      rejectUnauthorized: false
+      rejectUnauthorized: false,
+      minVersion: 'TLSv1.2'
     }
   };
 
