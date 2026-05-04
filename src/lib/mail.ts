@@ -58,24 +58,24 @@ export async function sendOrderEmails(order: Order) {
     }));
 
     // 1. Send to Customer
-    await getTransporter().sendMail({
+    getTransporter().sendMail({
       from: `"01 Living" <${FROM_EMAIL}>`,
       to: order.customerEmail,
       subject: isEn 
         ? `Order Confirmation - 01 Living - #${order.orderNumber}`
         : `Bedankt voor uw bestelling bij 01 Living - #${order.orderNumber}`,
       html: customerHtml,
-    });
-    console.log('[SMTP] CUSTOMER EMAIL SUCCESS');
+    }).then(() => console.log('[SMTP] CUSTOMER EMAIL SUCCESS'))
+      .catch(err => console.error('[SMTP] CUSTOMER EMAIL FAILED:', err));
 
     // 2. Send to Admin
-    await getTransporter().sendMail({
+    getTransporter().sendMail({
       from: `"01 Living System" <${FROM_EMAIL}>`,
       to: ADMIN_EMAIL,
       subject: `Nieuwe Bestelling: #${order.orderNumber}`,
       html: adminHtml,
-    });
-    console.log('[SMTP] ADMIN EMAIL SUCCESS');
+    }).then(() => console.log('[SMTP] ADMIN EMAIL SUCCESS'))
+      .catch(err => console.error('[SMTP] ADMIN EMAIL FAILED:', err));
 
   } catch (error) {
     console.error('[SMTP] FATAL EXCEPTION:', error);
@@ -109,15 +109,15 @@ export async function sendOrderStatusEmail(
       locale: locale,
     }));
 
-    await getTransporter().sendMail({
+    getTransporter().sendMail({
       from: `"01 Living" <${FROM_EMAIL}>`,
       to: order.customerEmail,
       subject: subjects[status],
       html: html,
-    });
-    console.log(`[SMTP] Status email (${status}) sent for #${order.orderNumber}`);
+    }).then(() => console.log(`[SMTP] Status email (${status}) sent for #${order.orderNumber}`))
+      .catch(err => console.error(`[SMTP] Failed to send ${status} email:`, err));
   } catch (error) {
-    console.error(`[SMTP] Failed to send ${status} email:`, error);
+    console.error(`[SMTP] Failed to render ${status} email:`, error);
   }
 }
 
