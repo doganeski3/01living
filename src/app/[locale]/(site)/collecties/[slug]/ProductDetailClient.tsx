@@ -143,39 +143,61 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-start">
           {/* Left: Image Gallery */}
           <div className="lg:col-span-7 space-y-8">
-            <motion.div
-              key={selectedImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              onClick={() => setIsLightboxOpen(true)}
-              className="relative aspect-[4/5] w-full bg-white shadow-2xl rounded-sm overflow-hidden cursor-zoom-in group"
-            >
-              <Image
-                src={product.images[selectedImage]}
-                alt={product.name[locale]}
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-                 <Maximize2 className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" size={32} strokeWidth={1} />
-              </div>
-            </motion.div>
+            <div className="relative group">
+              <motion.div
+                key={selectedImage}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                onClick={() => setIsLightboxOpen(true)}
+                className="relative aspect-[4/5] w-full bg-white shadow-2xl rounded-sm overflow-hidden cursor-zoom-in group/image"
+              >
+                <Image
+                  src={product.images[selectedImage]}
+                  alt={product.name[locale]}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover/image:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/5 transition-colors duration-300 flex items-center justify-center">
+                   <Maximize2 className="text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 drop-shadow-lg" size={32} strokeWidth={1} />
+                </div>
+              </motion.div>
+
+              {/* Main Image Navigation Arrows */}
+              {product.images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white hover:text-primary-anthracite z-10"
+                  >
+                    <ChevronLeft size={24} strokeWidth={1.5} />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white hover:text-primary-anthracite z-10"
+                  >
+                    <ChevronRight size={24} strokeWidth={1.5} />
+                  </button>
+                </>
+              )}
+            </div>
 
             {product.images.length > 1 && (
-              <div className="grid grid-cols-5 gap-4">
-                {product.images.map((img, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(index)}
-                    className={`relative aspect-[3/4] bg-white rounded-sm overflow-hidden border-2 transition-all duration-300 ${
-                      selectedImage === index ? 'border-accent-oak shadow-lg scale-105' : 'border-transparent opacity-60 hover:opacity-100'
-                    }`}
-                  >
-                    <Image src={img} alt={`${product.name[locale]} ${index + 1}`} fill className="object-cover" />
-                  </button>
-                ))}
+              <div className="relative">
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x no-scrollbar">
+                  {product.images.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImage(index)}
+                      className={`relative flex-shrink-0 w-24 aspect-[3/4] bg-white rounded-sm overflow-hidden border-2 transition-all duration-300 snap-start ${
+                        selectedImage === index ? 'border-accent-oak shadow-lg scale-105' : 'border-transparent opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      <Image src={img} alt={`${product.name[locale]} ${index + 1}`} fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -400,7 +422,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
       {mounted && isLightboxOpen && createPortal(
         <AnimatePresence>
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12">
+          <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 md:p-12">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -418,14 +440,32 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               <X size={32} strokeWidth={1.5} />
             </motion.button>
 
+            {/* Lightbox Navigation */}
+            {product.images.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                  className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-all z-[110]"
+                >
+                  <ChevronLeft size={48} strokeWidth={1} />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                  className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-all z-[110]"
+                >
+                  <ChevronRight size={48} strokeWidth={1} />
+                </button>
+              </>
+            )}
+
             <motion.div
               key={selectedImage}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full h-full flex items-center justify-center z-[105]"
+              className="relative w-full h-full flex flex-col items-center justify-center z-[105]"
             >
-              <div className="relative w-full h-full max-h-[85vh]">
+              <div className="relative w-full flex-grow max-h-[70vh] mb-8">
                 <Image
                   src={product.images[selectedImage]}
                   alt={product.name[locale]}
@@ -435,6 +475,23 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                   priority
                 />
               </div>
+
+              {/* Lightbox Thumbnails */}
+              {product.images.length > 1 && (
+                <div className="w-full max-w-2xl px-4 overflow-x-auto no-scrollbar pb-4 flex justify-center gap-3">
+                  {product.images.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={(e) => { e.stopPropagation(); setSelectedImage(index); }}
+                      className={`relative flex-shrink-0 w-16 md:w-20 aspect-[3/4] rounded-sm overflow-hidden border-2 transition-all duration-300 ${
+                        selectedImage === index ? 'border-white scale-110 shadow-2xl' : 'border-white/10 opacity-40 hover:opacity-100'
+                      }`}
+                    >
+                      <Image src={img} alt={`Gallery ${index}`} fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </motion.div>
           </div>
         </AnimatePresence>,
