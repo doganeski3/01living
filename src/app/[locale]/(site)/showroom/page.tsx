@@ -161,7 +161,7 @@ export default function ShowroomPage() {
               className="lg:col-span-5 relative aspect-[3/4] rounded-sm overflow-hidden shadow-2xl"
             >
               <Image
-                src="/kitchen_marble_detail.png"
+                src="/images/showroom_intro_v3.png"
                 alt={t('intro.title')}
                 fill
                 className="object-cover"
@@ -216,7 +216,7 @@ export default function ShowroomPage() {
               className="order-2 lg:order-1 relative aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-2xl"
             >
               <Image
-                src="/showroom_materials.png"
+                src="/images/showroom_materials_v3.png"
                 alt={t('materials.title')}
                 fill
                 className="object-cover"
@@ -283,7 +283,7 @@ export default function ShowroomPage() {
               className="relative aspect-video lg:aspect-[4/3] rounded-sm overflow-hidden shadow-2xl"
             >
               <Image
-                src="/showroom_consultation.png"
+                src="/images/showroom_consultation_v3.png"
                 alt={t('consultation.title')}
                 fill
                 className="object-cover"

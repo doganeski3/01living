@@ -9,6 +9,7 @@ import VisitShowroom from "@/components/VisitShowroom";
 import EditorialSection from "@/components/EditorialSection";
 
 import { getProducts } from '@/lib/products';
+import { prisma } from '@/lib/prisma';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const t = await getTranslations({locale, namespace: 'Home'});
@@ -23,17 +24,23 @@ export default async function Home({ params: { locale } }: { params: { locale: s
   const allProducts = await getProducts();
   const bestSellers = allProducts.slice(0, 4);
 
-  // Extract top 2 unique categories for the featured section and prepend 'All Products'
-  const dynamicCategories = Array.from(new Set(allProducts.map(p => p.category[locale as 'en' | 'nl'])))
-    .slice(0, 2)
-    .map(catName => ({
-      name: catName,
-      image: allProducts.find(p => p.category[locale as 'en' | 'nl'] === catName)?.images[0] || ''
-    }));
+  // Fetch categories from DB to get custom images and names
+  const dbCategories = await prisma.category.findMany({
+    orderBy: { order: 'asc' }
+  });
+
+  const getCatData = (slug: string, fallbackName: string) => {
+    const cat = dbCategories.find(c => c.slug === slug);
+    if (cat) return { name: locale === 'nl' ? cat.nameNl : cat.nameEn, image: cat.image || '' };
+    // Fallback to product images if not in Category table
+    const product = allProducts.find(p => p.category[locale as 'en' | 'nl'].toLowerCase() === fallbackName.toLowerCase());
+    return { name: fallbackName, image: product?.images[0] || '' };
+  };
 
   const categories = [
-    { name: 'all', image: '/collections_hero.png' }, // 'all' will be handled by the component
-    ...dynamicCategories
+    { name: 'all', image: dbCategories.find(c => c.slug === 'all-products')?.image || '/collections_hero.png' },
+    getCatData('showroom', 'Showroom'),
+    getCatData('fauteuil', 'Fauteuil')
   ];
 
   return (

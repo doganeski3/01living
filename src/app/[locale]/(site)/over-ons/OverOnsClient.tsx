@@ -29,8 +29,8 @@ export default function OverOnsClient() {
       <section ref={ref} className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/over_ons_hero.png"
-            alt="01 Living Craftsmanship"
+            src="/images/over_ons_hero_new.png"
+            alt="01 Living Design Philosophy"
             fill
             className="object-cover object-center"
             priority
@@ -81,8 +81,8 @@ export default function OverOnsClient() {
                 className="w-full lg:w-1/2 relative aspect-[4/5] bg-gray-100 overflow-hidden"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200"
-                  alt="Modern Living Space"
+                  src="/images/production_v3.png"
+                  alt="Global Design and Production Excellence"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-1000"
                 />
@@ -112,8 +112,8 @@ export default function OverOnsClient() {
                 className="w-full lg:w-1/2 relative aspect-[4/3] bg-gray-100 overflow-hidden"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1200"
-                  alt="Modern Kitchen Design"
+                  src="/images/turnkey_excellence.png"
+                  alt="Turnkey Luxury Interior"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-1000"
                 />

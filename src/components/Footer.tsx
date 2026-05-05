@@ -8,6 +8,10 @@ export default function Footer() {
   const t = useTranslations('Footer');
   const locale = useLocale();
 
+  const openInMaps = (address: string) => {
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank');
+  };
+
   return (
     <footer className="bg-primary-anthracite text-primary-ivory pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -77,7 +81,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Showroom Section */}
+          {/* Showroom & Warehouse Section */}
           <div className="lg:col-span-5 space-y-8">
             <div className="flex items-center gap-3">
               <div className="w-8 h-px bg-accent-oak"></div>
@@ -85,17 +89,36 @@ export default function Footer() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <p className="text-primary-ivory/70 text-sm leading-relaxed font-serif italic">
                   {t('showroomDesc')}
                 </p>
-                <div className="flex gap-4 group cursor-pointer">
-                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-accent-oak group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
-                    <MapPin size={18} />
+                
+                {/* Showroom Address */}
+                <div 
+                  onClick={() => openInMaps(t('showroomAddress'))}
+                  className="flex items-start gap-5 group cursor-pointer"
+                >
+                   <div className="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-accent-oak group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
+                    <MapPin size={20} />
                    </div>
-                   <div className="text-xs space-y-1">
-                      <p className="font-bold uppercase tracking-widest">Den Haag</p>
-                      <p className="text-primary-ivory/40 font-serif italic">De Werf 10, 2544 EK</p>
+                   <div className="text-xs space-y-1 pt-2">
+                      <p className="font-bold uppercase tracking-widest">Showroom</p>
+                      <p className="text-primary-ivory/40 font-serif italic group-hover:text-accent-oak transition-colors">{t('showroomAddress')}</p>
+                   </div>
+                </div>
+
+                {/* Warehouse Address */}
+                <div 
+                  onClick={() => openInMaps(t('warehouseAddress'))}
+                  className="flex items-start gap-5 group cursor-pointer"
+                >
+                   <div className="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-accent-oak group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
+                    <MapPin size={20} />
+                   </div>
+                   <div className="text-xs space-y-1 pt-2">
+                      <p className="font-bold uppercase tracking-widest">{t('warehouseTitle')}</p>
+                      <p className="text-primary-ivory/40 font-serif italic group-hover:text-accent-oak transition-colors">{t('warehouseAddress')}</p>
                    </div>
                 </div>
               </div>
@@ -121,7 +144,8 @@ export default function Footer() {
           </p>
           
           <div className="flex space-x-10 text-primary-ivory/40 text-[10px] font-bold tracking-[0.3em] uppercase">
-            <a href="https://www.instagram.com/01living10/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">Instagram</a>
+            <a href="https://www.instagram.com/01livingg/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">Instagram</a>
+            <a href="https://www.tiktok.com/@01livingg" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">TikTok</a>
           </div>
         </div>
       </div>

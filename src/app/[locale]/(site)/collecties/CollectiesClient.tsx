@@ -23,7 +23,16 @@ const SORT_OPTIONS = [
   { value: 'price-desc', labelKey: 'filters.sortOptions.priceHighLow' },
 ];
 
-export default function CollectiesClient({ initialProducts }: { initialProducts: Product[] }) {
+interface Category {
+  id: string;
+  nameNl: string;
+  nameEn: string;
+  slug: string;
+  image: string | null;
+  order: number;
+}
+
+export default function CollectiesClient({ initialProducts, dbCategories = [] }: { initialProducts: Product[], dbCategories?: Category[] }) {
   const t = useTranslations('Collecties');
   const locale = useLocale() as 'en' | 'nl';
   const router = useRouter();
@@ -40,13 +49,51 @@ export default function CollectiesClient({ initialProducts }: { initialProducts:
 
   // Available Categories
   const allCategories = useMemo(() => {
+    // If we have categories in DB, use them
+    if (dbCategories.length > 0) {
+      return dbCategories
+        .filter(c => c.slug !== 'all-products')
+        .sort((a, b) => a.order - b.order)
+        .map(c => locale === 'nl' ? c.nameNl : c.nameEn);
+    }
+
     const rawCategories = Array.from(
       new Set(initialProducts.map((p) => p.category[locale]))
     );
-    const hasShowroom = rawCategories.some(c => c.toLowerCase() === 'showroom');
-    const otherCategories = rawCategories.filter(c => c.toLowerCase() !== 'showroom');
-    return hasShowroom ? ['Showroom', ...otherCategories] : otherCategories;
-  }, [initialProducts, locale]);
+
+    // Fixed order based on user request (Showroom, Koltuk, Köşe, Sandalye, etc.)
+    // Mapped to both NL and EN keywords
+    const categoryPriorityMap = [
+      ['showroom'],                                    // 1. SHOWROOM
+      ['fauteuil', 'armchair', 'bank', 'sofa', 'koltuk'], // 2. KOLTUK
+      ['hoekbank', 'corner sofa', 'köşe'],              // 3. KÖŞE KANEPELER
+      ['stoel', 'chair', 'sandalye'],                   // 4. SANDALYE
+      ['bed', 'yatak'],                                 // 5. YATAK
+      ['tafel', 'table', 'masa'],                       // 6. MASA (TABLE)
+      ['salontafel', 'coffee table', 'sehpa'],          // 7. SEHPA (COFFEE TABLE)
+      ['accessoire', 'accessory', 'aksesuar'],          // 8. AKSESUAR
+      ['spiegel', 'mirror', 'ayna'],                    // 9. AYNA
+      ['tapijt', 'rug', 'carpet', 'halı'],              // 10. HALI
+    ];
+
+    return rawCategories.sort((a, b) => {
+      const aLower = a.toLowerCase();
+      const bLower = b.toLowerCase();
+      
+      const aIdx = categoryPriorityMap.findIndex(keywords => 
+        keywords.some(kw => aLower === kw)
+      );
+      const bIdx = categoryPriorityMap.findIndex(keywords => 
+        keywords.some(kw => bLower === kw)
+      );
+
+      const finalAIdx = aIdx === -1 ? 999 : aIdx;
+      const finalBIdx = bIdx === -1 ? 999 : bIdx;
+
+      if (finalAIdx !== finalBIdx) return finalAIdx - finalBIdx;
+      return a.localeCompare(b);
+    });
+  }, [initialProducts, locale, dbCategories]);
 
   // Available Colors (from variants)
   const allColors = useMemo(() => {
@@ -65,13 +112,22 @@ export default function CollectiesClient({ initialProducts }: { initialProducts:
     const images: Record<string, string> = {
       'Showroom': '/showroom-kitchen.png',
     };
+
+    // Use images from DB if available
+    if (dbCategories.length > 0) {
+      dbCategories.forEach(cat => {
+        const name = locale === 'nl' ? cat.nameNl : cat.nameEn;
+        if (cat.image) images[name] = cat.image;
+      });
+    }
+
     allCategories.forEach((cat) => {
-      if (cat === 'Showroom') return;
+      if (images[cat]) return; // Skip if already set from DB
       const product = initialProducts.find((p) => p.category[locale] === cat);
       if (product) images[cat] = product.images[0];
     });
     return images;
-  }, [allCategories, initialProducts, locale]);
+  }, [allCategories, initialProducts, locale, dbCategories]);
 
   const updateFilter = useCallback(
     (key: string, value: string | null) => {
@@ -177,7 +233,7 @@ export default function CollectiesClient({ initialProducts }: { initialProducts:
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-primary-anthracite shadow-xl"
               >
                 <Image
-                  src="/collections_hero.png"
+                  src={dbCategories.find(c => c.slug === 'all-products')?.image || "/collections_hero.png"}
                   alt="All Products"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
@@ -229,7 +285,7 @@ export default function CollectiesClient({ initialProducts }: { initialProducts:
               className="space-y-8"
             >
               {/* Refined Filter Bar */}
-              <div className="sticky top-24 z-40 flex flex-col gap-4">
+              <div className="relative mb-12 z-40 flex flex-col gap-4">
                 <div className="bg-white/70 backdrop-blur-xl border border-white/40 rounded-2xl shadow-lg px-6 py-4 flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4 md:gap-8">
                     <button

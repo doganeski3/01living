@@ -7,7 +7,11 @@ import { Product } from '@/lib/products';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Check, ShoppingBag, Minus, Plus, X, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  ArrowLeft, Check, ShoppingBag, Minus, Plus, X, Maximize2, 
+  ChevronLeft, ChevronRight, ShieldCheck, Truck, CreditCard, 
+  RefreshCcw, Clock 
+} from 'lucide-react';
 import { createPortal } from 'react-dom';
 
 interface ProductDetailClientProps {
@@ -25,6 +29,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeTab, setActiveTab] = useState<'description' | 'shipping' | 'returns'>('description');
 
   const nextImage = () => {
     setSelectedImage((prev) => (prev + 1) % product.images.length);
@@ -60,14 +65,12 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const allColors = Array.from(new Set(product.variants?.map(v => v.color[locale]).filter(Boolean) as string[]));
   const allSizes = Array.from(new Set(product.variants?.map(v => v.size[locale]).filter(Boolean) as string[]));
 
-  // Find variant that matches the current selection
   const activeVariant = product.variants?.find(v => {
     const colorMatch = selectedColor ? v.color[locale] === selectedColor : !v.color[locale];
     const sizeMatch = selectedSize ? v.size[locale] === selectedSize : !v.size[locale];
     return colorMatch && sizeMatch;
   }) || product.variants?.find(v => {
-    // Fallback: match only color if size not selected or vice-versa
-    if (selectedColor && selectedSize) return false; // Both must match if both selected
+    if (selectedColor && selectedSize) return false;
     if (selectedColor) return v.color[locale] === selectedColor;
     if (selectedSize) return v.size[locale] === selectedSize;
     return false;
@@ -76,24 +79,16 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const availableColors = allColors;
   const availableSizes = allSizes;
 
-  // Auto-switch image when active variant has a specific image
   useEffect(() => {
-    // 1. Try active variant image first
     let targetImage = activeVariant?.image;
-
-    // 2. Fallback: If no image on active variant, try to find any variant with the same color that has an image
     if (!targetImage && selectedColor) {
       const variantWithColorImg = product.variants?.find(v => v.color[locale] === selectedColor && v.image);
       if (variantWithColorImg) targetImage = variantWithColorImg.image;
     }
-
     if (targetImage) {
-      // Normalize URLs for robust comparison (ignore leading slashes, etc.)
       const normalize = (url: string) => url.replace(/^\/+/, '').split('?')[0];
       const normalizedTarget = normalize(targetImage);
-      
       const imgIndex = product.images.findIndex(img => normalize(img) === normalizedTarget);
-      
       if (imgIndex !== -1) {
         setSelectedImage(imgIndex);
       }
@@ -110,7 +105,6 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   }).format(currentPrice);
 
   const [quantity, setQuantity] = useState(1);
-  const tProj = useTranslations('ProjectInquiry');
 
   const isSelectionComplete = 
     (allColors.length === 0 || selectedColor !== null) && 
@@ -138,7 +132,6 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   return (
     <div className="min-h-screen bg-primary-ivory pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Back link */}
         <Link
           href={`/${locale}/collecties`}
           className="inline-flex items-center gap-2 text-sm text-primary-anthracite/60 hover:text-primary-anthracite transition-colors mb-12 uppercase tracking-widest"
@@ -147,23 +140,22 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
           {t('backToCollections')}
         </Link>
 
-        {/* Main grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
-          {/* Image Gallery */}
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-start">
+          {/* Left: Image Gallery */}
+          <div className="lg:col-span-7 space-y-8">
             <motion.div
               key={selectedImage}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
               onClick={() => setIsLightboxOpen(true)}
-              className="relative aspect-[4/5] w-full bg-gray-100 overflow-hidden cursor-zoom-in group"
+              className="relative aspect-[4/5] w-full bg-white shadow-2xl rounded-sm overflow-hidden cursor-zoom-in group"
             >
               <Image
                 src={product.images[selectedImage]}
                 alt={product.name[locale]}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
@@ -171,95 +163,14 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               </div>
             </motion.div>
 
-            {/* Lightbox Modal */}
-            {mounted && isLightboxOpen && createPortal(
-              <AnimatePresence>
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setIsLightboxOpen(false)}
-                    className="absolute inset-0 bg-primary-anthracite/95 backdrop-blur-2xl"
-                  />
-                  
-                  {/* Close Button */}
-                  <motion.button
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[110] p-2 hover:bg-white/10 rounded-full"
-                    onClick={() => setIsLightboxOpen(false)}
-                  >
-                    <X size={32} strokeWidth={1.5} />
-                  </motion.button>
-
-                  {/* Navigation Buttons - Hidden on small mobile, smaller on tablets */}
-                  {product.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[110] p-4 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-all"
-                      >
-                        <ChevronLeft size={48} strokeWidth={1} />
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                        className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-[110] p-4 text-white/40 hover:text-white hover:bg-white/10 rounded-full transition-all"
-                      >
-                        <ChevronRight size={48} strokeWidth={1} />
-                      </button>
-
-                      {/* Image Counter */}
-                      <div className="absolute bottom-12 md:bottom-8 left-1/2 -translate-x-1/2 z-[110] px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10">
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/60">
-                          {selectedImage + 1} <span className="mx-2 opacity-30">/</span> {product.images.length}
-                        </p>
-                      </div>
-                    </>
-                  )}
-
-                  <motion.div
-                    key={selectedImage}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={(e, { offset, velocity }) => {
-                      const swipe = offset.x;
-                      if (swipe < -50) nextImage();
-                      else if (swipe > 50) prevImage();
-                    }}
-                    initial={{ opacity: 0, scale: 0.95, x: 20 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, x: -20 }}
-                    transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                    className="relative w-full h-full flex items-center justify-center z-[105] touch-none"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="relative w-[95vw] h-[70vh] md:w-full md:h-full md:max-h-[85vh]">
-                      <Image
-                        src={product.images[selectedImage]}
-                        alt={product.name[locale]}
-                        fill
-                        className="object-contain"
-                        quality={100}
-                        priority
-                      />
-                    </div>
-                  </motion.div>
-                </div>
-              </AnimatePresence>,
-              document.body
-            )}
-
-            {/* Thumbnails */}
             {product.images.length > 1 && (
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-5 gap-4">
                 {product.images.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`relative w-20 h-24 bg-gray-100 overflow-hidden flex-shrink-0 border-2 transition-colors ${
-                      selectedImage === index ? 'border-primary-anthracite' : 'border-transparent'
+                    className={`relative aspect-[3/4] bg-white rounded-sm overflow-hidden border-2 transition-all duration-300 ${
+                      selectedImage === index ? 'border-accent-oak shadow-lg scale-105' : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
                     <Image src={img} alt={`${product.name[locale]} ${index + 1}`} fill className="object-cover" />
@@ -269,191 +180,273 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             )}
           </div>
 
-          {/* Product Info */}
-          <div className="flex flex-col justify-center space-y-8">
-            {/* Category */}
-            <p className="text-xs uppercase tracking-widest text-accent-oak font-semibold">
-              {product.category[locale]}
-            </p>
-
-            {/* Name */}
-            <h1 className="text-4xl md:text-5xl font-heading text-primary-anthracite leading-tight">
-              {product.name[locale]}
-            </h1>
-
-            {/* Price - Hidden for Showroom products */}
-            {product.category[locale] !== 'Showroom' && (
-              <p className="text-3xl font-sans text-primary-anthracite">
-                {formattedPrice}
+          {/* Right: Product Info - Sticky */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-10">
+            <div className="space-y-4">
+              <p className="text-xs uppercase tracking-[0.4em] text-accent-oak font-bold">
+                {product.category[locale]}
               </p>
-            )}
-
-            {/* Color Selector */}
-            {allColors.length > 0 && (
-              <div className="space-y-4 pt-4 border-t border-primary-anthracite/10">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
-                  {t('color')}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-primary-anthracite leading-tight uppercase tracking-tight">
+                {product.name[locale]}
+              </h1>
+              {product.category[locale] !== 'Showroom' && (
+                <p className="text-3xl font-sans text-primary-anthracite/80 tracking-tight">
+                  {formattedPrice}
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {allColors.map((color) => {
-                    const isAvailable = availableColors.includes(color);
-                    return (
+              )}
+            </div>
+
+            <div className="space-y-8 py-10 border-y border-primary-anthracite/10">
+              {allColors.length > 0 && (
+                <div className="space-y-4">
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
+                    {t('color')}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {allColors.map((color) => (
                       <button
                         key={color}
                         onClick={() => setSelectedColor(color)}
-                        disabled={!isAvailable}
-                        className={`px-6 py-3 border text-xs uppercase tracking-widest font-bold transition-all ${
+                        className={`px-8 py-3 border text-[10px] uppercase tracking-widest font-bold transition-all duration-300 ${
                           selectedColor === color
-                            ? 'border-primary-anthracite bg-primary-anthracite text-white'
-                            : isAvailable 
-                              ? 'border-gray-200 text-primary-anthracite/60 hover:border-primary-anthracite'
-                              : 'border-gray-100 text-gray-300 cursor-not-allowed'
+                            ? 'border-primary-anthracite bg-primary-anthracite text-white shadow-xl translate-y-[-2px]'
+                            : 'border-gray-200 text-primary-anthracite/60 hover:border-primary-anthracite'
                         }`}
                       >
                         {color}
                       </button>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Size Selector */}
-            {allSizes.length > 0 && (
-              <div className="space-y-4 pt-4 border-t border-primary-anthracite/10">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
-                  {t('size')}
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {allSizes.map((size) => {
-                    const isAvailable = availableSizes.includes(size);
-                    return (
+              {allSizes.length > 0 && (
+                <div className="space-y-4">
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
+                    {t('size')}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {allSizes.map((size) => (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
-                        disabled={!isAvailable}
-                        className={`px-6 py-3 border text-xs uppercase tracking-widest font-bold transition-all ${
+                        className={`px-8 py-3 border text-[10px] uppercase tracking-widest font-bold transition-all duration-300 ${
                           selectedSize === size
-                            ? 'border-primary-anthracite bg-primary-anthracite text-white'
-                            : isAvailable
-                              ? 'border-gray-200 text-primary-anthracite/60 hover:border-primary-anthracite'
-                              : 'border-gray-100 text-gray-300 cursor-not-allowed'
+                            ? 'border-primary-anthracite bg-primary-anthracite text-white shadow-xl translate-y-[-2px]'
+                            : 'border-gray-200 text-primary-anthracite/60 hover:border-primary-anthracite'
                         }`}
                       >
                         {size}
                       </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-
-            {/* Quantity Selector - Hidden for Showroom products */}
-            {product.category[locale] !== 'Showroom' && (
-              <div className="space-y-4 pt-4 border-t border-primary-anthracite/10">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
-                  {t('quantity')}
-                </p>
-                <div className="flex items-center gap-6">
-                  <div className="flex items-center border border-primary-anthracite/10 rounded-full p-1 bg-white">
-                    <button 
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-10 flex items-center justify-center text-primary-anthracite/60 hover:text-primary-anthracite hover:bg-gray-50 rounded-full transition-all"
-                    >
-                      <Minus size={16} />
-                    </button>
-                    <span className="w-12 text-center font-bold text-sm text-primary-anthracite">{quantity}</span>
-                    <button 
-                      onClick={() => setQuantity(Math.min(5, quantity + 1))}
-                      disabled={quantity >= 5}
-                      className={`w-10 h-10 flex items-center justify-center rounded-full transition-all ${
-                        quantity >= 5 
-                          ? 'text-gray-300 cursor-not-allowed' 
-                          : 'text-primary-anthracite/60 hover:text-primary-anthracite hover:bg-gray-50'
-                      }`}
-                    >
-                      <Plus size={16} />
-                    </button>
+                    ))}
                   </div>
-                  {quantity === 5 && (
-                    <p className="text-[10px] text-accent-oak font-bold uppercase tracking-widest animate-pulse">Max. 5 items</p>
-                  )}
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Stock / Showroom Status */}
-            <div className="flex items-center gap-2 pt-8 border-t border-primary-anthracite/10">
-              <div className={`w-2 h-2 rounded-full ${product.category[locale] === 'Showroom' ? 'bg-accent-oak' : currentStock > 0 ? 'bg-green-500' : 'bg-red-400'}`} />
-              <span className="text-sm text-primary-anthracite/70">
-                {product.category[locale] === 'Showroom' 
-                  ? t('showroomStatus') 
-                  : currentStock > 0 ? t('inStock') : t('outOfStock')}
-              </span>
+              {product.category[locale] !== 'Showroom' && (
+                <div className="space-y-4">
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">
+                    {t('quantity')}
+                  </p>
+                  <div className="flex items-center gap-6">
+                    <div className="flex items-center border border-primary-anthracite/10 rounded-full p-1 bg-white shadow-sm">
+                      <button 
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="w-10 h-10 flex items-center justify-center text-primary-anthracite/60 hover:text-primary-anthracite hover:bg-gray-50 rounded-full transition-all"
+                      >
+                        <Minus size={14} />
+                      </button>
+                      <span className="w-12 text-center font-bold text-sm text-primary-anthracite">{quantity}</span>
+                      <button 
+                        onClick={() => setQuantity(Math.min(5, quantity + 1))}
+                        disabled={quantity >= 5}
+                        className="w-10 h-10 flex items-center justify-center rounded-full transition-all text-primary-anthracite/60 hover:text-primary-anthracite hover:bg-gray-50"
+                      >
+                        <Plus size={14} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Action Button */}
             <div className="space-y-6">
               {product.category[locale] === 'Showroom' ? (
                 <Link 
                   href={`/${locale}/showroom`}
-                  className="w-full py-5 uppercase tracking-widest text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-xl bg-primary-anthracite text-primary-ivory hover:bg-accent-oak"
+                  className="w-full py-6 bg-primary-anthracite text-white uppercase tracking-[0.3em] text-[11px] font-bold hover:bg-accent-oak transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl group"
                 >
                   {t('bookAppointment')}
+                  <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </Link>
               ) : (
                 <motion.button
                   whileTap={{ scale: 0.98 }}
                   onClick={handleAddToCart}
                   disabled={currentStock === 0 || !isSelectionComplete}
-                  className={`w-full py-5 uppercase tracking-widest text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-xl ${
+                  className={`w-full py-6 uppercase tracking-[0.3em] text-[11px] font-bold transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl ${
                     added
                       ? 'bg-green-600 text-white'
                       : isSelectionComplete 
-                        ? 'bg-primary-anthracite text-primary-ivory hover:bg-accent-oak'
+                        ? 'bg-primary-anthracite text-white hover:bg-accent-oak'
                         : 'bg-gray-100 text-primary-anthracite/30 cursor-not-allowed'
-                  } disabled:opacity-50`}
+                  }`}
                 >
-                  {added ? (
-                    <Check size={18} />
-                  ) : (
-                    <ShoppingBag size={18} strokeWidth={1.5} />
-                  )}
+                  {added ? <Check size={18} /> : <ShoppingBag size={18} strokeWidth={1.5} />}
                   {getButtonText()}
                 </motion.button>
               )}
 
-              {/* Project Inquiry Info Box */}
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="p-8 border border-accent-oak/20 bg-primary-ivory/50 rounded-2xl space-y-4"
-              >
-                <div className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100/50 space-y-4">
-              <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent-oak/60">
-                {t('bespokeTitle')}
-              </h3>
-              <p className="text-xs text-primary-anthracite/60 leading-relaxed">
-                {t('bespokeDesc')}
-              </p>
-              <Link 
-                href={`/${locale}/contact`}
-                className="inline-block text-[10px] uppercase tracking-widest font-bold border-b border-primary-anthracite pb-1 hover:text-accent-oak hover:border-accent-oak transition-all"
-              >
-                {t('bespokeContact')}
-              </Link>
-            </div>
-  </motion.div>
+              <div className="p-8 bg-white/50 border border-primary-anthracite/5 rounded-sm space-y-4">
+                <h4 className="text-[10px] uppercase tracking-widest font-bold text-accent-oak">{t('bespokeTitle')}</h4>
+                <p className="text-[11px] text-primary-anthracite/60 leading-relaxed uppercase tracking-wider">{t('bespokeDesc')}</p>
+                <Link href={`/${locale}/contact`} className="inline-block text-[10px] font-bold uppercase tracking-widest border-b border-primary-anthracite pb-1 hover:text-accent-oak hover:border-accent-oak transition-all">
+                  {t('bespokeContact')}
+                </Link>
+              </div>
             </div>
 
-            {/* Description */}
-            <p className="text-primary-anthracite/70 font-sans leading-relaxed text-lg border-t border-primary-anthracite/10 pt-8 whitespace-pre-wrap">
-              {product.description[locale]}
-            </p>
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="flex items-center gap-3 p-4 bg-white rounded-sm border border-primary-anthracite/5">
+                <ShieldCheck size={20} className="text-accent-oak shrink-0" />
+                <span className="text-[9px] uppercase tracking-widest font-bold text-primary-anthracite/60">{t('qualityBadge')}</span>
+              </div>
+              <div className="flex items-center gap-3 p-4 bg-white rounded-sm border border-primary-anthracite/5">
+                <Truck size={20} className="text-accent-oak shrink-0" />
+                <span className="text-[9px] uppercase tracking-widest font-bold text-primary-anthracite/60">{t('shippingBadge')}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-32 border-t border-primary-anthracite/10 pt-20">
+          <div className="max-w-4xl mx-auto space-y-16">
+            <div className="flex gap-12 border-b border-primary-anthracite/10">
+              <button 
+                onClick={() => setActiveTab('description')}
+                className={`pb-6 text-xs uppercase tracking-[0.4em] font-bold transition-all relative ${
+                  activeTab === 'description' ? 'text-primary-anthracite' : 'text-primary-anthracite/30 hover:text-primary-anthracite/60'
+                }`}
+              >
+                {t('description')}
+                {activeTab === 'description' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-px bg-primary-anthracite" />}
+              </button>
+              <button 
+                onClick={() => setActiveTab('shipping')}
+                className={`pb-6 text-xs uppercase tracking-[0.4em] font-bold transition-all relative ${
+                  activeTab === 'shipping' ? 'text-primary-anthracite' : 'text-primary-anthracite/30 hover:text-primary-anthracite/60'
+                }`}
+              >
+                {t('shippingTab')}
+                {activeTab === 'shipping' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-px bg-primary-anthracite" />}
+              </button>
+            </div>
+
+            <div className="min-h-[200px]">
+              <AnimatePresence mode="wait">
+                {activeTab === 'description' && (
+                  <motion.div
+                    key="desc"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="prose prose-lg max-w-none"
+                  >
+                    <p className="text-xl md:text-2xl text-primary-anthracite/80 font-serif italic leading-relaxed whitespace-pre-wrap">
+                      {product.description[locale]}
+                    </p>
+                  </motion.div>
+                )}
+                {activeTab === 'shipping' && (
+                  <motion.div
+                    key="shipping"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                  >
+                    <div className="space-y-6">
+                      <div className="flex gap-4">
+                        <Truck className="text-accent-oak" size={24} />
+                        <div>
+                          <h4 className="text-xs uppercase tracking-widest font-bold mb-2">{t('premiumShippingTitle')}</h4>
+                          <p className="text-sm text-primary-anthracite/60 font-serif italic">{t('premiumShippingDesc')}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <Clock className="text-accent-oak" size={24} />
+                        <div>
+                          <h4 className="text-xs uppercase tracking-widest font-bold mb-2">{t('leadTimeTitle')}</h4>
+                          <p className="text-sm text-primary-anthracite/60 font-serif italic">{t('leadTimeDesc')}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-6">
+                       <div className="flex gap-4">
+                        <RefreshCcw className="text-accent-oak" size={24} />
+                        <div>
+                          <h4 className="text-xs uppercase tracking-widest font-bold mb-2">{t('returnsPolicyTitle')}</h4>
+                          <p className="text-sm text-primary-anthracite/60 font-serif italic">{t('returnsPolicyDesc')}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>
+
+      {mounted && isLightboxOpen && createPortal(
+        <AnimatePresence>
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsLightboxOpen(false)}
+              className="absolute inset-0 bg-primary-anthracite/95 backdrop-blur-2xl"
+            />
+            
+            <motion.button
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="absolute top-8 right-8 text-white/40 hover:text-white transition-all z-[110] p-2 hover:bg-white/10 rounded-full"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              <X size={32} strokeWidth={1.5} />
+            </motion.button>
+
+            <motion.div
+              key={selectedImage}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative w-full h-full flex items-center justify-center z-[105]"
+            >
+              <div className="relative w-full h-full max-h-[85vh]">
+                <Image
+                  src={product.images[selectedImage]}
+                  alt={product.name[locale]}
+                  fill
+                  className="object-contain"
+                  quality={100}
+                  priority
+                />
+              </div>
+            </motion.div>
+          </div>
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   );
 }
+
+const ArrowRight = ({ size, className }: { size: number, className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+    <polyline points="12 5 19 12 12 19"></polyline>
+  </svg>
+);

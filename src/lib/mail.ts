@@ -183,13 +183,27 @@ export async function sendWelcomeEmail(email: string, name: string, locale: stri
   }
 }
 
-export async function sendContactEmail(formData: { name: string; email: string; message: string }) {
+export async function sendContactEmail(formData: { 
+  firstName: string; 
+  lastName: string; 
+  email: string; 
+  phone?: string; 
+  date?: string; 
+  time?: string; 
+  location?: string; 
+  message: string; 
+}) {
   try {
+    const fullName = `${formData.firstName} ${formData.lastName}`;
     const html = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
         <h2 style="color: #1a1a1a; border-bottom: 1px solid #eee; padding-bottom: 10px;">Nieuw Contactbericht</h2>
-        <p><strong>Naam:</strong> ${formData.name}</p>
+        <p><strong>Naam:</strong> ${fullName}</p>
         <p><strong>E-mail:</strong> ${formData.email}</p>
+        <p><strong>Telefoon:</strong> ${formData.phone || '-'}</p>
+        <p><strong>Voorkeursdag:</strong> ${formData.date || '-'}</p>
+        <p><strong>Voorkeurstijd:</strong> ${formData.time || '-'}</p>
+        <p><strong>Locatie:</strong> ${formData.location || '-'}</p>
         <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
           <p style="margin-top: 0;"><strong>Bericht:</strong></p>
           <p style="white-space: pre-wrap; color: #444;">${formData.message}</p>
@@ -202,8 +216,8 @@ export async function sendContactEmail(formData: { name: string; email: string; 
     await sendEmailViaAPI({
       to: ADMIN_EMAIL,
       fromEmail: FROM_EMAIL,
-      fromName: `Contact: ${formData.name}`,
-      subject: `Nieuw Contactbericht: ${formData.name}`,
+      fromName: `Contact: ${fullName}`,
+      subject: `Nieuw Contactbericht: ${fullName}`,
       html: html,
     });
 
@@ -213,5 +227,3 @@ export async function sendContactEmail(formData: { name: string; email: string; 
     return { success: false, error: error.message || 'Er is bir hata oluştu.' };
   }
 }
-
-

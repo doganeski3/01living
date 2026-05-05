@@ -12,7 +12,8 @@ import {
   Menu,
   X,
   AlertCircle,
-  Users
+  Users,
+  Tag
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -24,6 +25,7 @@ export default function SidebarWrapper({ children }: { children: React.ReactNode
   const menuItems = [
     { label: 'Dashboard', icon: LayoutDashboard, href: `/${locale}/01admin-portal` },
     { label: 'Producten', icon: Package, href: `/${locale}/01admin-portal/products` },
+    { label: 'Categorieën', icon: Tag, href: `/${locale}/01admin-portal/categories` },
     { label: 'Bestellingen', icon: ShoppingBag, href: `/${locale}/01admin-portal/orders` },
     { label: 'Gebruikers', icon: Users, href: `/${locale}/01admin-portal/users` },
     { label: 'In afwachting', icon: AlertCircle, href: `/${locale}/01admin-portal/abandoned` },
