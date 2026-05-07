@@ -139,9 +139,16 @@ export default function Footer() {
 
         {/* Bottom Bar: Socials & Copyright */}
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-primary-ivory/30 text-[9px] uppercase tracking-[0.2em] font-bold">
-            {t('copyright')}
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-primary-ivory/30 text-[9px] uppercase tracking-[0.2em] font-bold">
+              {t('copyright')}
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-primary-ivory/50 text-[9px] uppercase tracking-[0.2em] font-bold">
+              <span>01Living BV</span>
+              <span>KVK-nummer : 85234133</span>
+              <span>BTW-nummer : NL863555457B01</span>
+            </div>
+          </div>
           
           <div className="flex space-x-10 text-primary-ivory/40 text-[10px] font-bold tracking-[0.3em] uppercase">
             <a href="https://www.instagram.com/01livingg/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">Instagram</a>
