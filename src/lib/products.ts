@@ -19,6 +19,10 @@ export interface Product {
     nl: string
     en: string
   }
+  dimensions?: {
+    nl: string | null
+    en: string | null
+  }
   variants?: {
     id: string
     name: { nl: string | null, en: string | null }
@@ -47,6 +51,7 @@ function transformProduct(p: PrismaProduct): Product {
     })(),
     stock: p.stock,
     category: { nl: p.categoryNl, en: p.categoryEn },
+    dimensions: { nl: (p as any).dimensionsNl, en: (p as any).dimensionsEn },
     variants: (p as any).variants?.map((v: any) => ({
       id: v.id,
       name: { nl: v.nameNl, en: v.nameEn },

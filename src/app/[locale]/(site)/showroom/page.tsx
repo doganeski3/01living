@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Phone, Clock, ArrowRight, ShieldCheck, PenTool, Gem, Users } from 'lucide-react';
+import { MapPin, Phone, Clock, ArrowRight, ShieldCheck, PenTool, Gem, Users, Mail, Smartphone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { useTranslations, useLocale } from 'next-intl';
 
@@ -88,10 +88,25 @@ export default function ShowroomPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-white/80 text-base md:text-xl font-serif italic max-w-3xl mx-auto leading-relaxed"
+            className="text-white/80 text-base md:text-xl font-serif italic max-w-3xl mx-auto leading-relaxed mb-12"
           >
             {t('hero.subtitle')}
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="flex justify-center"
+          >
+            <Link 
+              href={`/${locale}/contact`}
+              className="inline-flex items-center gap-6 bg-white text-primary-anthracite px-12 py-5 text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-accent-oak hover:text-white transition-all shadow-2xl group"
+            >
+              {t('hero.cta')}
+              <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
 
         <motion.div 
@@ -161,7 +176,7 @@ export default function ShowroomPage() {
               className="lg:col-span-5 relative aspect-[3/4] rounded-sm overflow-hidden shadow-2xl"
             >
               <Image
-                src="/images/showroom_intro_v3.png"
+                src="/images/showroom_kitchen_intro_v2.png"
                 alt={t('intro.title')}
                 fill
                 className="object-cover"
@@ -309,25 +324,63 @@ export default function ShowroomPage() {
             <div className="space-y-10">
               <h4 className="text-[10px] uppercase tracking-[0.4em] font-bold text-accent-oak">Locatie & Contact</h4>
               <div className="space-y-8">
-                <div className="flex gap-4 group">
-                  <div className="w-10 h-10 rounded-full bg-primary-ivory flex items-center justify-center text-primary-anthracite/40 group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
+                {/* Showroom */}
+                <div className="flex gap-4 group" onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=De%20Werf%2010%2C%202544%20EK%20Den%20Haag%2C%20Hollanda', '_blank')}>
+                  <div className="w-10 h-10 rounded-full bg-primary-ivory flex items-center justify-center text-primary-anthracite/40 group-hover:bg-accent-oak group-hover:text-white transition-all duration-500 cursor-pointer">
                     <MapPin size={18} />
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-primary-anthracite uppercase tracking-widest mb-2">{t('contact.address')}</p>
+                  <div className="cursor-pointer">
+                    <p className="text-sm font-bold text-primary-anthracite uppercase tracking-widest mb-2 group-hover:text-accent-oak transition-colors">{t('contact.address')}</p>
                     <p className="text-sm text-primary-anthracite/60 font-serif italic leading-relaxed">
                       De Werf 10 <br />
                       2544 EK Den Haag
                     </p>
                   </div>
                 </div>
+
+                {/* Warehouse */}
+                <div className="flex gap-4 group" onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=De%20Werf%2015%2C%20Loods%203%2C%20Zinkwerf%2024%20A%2C%202544%20EH%20Den%20Haag%2C%20Hollanda', '_blank')}>
+                  <div className="w-10 h-10 rounded-full bg-primary-ivory flex items-center justify-center text-primary-anthracite/40 group-hover:bg-accent-oak group-hover:text-white transition-all duration-500 cursor-pointer">
+                    <MapPin size={18} />
+                  </div>
+                  <div className="cursor-pointer">
+                    <p className="text-sm font-bold text-primary-anthracite uppercase tracking-widest mb-2 group-hover:text-accent-oak transition-colors">{t('contact.warehouse')}</p>
+                    <p className="text-sm text-primary-anthracite/60 font-serif italic leading-relaxed">
+                      De Werf 15, Loods 3 <br />
+                      Zinkwerf 24 A, 2544 EH <br />
+                      Den Haag, Hollanda
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phone */}
                 <div className="flex gap-4 group">
                   <div className="w-10 h-10 rounded-full bg-primary-ivory flex items-center justify-center text-primary-anthracite/40 group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
-                    <Phone size={18} />
+                    <Smartphone size={18} />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-primary-anthracite uppercase tracking-widest mb-2">{t('contact.phone')}</p>
-                    <a href="tel:0703888402" className="text-sm text-primary-anthracite/60 font-serif italic hover:text-accent-oak transition-colors">070 388 8402</a>
+                    <div className="space-y-1">
+                      <p className="text-sm text-primary-anthracite/60 font-serif italic flex items-center gap-2">
+                        <span className="font-bold uppercase text-[9px] text-primary-anthracite/30 w-4">M:</span>
+                        <a href="tel:+31638230747" className="hover:text-accent-oak transition-colors">+31 6 38230747</a>
+                      </p>
+                      <p className="text-sm text-primary-anthracite/60 font-serif italic flex items-center gap-2">
+                        <span className="font-bold uppercase text-[9px] text-primary-anthracite/30 w-4">T:</span>
+                        <a href="tel:0703888402" className="hover:text-accent-oak transition-colors">070 388 8402</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-primary-ivory flex items-center justify-center text-primary-anthracite/40 group-hover:bg-accent-oak group-hover:text-white transition-all duration-500">
+                    <Mail size={18} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-primary-anthracite uppercase tracking-widest mb-2">{t('contact.email')}</p>
+                    <a href="mailto:info@01living.nl" className="text-sm text-primary-anthracite/60 font-serif italic hover:text-accent-oak transition-colors">info@01living.nl</a>
                   </div>
                 </div>
               </div>

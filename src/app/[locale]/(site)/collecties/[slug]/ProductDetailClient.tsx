@@ -29,7 +29,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'description' | 'shipping' | 'returns'>('description');
+  const [activeTab, setActiveTab] = useState<'description' | 'dimensions' | 'shipping' | 'returns'>('description');
 
   const nextImage = () => {
     setSelectedImage((prev) => (prev + 1) % product.images.length);
@@ -354,6 +354,15 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 {activeTab === 'description' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-px bg-primary-anthracite" />}
               </button>
               <button 
+                onClick={() => setActiveTab('dimensions')}
+                className={`pb-6 text-xs uppercase tracking-[0.4em] font-bold transition-all relative ${
+                  activeTab === 'dimensions' ? 'text-primary-anthracite' : 'text-primary-anthracite/30 hover:text-primary-anthracite/60'
+                }`}
+              >
+                {t('dimensionsTab')}
+                {activeTab === 'dimensions' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-px bg-primary-anthracite" />}
+              </button>
+              <button 
                 onClick={() => setActiveTab('shipping')}
                 className={`pb-6 text-xs uppercase tracking-[0.4em] font-bold transition-all relative ${
                   activeTab === 'shipping' ? 'text-primary-anthracite' : 'text-primary-anthracite/30 hover:text-primary-anthracite/60'
@@ -377,6 +386,41 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                     <p className="text-xl md:text-2xl text-primary-anthracite/80 font-serif italic leading-relaxed whitespace-pre-wrap">
                       {product.description[locale]}
                     </p>
+                  </motion.div>
+                )}
+                {activeTab === 'dimensions' && (
+                  <motion.div
+                    key="dimensions"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="space-y-6 max-w-2xl"
+                  >
+                    {product.dimensions?.[locale] ? (
+                      product.dimensions[locale].split('\n').filter(Boolean).map((line, i) => {
+                        const [label, ...valueParts] = line.split(':');
+                        const value = valueParts.join(':').trim();
+                        
+                        if (label && value) {
+                          return (
+                            <div key={i} className="flex justify-between items-baseline border-b border-primary-anthracite/5 pb-4 group hover:border-primary-anthracite/20 transition-colors">
+                              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary-anthracite/40 group-hover:text-primary-anthracite/60 transition-colors">{label.trim()}</span>
+                              <span className="text-xl md:text-2xl text-primary-anthracite font-serif italic">{value}</span>
+                            </div>
+                          );
+                        }
+                        
+                        return (
+                          <p key={i} className="text-xl md:text-2xl text-primary-anthracite/80 font-serif italic leading-relaxed border-b border-primary-anthracite/5 pb-4">
+                            {line}
+                          </p>
+                        );
+                      })
+                    ) : (
+                      <p className="text-xl md:text-2xl text-primary-anthracite/40 font-serif italic">
+                        {locale === 'en' ? 'Dimensions not specified' : 'Afmetingen niet gespecificeerd'}
+                      </p>
+                    )}
                   </motion.div>
                 )}
                 {activeTab === 'shipping' && (

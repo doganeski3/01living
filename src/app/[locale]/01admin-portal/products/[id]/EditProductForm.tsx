@@ -20,6 +20,8 @@ interface Product {
   images: string;
   categoryNl: string;
   categoryEn: string;
+  dimensionsNl?: string | null;
+  dimensionsEn?: string | null;
   variants?: { id: string, nameNl: string, nameEn: string, colorNl?: string, colorEn?: string, sizeNl?: string, sizeEn?: string, price: number, stock: number }[];
 }
 
@@ -255,6 +257,26 @@ export default function EditProductForm({ product, initialCategoriesNl, initialC
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40">Description (EN)</label>
                   <textarea name="descEn" defaultValue={product.descEn} rows={4} required className="w-full bg-gray-50/50 border border-gray-100 p-6 text-sm focus:outline-none focus:border-accent-oak transition-all rounded-2xl leading-relaxed" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40 block">
+                      Afmetingen (NL) 
+                      <span className="ml-2 text-[8px] text-accent-oak italic font-medium normal-case tracking-normal">
+                        (İpucu: 'Başlık: Değer' formatında giriniz, örn. Boy: 180 cm)
+                      </span>
+                    </label>
+                    <textarea name="dimensionsNl" defaultValue={product.dimensionsNl || ''} rows={2} className="w-full bg-gray-50/50 border border-gray-100 p-6 text-sm focus:outline-none focus:border-accent-oak transition-all rounded-2xl leading-relaxed" placeholder="bijv. 180x90 cm, Hoogte: 75 cm" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-primary-anthracite/40 block">
+                      Dimensions (EN)
+                      <span className="ml-2 text-[8px] text-accent-oak italic font-medium normal-case tracking-normal">
+                        (Hint: Use 'Label: Value' format, e.g. Height: 180 cm)
+                      </span>
+                    </label>
+                    <textarea name="dimensionsEn" defaultValue={product.dimensionsEn || ''} rows={2} className="w-full bg-gray-50/50 border border-gray-100 p-6 text-sm focus:outline-none focus:border-accent-oak transition-all rounded-2xl leading-relaxed" placeholder="e.g. 180x90 cm, Height: 75 cm" />
+                  </div>
                 </div>
               </div>
             </div>

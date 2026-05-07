@@ -42,7 +42,7 @@
     }
   },
   "Marquee": {
-    "tags": ["Handgemaakt", "Tijdloos Design", "Duurzaam Hout", "Den Haag", "Schiedam", "Meesterlijk Vakmanschap", "Exclusief", "Nederlands Interieur", "Luxe Meubels"]
+    "tags": ["Handgemaakt", "Tijdloos Design", "Duurzaam Hout", "Den Haag", "Meesterlijk Vakmanschap", "Exclusief", "Nederlands Interieur", "Luxe Meubels"]
   },
   "Hero": {
     "title": "Tijdloos Design voor Modern Wonen",
@@ -121,8 +121,8 @@
       "datePlaceholder": "Selecteer een dag",
       "time": "Voorkeurstijd",
       "timePlaceholder": "Selecteer dagdeel",
-      "morning": "Ochtend (09:00 - 12:00)",
-      "afternoon": "Middag (12:00 - 17:00)",
+      "morning": "Ochtend (10:00 - 12:00)",
+      "afternoon": "Middag (13:30 - 17:00)",
       "location": "Locatie",
       "locationPlaceholder": "Selecteer locatie",
       "message": "Bericht",
@@ -143,7 +143,6 @@
       "title": "Onze Locaties",
       "warehouse": "Magazijn",
       "showroomDenHaag": "DEN HAAG SHOWROOM",
-      "showroomSchiedam": "SCHIEDAM SHOWROOM",
       "phoneMobile": "GSM",
       "phoneFixed": "Vast nummer"
     }
@@ -200,7 +199,8 @@
     "bespokeTitle": "PROJECTINRICHTING OF MAATWERK?",
     "bespokeDesc": "Voor bestellingen van meer dan 5 stuks of specifieke projectaanvragen, werken wij graag op maat. Neem contact op met onze design studio.",
     "bespokeContact": "NEEM CONTACT OP",
-    "description": "Omschrijving",
+    "description": "Beschrijving",
+    "dimensionsTab": "Afmetingen",
     "shippingTab": "Verzending & Levering",
     "returnsTab": "Retourneren",
     "premiumShippingTitle": "Premium Verzending",
@@ -316,7 +316,8 @@
     "hero": {
       "badge": "De Ultieme Keukenbeleving",
       "title": "Exclusief Design in Den Haag",
-      "subtitle": "Stap binnen in de wereld van 01 Living. Waar innovatieve keukenconcepten en meesterlijk vakmanschap elkaar ontmoeten voor bir tijdloos interieur."
+      "subtitle": "Stap binnen in de world of 01 Living. Waar innovatieve kitchenconcepten en meesterlijk vakmanschap elkaar ontmoeten voor bir tijdloos interieur.",
+      "cta": "Plan Uw Bezoek"
     },
     "intro": {
       "badge": "Welkom bij 01 Living",
@@ -374,8 +375,11 @@
     "contact": {
       "badge": "Bezoek Ons",
       "title": "Showroom Den Haag",
-      "address": "Adres",
-      "phone": "Telefoon",
+      "address": "Adres Showroom",
+      "warehouse": "Adres Magazijn",
+      "phone": "Vast nummer",
+      "mobile": "GSM",
+      "email": "E-mail",
       "hours": "Openingstijden",
       "findUs": "Vind Ons"
     },

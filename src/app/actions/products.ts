@@ -16,6 +16,8 @@ export async function createProduct(formData: FormData) {
     const categoryEn = formData.get('categoryEn') as string;
     const descNl = formData.get('descNl') as string;
     const descEn = formData.get('descEn') as string;
+    const dimensionsNl = formData.get('dimensionsNl') as string;
+    const dimensionsEn = formData.get('dimensionsEn') as string;
 
     const images: string[] = [];
     
@@ -49,6 +51,8 @@ export async function createProduct(formData: FormData) {
         images: JSON.stringify(images),
         categoryNl,
         categoryEn,
+        dimensionsNl,
+        dimensionsEn,
         variants: {
           create: variants.map((v: any) => ({
             nameNl: v.nameNl || null,
@@ -84,6 +88,8 @@ export async function updateProduct(id: string, formData: FormData) {
     const categoryEn = formData.get('categoryEn') as string;
     const descNl = formData.get('descNl') as string;
     const descEn = formData.get('descEn') as string;
+    const dimensionsNl = formData.get('dimensionsNl') as string;
+    const dimensionsEn = formData.get('dimensionsEn') as string;
     const existingImagesJson = formData.get('existingImages') as string;
     
     const images: string[] = existingImagesJson ? JSON.parse(existingImagesJson) : [];
@@ -113,6 +119,8 @@ export async function updateProduct(id: string, formData: FormData) {
         images: JSON.stringify(images),
         categoryNl,
         categoryEn,
+        dimensionsNl,
+        dimensionsEn,
         variants: {
           deleteMany: {},
           create: variants.map((v: any) => ({

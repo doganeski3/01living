@@ -42,7 +42,7 @@
     }
   },
   "Marquee": {
-    "tags": ["Handmade", "Timeless Design", "Sustainable Wood", "The Hague", "Schiedam", "Masterful Craftsmanship", "Exclusive", "Dutch Interior", "Luxury Furniture"]
+    "tags": ["Handmade", "Timeless Design", "Sustainable Wood", "The Hague", "Masterful Craftsmanship", "Exclusive", "Dutch Interior", "Luxury Furniture"]
   },
   "Hero": {
     "title": "Timeless Design for Modern Living",
@@ -121,8 +121,8 @@
       "datePlaceholder": "Select a day",
       "time": "Preferred Time",
       "timePlaceholder": "Select time of day",
-      "morning": "Morning (09:00 - 12:00)",
-      "afternoon": "Afternoon (12:00 - 17:00)",
+      "morning": "Morning (10:00 - 12:00)",
+      "afternoon": "Afternoon (13:30 - 17:00)",
       "location": "Location",
       "locationPlaceholder": "Select location",
       "message": "Message",
@@ -144,7 +144,6 @@
       "title": "Our Locations",
       "warehouse": "Warehouse",
       "showroomDenHaag": "THE HAGUE SHOWROOM",
-      "showroomSchiedam": "SCHIEDAM SHOWROOM",
       "phoneMobile": "Mobile",
       "phoneFixed": "Landline"
     }
@@ -202,6 +201,7 @@
     "bespokeDesc": "For orders of more than 5 pieces or specific project inquiries, we are happy to work on a custom basis. Please contact our design studio.",
     "bespokeContact": "GET IN TOUCH",
     "description": "Description",
+    "dimensionsTab": "Dimensions",
     "shippingTab": "Shipping & Delivery",
     "returnsTab": "Returns",
     "premiumShippingTitle": "Premium Shipping",
@@ -317,7 +317,8 @@
     "hero": {
       "badge": "The Ultimate Kitchen Experience",
       "title": "Exclusive Design in The Hague",
-      "subtitle": "Step into the world of 01 Living. Where innovative kitchen concepts and masterful craftsmanship meet for a timeless interior."
+      "subtitle": "Step into the world of 01 Living. Where innovative kitchen concepts and masterful craftsmanship meet for a timeless interior.",
+      "cta": "Plan Your Visit"
     },
     "intro": {
       "badge": "Welcome to 01 Living",
@@ -375,8 +376,11 @@
     "contact": {
       "badge": "Visit Us",
       "title": "Showroom The Hague",
-      "address": "Address",
+      "address": "Showroom Address",
+      "warehouse": "Warehouse Address",
       "phone": "Phone",
+      "mobile": "Mobile",
+      "email": "Email",
       "hours": "Opening Hours",
       "findUs": "Find Us"
     },

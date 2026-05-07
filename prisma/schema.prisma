@@ -19,6 +19,8 @@ model Product {
   stock       Int      @default(0)
   categoryNl  String
   categoryEn  String
+  dimensionsNl String?  // Localized dimensions
+  dimensionsEn String?  // Localized dimensions
   isArchived  Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

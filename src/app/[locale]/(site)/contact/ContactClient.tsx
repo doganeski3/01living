@@ -240,10 +240,10 @@ export default function ContactClient() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                           <div>
                             <input 
-                              type="text" 
+                              type="date" 
                               placeholder={t('form.date')}
                               {...register('date')}
-                              className="w-full border-b border-primary-anthracite bg-transparent py-4 text-primary-anthracite placeholder:text-primary-anthracite/50 focus:outline-none focus:border-accent-oak transition-colors"
+                              className="w-full border-b border-primary-anthracite bg-transparent py-4 text-primary-anthracite placeholder:text-primary-anthracite/50 focus:outline-none focus:border-accent-oak transition-colors min-h-[64px]"
                             />
                           </div>
                           <div className="relative">
