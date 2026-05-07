@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="block text-xs uppercase tracking-[0.3em] text-primary-ivory/60 mb-6"
         >
-          01 Living — Den Haag & Schiedam
+          01 Living — Den Haag
         </motion.span>
 
         <motion.h1

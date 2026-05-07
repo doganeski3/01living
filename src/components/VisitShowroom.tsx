@@ -32,11 +32,7 @@ export default function VisitShowroom() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
               <div>
                 <h3 className="text-accent-oak uppercase tracking-widest text-xs font-bold mb-2">Den Haag</h3>
-                <p className="text-sm text-primary-ivory/60 italic">Showroom & Studio</p>
-              </div>
-              <div>
-                <h3 className="text-accent-oak uppercase tracking-widest text-xs font-bold mb-2">Schiedam</h3>
-                <p className="text-sm text-primary-ivory/60 italic">Warehouse & Outlet</p>
+                <p className="text-sm text-primary-ivory/60 italic">Showroom & Warehouse</p>
               </div>
             </div>
 
