@@ -1,6 +1,6 @@
 import { withAuth } from "next-auth/middleware";
 import createIntlMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const locales = ['nl', 'en'];
 const intlMiddleware = createIntlMiddleware({
@@ -29,6 +29,18 @@ const authMiddleware = withAuth(
 );
 
 export default function middleware(req: NextRequest) {
+  // Fix for Railway: Strip internal port numbers from the host to prevent leaking into redirects
+  const host = req.headers.get('host');
+  if (host && (host.includes(':8080') || host.includes(':3000'))) {
+    const url = req.nextUrl.clone();
+    url.port = ''; // Clear the port
+    // Ensure we maintain the protocol, especially in production
+    if (process.env.NODE_ENV === 'production') {
+      url.protocol = 'https:';
+    }
+    return NextResponse.redirect(url);
+  }
+
   const isPublicPage = !req.nextUrl.pathname.includes('/01admin-portal');
 
   if (isPublicPage) {
