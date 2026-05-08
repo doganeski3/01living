@@ -10,7 +10,7 @@ const intlMiddleware = createIntlMiddleware({
 
 const authMiddleware = withAuth(
   function onSuccess(req) {
-    return intlMiddleware(req);
+    return handleIntlAndStripPort(req);
   },
   {
     callbacks: {
@@ -28,23 +28,30 @@ const authMiddleware = withAuth(
   }
 );
 
-export default function middleware(req: NextRequest) {
-  // Fix for Railway: Strip internal port numbers from the host to prevent leaking into redirects
-  const host = req.headers.get('host');
-  if (host && (host.includes(':8080') || host.includes(':3000'))) {
-    const url = req.nextUrl.clone();
-    url.port = ''; // Clear the port
-    // Ensure we maintain the protocol, especially in production
-    if (process.env.NODE_ENV === 'production') {
-      url.protocol = 'https:';
-    }
-    return NextResponse.redirect(url);
+// Helper to handle intl redirects and strip internal ports
+function handleIntlAndStripPort(req: NextRequest) {
+  const response = intlMiddleware(req);
+  
+  // Intercept the response and clean the Location header if it contains internal ports
+  const location = response.headers.get('location');
+  if (location && (location.includes(':8080') || location.includes(':3000'))) {
+    const cleanLocation = location
+      .replace(':8080', '')
+      .replace(':3000', '')
+      // In production, we want to ensure redirects stay on https
+      .replace('http://', 'https://');
+    
+    response.headers.set('location', cleanLocation);
   }
+  
+  return response;
+}
 
+export default function middleware(req: NextRequest) {
   const isPublicPage = !req.nextUrl.pathname.includes('/01admin-portal');
 
   if (isPublicPage) {
-    return intlMiddleware(req);
+    return handleIntlAndStripPort(req);
   } else {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (authMiddleware as any)(req);
