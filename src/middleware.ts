@@ -31,12 +31,14 @@ const authMiddleware = withAuth(
 // Helper to handle intl redirects and strip internal ports
 function handleIntlAndStripPort(req: NextRequest) {
   const host = req.headers.get('host');
-  const protocol = req.headers.get('x-forwarded-proto') || 'http';
+  // Detect protocol more robustly for proxy environments
+  const xForwardedProto = req.headers.get('x-forwarded-proto') || req.headers.get('X-Forwarded-Proto');
+  const protocol = xForwardedProto || (req.nextUrl.protocol === 'https:' ? 'https' : 'http');
   const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
 
-  // 1. Force HTTPS in production if accessed via HTTP
-  if (!isLocalhost && protocol === 'http') {
-    const httpsUrl = new URL(req.url);
+  // 1. Force HTTPS in production if not already on HTTPS
+  if (!isLocalhost && protocol !== 'https') {
+    const httpsUrl = req.nextUrl.clone();
     httpsUrl.protocol = 'https:';
     if (host) httpsUrl.host = host;
     return NextResponse.redirect(httpsUrl, 301);
