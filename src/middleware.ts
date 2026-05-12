@@ -30,25 +30,35 @@ const authMiddleware = withAuth(
 
 // Helper to handle intl redirects and strip internal ports
 function handleIntlAndStripPort(req: NextRequest) {
+  const host = req.headers.get('host');
+  const protocol = req.headers.get('x-forwarded-proto') || 'http';
+  const isLocalhost = host?.includes('localhost') || host?.includes('127.0.0.1');
+
+  // 1. Force HTTPS in production if accessed via HTTP
+  if (!isLocalhost && protocol === 'http') {
+    const httpsUrl = new URL(req.url);
+    httpsUrl.protocol = 'https:';
+    if (host) httpsUrl.host = host;
+    return NextResponse.redirect(httpsUrl, 301);
+  }
+
   const response = intlMiddleware(req);
   
   // Intercept the response and clean the Location header
   const location = response.headers.get('location');
   if (location) {
     let cleanLocation = location;
-    const host = req.headers.get('host');
     
-    // 1. Remove internal ports (8080/3000)
+    // 2. Remove internal ports (8080/3000)
     cleanLocation = cleanLocation.replace(':8080', '').replace(':3000', '');
     
-    // 2. If the redirect is to localhost but the request was for a real domain, fix the domain
-    if (host && !host.includes('localhost') && cleanLocation.includes('localhost')) {
-      const domain = host.split(':')[0];
-      cleanLocation = cleanLocation.replace('localhost', domain);
+    // 3. If the redirect is to localhost but the request was for a real domain, fix the domain
+    if (host && !isLocalhost && cleanLocation.includes('localhost')) {
+      cleanLocation = cleanLocation.replace(/localhost(:\d+)?/, host);
     }
     
-    // 3. Ensure HTTPS in production
-    if (host && !host.includes('localhost')) {
+    // 4. Ensure HTTPS in production for redirects
+    if (!isLocalhost && cleanLocation.startsWith('http://')) {
       cleanLocation = cleanLocation.replace('http://', 'https://');
     }
     
@@ -70,5 +80,10 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(nl|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
+  // Match all pathnames except for
+  // - /api (API routes)
+  // - /_next (Next.js internals)
+  // - /_vercel (Vercel internals)
+  // - all root files inside public (e.g. /favicon.ico)
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
