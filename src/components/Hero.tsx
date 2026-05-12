@@ -24,14 +24,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pb-24">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="block text-xs uppercase tracking-[0.3em] text-primary-ivory/60 mb-6"
-        >
-          01 Living — Den Haag
-        </motion.span>
+
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
