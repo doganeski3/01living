@@ -133,7 +133,8 @@
       "successMessage": "Uw bericht is succesvol verzonden. We nemen zo snel mogelijk contact met u op."
     },
     "validation": {
-      "nameRequired": "Naam is verplicht",
+      "firstNameRequired": "Voornaam is verplicht",
+      "lastNameRequired": "Achternaam is verplicht",
       "emailRequired": "E-mailadres is verplicht",
       "emailInvalid": "Ongeldig e-mailadres",
       "messageRequired": "Bericht is verplicht",

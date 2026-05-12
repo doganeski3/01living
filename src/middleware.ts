@@ -32,14 +32,25 @@ const authMiddleware = withAuth(
 function handleIntlAndStripPort(req: NextRequest) {
   const response = intlMiddleware(req);
   
-  // Intercept the response and clean the Location header if it contains internal ports
+  // Intercept the response and clean the Location header
   const location = response.headers.get('location');
-  if (location && (location.includes(':8080') || location.includes(':3000'))) {
-    const cleanLocation = location
-      .replace(':8080', '')
-      .replace(':3000', '')
-      // In production, we want to ensure redirects stay on https
-      .replace('http://', 'https://');
+  if (location) {
+    let cleanLocation = location;
+    const host = req.headers.get('host');
+    
+    // 1. Remove internal ports (8080/3000)
+    cleanLocation = cleanLocation.replace(':8080', '').replace(':3000', '');
+    
+    // 2. If the redirect is to localhost but the request was for a real domain, fix the domain
+    if (host && !host.includes('localhost') && cleanLocation.includes('localhost')) {
+      const domain = host.split(':')[0];
+      cleanLocation = cleanLocation.replace('localhost', domain);
+    }
+    
+    // 3. Ensure HTTPS in production
+    if (host && !host.includes('localhost')) {
+      cleanLocation = cleanLocation.replace('http://', 'https://');
+    }
     
     response.headers.set('location', cleanLocation);
   }
