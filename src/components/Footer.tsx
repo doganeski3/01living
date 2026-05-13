@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary-anthracite text-primary-ivory pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-12">
           
           {/* Brand & Description */}
           <div className="lg:col-span-3 space-y-8">
@@ -123,7 +123,12 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-end">
+              <div className="flex flex-col justify-end gap-10">
+                <div className="flex flex-col gap-2 text-primary-ivory/40 text-[9px] uppercase tracking-[0.2em] font-bold">
+                  <span>01Living BV</span>
+                  <span>KVK-nummer : 85234133</span>
+                  <span>BTW-nummer : NL863555457B01</span>
+                </div>
                 <Link 
                   href={`/${locale}/contact`}
                   className="group inline-flex items-center justify-between bg-white text-primary-anthracite px-8 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-accent-oak hover:text-white transition-all shadow-xl"
@@ -138,19 +143,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Socials & Copyright */}
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <p className="text-primary-ivory/30 text-[9px] uppercase tracking-[0.2em] font-bold">
-              {t('copyright')}
-            </p>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-primary-ivory/50 text-[9px] uppercase tracking-[0.2em] font-bold">
-              <span>01Living BV</span>
-              <span>KVK-nummer : 85234133</span>
-              <span>BTW-nummer : NL863555457B01</span>
-            </div>
+        <div className="border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+          <div className="text-primary-ivory/30 text-[9px] uppercase tracking-[0.2em] font-bold text-center md:text-left">
+            {t('copyright')}
+          </div>
+
+          <div className="text-primary-ivory/30 text-[10px] uppercase tracking-[0.4em] font-bold text-center">
+            Made by <a href="https://dgndigital.com" target="_blank" rel="noopener noreferrer" className="text-accent-oak hover:opacity-80 transition-opacity">dgndigital.com</a>
           </div>
           
-          <div className="flex space-x-10 text-primary-ivory/40 text-[10px] font-bold tracking-[0.3em] uppercase">
+          <div className="flex justify-center md:justify-end space-x-10 text-primary-ivory/40 text-[10px] font-bold tracking-[0.3em] uppercase">
             <a href="https://www.instagram.com/01livingg/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">Instagram</a>
             <a href="https://www.tiktok.com/@01livingg" target="_blank" rel="noopener noreferrer" className="hover:text-accent-oak transition-colors">TikTok</a>
           </div>
