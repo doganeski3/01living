@@ -1,4 +1,5 @@
 import { render } from '@react-email/render';
+import nodemailer from 'nodemailer';
 import OrderConfirmationEmail from '@/emails/OrderConfirmation';
 import AdminNotificationEmail from '@/emails/AdminNotification';
 import OrderStatusEmail from '@/emails/OrderStatusEmail';
@@ -65,11 +66,58 @@ async function sendEmailViaAPI(options: { to: string; subject: string; html: str
     if (!response.ok) {
       console.error('[MAIL] SendPulse API Error:', result);
     } else {
-      console.log('[MAIL] Email sent successfully via API to:', options.to);
+      console.log(`[MAIL] Email sent successfully via API to: ${options.to} from: ${options.fromEmail || process.env.SMTP_USER || 'info@01living.nl'}`);
     }
   } catch (error) {
     console.error('[MAIL] SendPulse API Exception:', error);
   }
+}
+
+async function sendEmailViaSMTP(options: { to: string; subject: string; html: string; fromName?: string; fromEmail?: string }) {
+  const host = process.env.SMTP_HOST;
+  const port = parseInt(process.env.SMTP_PORT || '465');
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
+  if (!host || !user || !pass) {
+    console.warn('[MAIL] SMTP credentials missing. Skipping SMTP.');
+    return false;
+  }
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: {
+      user,
+      pass,
+    },
+  });
+
+  try {
+    const fromName = options.fromName || "01 Living";
+    const fromEmail = options.fromEmail || user;
+    
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
+    });
+    console.log(`[MAIL] Email sent successfully via SMTP to: ${options.to} from: ${fromEmail}`);
+    return true;
+  } catch (error) {
+    console.error('[MAIL] SMTP sending failed:', error);
+    return false;
+  }
+}
+
+async function dispatchEmail(options: { to: string; subject: string; html: string; fromName?: string; fromEmail?: string; replyTo?: string }) {
+  if (process.env.USE_SMTP === 'true') {
+    const success = await sendEmailViaSMTP(options);
+    if (success) return;
+  }
+  await sendEmailViaAPI(options);
 }
 
 const FROM_EMAIL = process.env.FROM_EMAIL || 'info@01living.nl'; 
@@ -107,7 +155,7 @@ export async function sendOrderEmails(order: Order) {
     }));
 
     // Send to Customer
-    sendEmailViaAPI({
+    dispatchEmail({
       to: order.customerEmail,
       fromEmail: FROM_EMAIL,
       subject: isEn 
@@ -117,7 +165,7 @@ export async function sendOrderEmails(order: Order) {
     });
 
     // Send to Admin
-    sendEmailViaAPI({
+    dispatchEmail({
       to: ADMIN_EMAIL,
       fromEmail: FROM_EMAIL,
       fromName: "01 Living System",
@@ -155,7 +203,7 @@ export async function sendOrderStatusEmail(
       locale: locale,
     }));
 
-    sendEmailViaAPI({
+    dispatchEmail({
       to: order.customerEmail,
       fromEmail: FROM_EMAIL,
       subject: subjects[status],
@@ -172,7 +220,7 @@ export async function sendWelcomeEmail(email: string, name: string, locale: stri
   try {
     const html = await render(WelcomeEmail({ customerName: name, locale: locale }));
     
-    sendEmailViaAPI({
+    dispatchEmail({
       to: email,
       fromEmail: FROM_EMAIL,
       subject: isEn ? 'Welcome to 01 Living' : 'Welkom bij 01 Living',
@@ -213,7 +261,7 @@ export async function sendContactEmail(formData: {
       </div>
     `;
 
-    await sendEmailViaAPI({
+    await dispatchEmail({
       to: ADMIN_EMAIL,
       fromEmail: FROM_EMAIL,
       fromName: `Contact: ${fullName}`,
