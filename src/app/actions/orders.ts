@@ -6,9 +6,13 @@ import { revalidatePath } from "next/cache";
 import { adjustStock } from "@/lib/stock";
 import { sendOrderStatusEmail, sendOrderEmails } from "@/lib/mail";
 
+import { requireAdmin } from "@/lib/auth";
+
 export async function updateOrderStatus(orderId: string, status: string, trackingCode?: string, shippingCarrier?: string) {
   console.log(`[Order Action] Updating status for Order ID: ${orderId} to: ${status}`);
   try {
+    await requireAdmin();
+
     const order = await prisma.order.findUnique({ 
       where: { id: orderId } 
     });
@@ -101,6 +105,8 @@ export async function updateOrderStatus(orderId: string, status: string, trackin
 
 export async function deleteOrder(orderId: string) {
   try {
+    await requireAdmin();
+
     // If deleting a paid order that hasn't been cancelled, maybe we should restore stock?
     // Usually admin should cancel first. But let's be safe.
     await adjustStock(orderId, 'restore');
@@ -118,6 +124,8 @@ export async function deleteOrder(orderId: string) {
 
 export async function bulkDeleteOrders(orderIds: string[]) {
   try {
+    await requireAdmin();
+
     for (const id of orderIds) {
       await adjustStock(id, 'restore');
     }

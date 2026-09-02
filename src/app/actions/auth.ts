@@ -44,8 +44,15 @@ export async function registerUser(formData: FormData) {
   }
 }
 
+import { requireAuth } from "@/lib/auth";
+
 export async function updateAddress(userId: string, formData: FormData) {
   try {
+    const currentUser = await requireAuth();
+    if (currentUser.id !== userId && currentUser.role !== "ADMIN") {
+      return { success: false, error: "Niet geautoriseerd om dit adres te bewerken." };
+    }
+
     const street = formData.get('street') as string;
     const houseNumber = formData.get('houseNumber') as string;
     const addition = formData.get('addition') as string;
@@ -83,6 +90,11 @@ export async function updateAddress(userId: string, formData: FormData) {
 
 export async function updateProfile(userId: string, formData: FormData) {
   try {
+    const currentUser = await requireAuth();
+    if (currentUser.id !== userId && currentUser.role !== "ADMIN") {
+      return { success: false, error: "Niet geautoriseerd om dit profiel te bewerken." };
+    }
+
     const name = formData.get('name') as string;
     const currentPassword = formData.get('currentPassword') as string;
     const newPassword = formData.get('newPassword') as string;

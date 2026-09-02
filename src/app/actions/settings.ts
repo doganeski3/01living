@@ -22,8 +22,12 @@ export async function getSettings() {
   }
 }
 
+import { requireAdmin } from '@/lib/auth';
+
 export async function updateSettings(formData: FormData) {
   try {
+    await requireAdmin();
+
     const data = {
       siteName: (formData.get('siteName') as string) || '01 Living',
       contactEmail: (formData.get('contactEmail') as string) || 'info@01living.nl',

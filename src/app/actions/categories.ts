@@ -4,6 +4,8 @@ import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { uploadFile } from '@/lib/upload';
 
+import { requireAdmin } from '@/lib/auth';
+
 export async function getCategories() {
   return await prisma.category.findMany({
     orderBy: { order: 'asc' }
@@ -12,6 +14,8 @@ export async function getCategories() {
 
 export async function createCategory(formData: FormData) {
   try {
+    await requireAdmin();
+
     const nameNl = formData.get('nameNl') as string;
     const nameEn = formData.get('nameEn') as string;
     const slug = formData.get('slug') as string;
@@ -43,6 +47,8 @@ export async function createCategory(formData: FormData) {
 
 export async function updateCategory(id: string, formData: FormData) {
   try {
+    await requireAdmin();
+
     const nameNl = formData.get('nameNl') as string;
     const nameEn = formData.get('nameEn') as string;
     const slug = formData.get('slug') as string;
@@ -76,6 +82,8 @@ export async function updateCategory(id: string, formData: FormData) {
 
 export async function deleteCategory(id: string) {
   try {
+    await requireAdmin();
+
     await prisma.category.delete({
       where: { id }
     });

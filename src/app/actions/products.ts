@@ -3,10 +3,12 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { uploadFile } from '@/lib/upload';
-
+import { requireAdmin } from '@/lib/auth';
 
 export async function createProduct(formData: FormData) {
   try {
+    await requireAdmin();
+
     const nameNl = formData.get('nameNl') as string;
     const nameEn = formData.get('nameEn') as string;
     const slug = formData.get('slug') as string;
@@ -79,6 +81,8 @@ export async function createProduct(formData: FormData) {
 
 export async function updateProduct(id: string, formData: FormData) {
   try {
+    await requireAdmin();
+
     const nameNl = formData.get('nameNl') as string;
     const nameEn = formData.get('nameEn') as string;
     const slug = formData.get('slug') as string;
@@ -148,6 +152,8 @@ export async function updateProduct(id: string, formData: FormData) {
 
 export async function deleteProduct(id: string) {
   try {
+    await requireAdmin();
+
     await prisma.product.update({
       where: { id },
       data: { isArchived: true }
@@ -162,6 +168,8 @@ export async function deleteProduct(id: string) {
 
 export async function bulkDeleteProducts(ids: string[]) {
   try {
+    await requireAdmin();
+
     await prisma.product.updateMany({
       where: { id: { in: ids } },
       data: { isArchived: true }

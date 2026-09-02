@@ -2,23 +2,13 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { requireAdmin } from "@/lib/auth";
 
 export async function deleteUser(userId: string) {
   try {
-    const session = await getServerSession(authOptions);
-    const currentUserEmail = session?.user?.email;
+    const admin = await requireAdmin();
 
-    if (!currentUserEmail) {
-      return { success: false, error: "Yetkiniz yok." };
-    }
-
-    const currentUser = await prisma.user.findUnique({
-      where: { email: currentUserEmail }
-    });
-
-    if (currentUser?.id === userId) {
+    if (admin.id === userId) {
       return { success: false, error: "Kendi hesabınızı silemezsiniz." };
     }
 

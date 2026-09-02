@@ -83,3 +83,22 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
+
+import { getServerSession } from "next-auth/next";
+
+export async function requireAuth() {
+  const session = await getServerSession(authOptions);
+  if (!session?.user) {
+    throw new Error("Niet geautoriseerd: Log in om door te gaan.");
+  }
+  return session.user;
+}
+
+export async function requireAdmin() {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || session.user.role !== "ADMIN") {
+    throw new Error("Niet geautoriseerd: Alleen beheerders hebben toegang.");
+  }
+  return session.user;
+}
+
