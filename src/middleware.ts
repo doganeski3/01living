@@ -51,8 +51,10 @@ function handleIntlAndStripPort(req: NextRequest) {
   if (location) {
     let cleanLocation = location;
     
-    // 2. Remove internal ports (8080/3000)
-    cleanLocation = cleanLocation.replace(':8080', '').replace(':3000', '');
+    // 2. Remove internal ports (8080/3000) in production
+    if (!isLocalhost) {
+      cleanLocation = cleanLocation.replace(':8080', '').replace(':3000', '');
+    }
     
     // 3. If the redirect is to localhost but the request was for a real domain, fix the domain
     if (host && !isLocalhost && cleanLocation.includes('localhost')) {
