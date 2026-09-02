@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 import Navbar from "@/components/Navbar";
-import RetourClient from './RetourClient';
+import RetourClient from '../retour-en-annulering/RetourClient';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const t = await getTranslations({locale, namespace: 'Legal.returns'});
@@ -26,13 +26,13 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
   };
 }
 
-export default function RetourEnAnnuleringPage({
+export default function ReturnAndCancellationPolicyPage({
   params: { locale }
 }: {
   params: { locale: string }
 }) {
-  if (locale === 'en') {
-    redirect('/en/return-and-cancellation-policy');
+  if (locale === 'nl') {
+    redirect('/nl/retour-en-annulering');
   }
 
   return (
