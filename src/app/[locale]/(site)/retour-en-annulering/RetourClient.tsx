@@ -342,7 +342,7 @@ Met vriendelijke groet,
             </a>
 
             <a 
-              href="https://wa.me/31600000000"
+              href="https://wa.me/31638230747"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 border border-white/30 text-primary-ivory px-8 py-4 text-xs font-bold uppercase tracking-[0.25em] hover:border-accent-oak hover:text-accent-oak transition-all"

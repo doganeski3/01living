@@ -29,6 +29,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: page === '' ? 1.0 : 0.8,
       });
     });
+
+    // Add localized return policy
+    sitemapEntries.push({
+      url: locale === 'en' 
+        ? `${baseUrl}/en/return-and-cancellation-policy`
+        : `${baseUrl}/nl/retour-en-annulering`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    });
   });
 
   // 2. Dynamic Product Pages for each locale

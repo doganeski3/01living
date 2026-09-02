@@ -158,8 +158,8 @@
     "showroomTitle": "Showroom Den Haag",
     "showroomDesc": "Ervaar vakmanschap en design in onze flagship showroom. Onze adviseurs staan klaar om uw droominterieur te realiseren.",
     "warehouseTitle": "Magazijn",
-    "showroomAddress": "De Werf 10, 2544 EK Den Haag, Hollanda",
-    "warehouseAddress": "De Werf 15, Loods 3, Zinkwerf 24 A, 2544 EH Den Haag, Hollanda",
+    "showroomAddress": "De Werf 10, 2544 EK Den Haag, Nederland",
+    "warehouseAddress": "De Werf 15, Loods 3, Zinkwerf 24 A, 2544 EH Den Haag, Nederland",
     "bookAppointment": "Plan een Adviesgesprek",
     "social": "Volg Ons",
     "legal": "Juridisch",
@@ -318,14 +318,14 @@
     "hero": {
       "badge": "De Ultieme Keukenbeleving",
       "title": "Exclusief Design in Den Haag",
-      "subtitle": "Stap binnen in de world of 01 Living. Waar innovatieve kitchenconcepten en meesterlijk vakmanschap elkaar ontmoeten voor bir tijdloos interieur.",
+      "subtitle": "Stap binnen in de wereld van 01 Living. Waar innovatieve keukenconcepten en meesterlijk vakmanschap elkaar ontmoeten voor een tijdloos interieur.",
       "cta": "Plan Uw Bezoek"
     },
     "intro": {
       "badge": "Welkom bij 01 Living",
       "title": "Uw Partner voor Luxe Keukens op Maat",
-      "p1": "Bij 01 Living geloven we dat de keuken meer is dan alleen bir plek om te koken; het is het kloppend hart van uw woning. Onze showroom in Den Haag is ontworpen om u te inspireren met de nieuwste trends in modern keukenontwerp en hoogwaardige interieuroplossingen.",
-      "p2": "Of u nu op zoek bent naar bir minimalistisch kookeiland, bir klassieke houten keuken met bir moderne twist, of bir volledig op maat gemaakt interieurproject, ons team van deskundige ontwerpers staat klaar om uw visie te realiseren. Wij combineren jarenlange ervaring met bir passie voor detail en kwaliteit."
+      "p1": "Bij 01 Living geloven we dat de keuken meer is dan alleen een plek om te koken; het is het kloppend hart van uw woning. Onze showroom in Den Haag is ontworpen om u te inspireren met de nieuwste trends in modern keukenontwerp en hoogwaardige interieuroplossingen.",
+      "p2": "Of u nu op zoek bent naar een minimalistisch kookeiland, een klassieke houten keuken met een moderne twist, of een volledig op maat gemaakt interieurproject, ons team van deskundige ontwerpers staat klaar om uw visie te realiseren. Wij combineren jarenlange ervaring met een passie voor detail en kwaliteit."
     },
     "features": {
       "materials": {
@@ -334,7 +334,7 @@
       },
       "design": {
         "title": "Maatwerk Ontwerp",
-        "desc": "Onze ontwerpers vertalen uw persoonlijke wensen naar bir functioneel meesterwerk."
+        "desc": "Onze ontwerpers vertalen uw persoonlijke wensen naar een functioneel meesterwerk."
       },
       "quality": {
         "title": "Duitse Kwaliteit",
@@ -354,7 +354,7 @@
       },
       "step2": {
         "title": "Ontwerp & Materialisatie",
-        "text": "Onze ontwerpers maken bir fotorealistisch 3D-ontwerp en we selecteren de materialen die uw visie tot leven brengen."
+        "text": "Onze ontwerpers maken een fotorealistisch 3D-ontwerp en we selecteren de materialen die uw visie tot leven brengen."
       },
       "step3": {
         "title": "Productie & Installatie",
@@ -363,16 +363,16 @@
     },
     "materials": {
       "badge": "Meesterlijk Vakmanschap",
-      "title": "Materialen die bir Verhaal Vertellen",
-      "p1": "De kwaliteit van bir 01 Living keuken is voelbaar in elk detail. Wij werken uitsluitend met leveranciers die voldoen aan onze strenge eisen.",
+      "title": "Materialen die een Verhaal Vertellen",
+      "p1": "De kwaliteit van een 01 Living keuken is voelbaar in elk detail. Wij werken uitsluitend met leveranciers die voldoen aan onze strenge eisen.",
       "p2": "In onze showroom kunt u de texturen zelf ervaren, van zijdezachte lakafwerkingen tot natuurlijke eiken nerven.",
       "cta": "Bekijk Onze Collecties"
     },
     "consultation": {
       "badge": "Advies op Maat",
       "title": "Een Ruimte voor Creativiteit",
-      "p1": "Onze showroom in Den Haag is meer dan bir expositieruimte; het is bir plek waar ideeën tot leven komen.",
-      "p2": "Met geavanceerde 3D-planningssoftware visualiseren we direct uw nieuwe keuken voor bir perfect beeld."
+      "p1": "Onze showroom in Den Haag is meer dan een expositieruimte; het is een plek waar ideeën tot leven komen.",
+      "p2": "Met geavanceerde 3D-planningssoftware visualiseren we direct uw nieuwe keuken voor een perfect beeld."
     },
     "contact": {
       "badge": "Bezoek Ons",
@@ -387,8 +387,8 @@
     },
     "cta": {
       "title": "Begin Vandaag Aan Uw Droominterieur",
-      "subtitle": "Maak bir afspraak voor bir persoonlijk adviesgesprek in onze showroom.",
-      "btn": "Maak bir Afspraak",
+      "subtitle": "Maak een afspraak voor een persoonlijk adviesgesprek in onze showroom.",
+      "btn": "Maak een Afspraak",
       "call": "Bel Direct"
     }
   },
@@ -403,18 +403,18 @@
       "noAccount": "Nog geen account?",
       "registerLink": "Registreren",
       "error": "Ongeldig e-mailadres of wachtwoord.",
-      "unknownError": "Er is bir onbekende fout opgetreden."
+      "unknownError": "Er is een onbekende fout opgetreden."
     },
     "register": {
       "title": "Registreren",
-      "subtitle": "Creëer bir account voor bir exclusieve ervaring.",
+      "subtitle": "Creëer een account voor een exclusieve ervaring.",
       "name": "Naam",
       "namePlaceholder": "Uw volledige naam",
       "email": "E-mailadres",
       "password": "Wachtwoord",
       "passwordPlaceholder": "Minimaal 6 tekens",
       "submit": "Account Aanmaken",
-      "hasAccount": "Heeft u al bir account?",
+      "hasAccount": "Heeft u al een account?",
       "loginLink": "Inloggen",
       "error": "Er is iets misgegaan."
     }
@@ -427,7 +427,7 @@
       "intro": "Deze algemene voorwaarden zijn van toepassing op elk aanbod van 01 Living en op elke tot stand gekomen overeenkomst tussen ondernemer en consument. Wij raden u aan deze voorwaarden zorgvuldig door te lezen.",
       "sections": [
         { "title": "1. Toepasselijkheid", "content": "Deze algemene voorwaarden zijn van toepassing op elk aanbod van 01 Living en op elke tot stand gekomen overeenkomst op afstand tussen 01 Living en de consument. Voordat de overeenkomst op afstand wordt gesloten, wordt de tekst van deze algemene voorwaarden aan de consument beschikbaar gesteld." },
-        { "title": "2. Het Aanbod", "content": "Indien een aanbod een beperkte geldigheidsduur heeft of onder voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld. Het aanbod bevat bir volledige en nauwkeurige omschrijving van de aangeboden producten. Kennelijke vergissingen of fouten in het aanbod binden 01 Living niet." },
+        { "title": "2. Het Aanbod", "content": "Indien een aanbod een beperkte geldigheidsduur heeft of onder voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld. Het aanbod bevat een volledige en nauwkeurige omschrijving van de aangeboden producten. Kennelijke vergissingen of fouten in het aanbod binden 01 Living niet." },
         { "title": "3. De Overeenkomst", "content": "De overeenkomst komt tot stand op het moment van aanvaarding door de consument van het aanbod en het voldoen aan de daarbij gestelde voorwaarden. 01 Living bevestigt onverwijld langs elektronische weg de ontvangst van de aanvaarding van het aanbod." },
         { "title": "4. Herroepingsrecht", "content": "Bij de aankoop van producten heeft de consument de mogelijkheid de overeenkomst zonder opgave van redenen te ontbinden gedurende 14 dagen. Deze bedenktermijn gaat in op de dag na ontvangst van het product door de consument. Tijdens de bedenktijd zal de consument zorgvuldig omgaan met het product en de verpakking." },
         { "title": "5. Uitsluiting Herroepingsrecht", "content": "Het herroepingsrecht is niet van toepassing op producten die volgens specificaties van de consument zijn vervaardigd (maatwerk), die duidelijk persoonlijk van aard zijn, of die door hun aard niet kunnen worden teruggezonden." },
@@ -439,19 +439,19 @@
       "title": "Privacybeleid",
       "intro": "01 Living respecteert de privacy van alle gebruikers van haar site en draagt er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld. Wij gebruiken uw gegevens om de bestellingen zo snel en gemakkelijk mogelijk te laten verlopen.",
       "sections": [
-        { "title": "1. Gebruik van persoonsgegevens", "content": "Wanneer u onze website bezoekt of bir bestelling plaatst, verzamelen wij gegevens zoals uw naam, adres, e-mailadres en betaalmethode. Belangrijk: Uw creditcardgegevens of andere gevoelige betaalinformatie worden rechtstreeks verwerkt door onze beveiligde partner Mollie; 01 Living slaat deze gegevens onder geen enkele omstandigheid op in haar eigen systemen." },
+        { "title": "1. Gebruik van persoonsgegevens", "content": "Wanneer u onze website bezoekt of een bestelling plaatst, verzamelen wij gegevens zoals uw naam, adres, e-mailadres en betaalmethode. Belangrijk: Uw creditcardgegevens of andere gevoelige betaalinformatie worden rechtstreeks verwerkt door onze beveiligde partner Mollie; 01 Living slaat deze gegevens onder geen enkele omstandigheid op in haar eigen systemen." },
         { "title": "2. Doeleinden van de verwerking", "content": "Wij verwerken uw gegevens voor de volgende doelen: het afhandelen van uw betaling, u te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren, en u te informeren over wijzigingen van onze diensten en producten." },
         { "title": "3. Bewaartermijn", "content": "01 Living bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld, conform de wettelijke bewaartermijnen." },
-        { "title": "4. Delen met derden", "content": "Wij verkopen uw gegevens niet aan derden en verstrekken deze uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u (bijv. bezorgdiensten) of om te voldoen aan bir wettelijke verplichting." },
+        { "title": "4. Delen met derden", "content": "Wij verkopen uw gegevens niet aan derden en verstrekken deze uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u (bijv. bezorgdiensten) of om te voldoen aan een wettelijke verplichting." },
         { "title": "5. Gegevens inzien, aanpassen of verwijderen", "content": "U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door 01 Living." }
       ]
     },
     "shipping": {
-      "title": "Verzending & Retour",
-      "intro": "Wij streven naar bir perfecte bezorging van uw handgemaakte meubels. Hieronder vindt u onze richtlijnen voor verzending en het retourproces.",
+      "title": "Verzending & Levering",
+      "intro": "Wij streven naar een perfecte bezorging van uw handgemaakte meubels. Hieronder vindt u onze richtlijnen voor verzending en levering.",
       "sections": [
         { "title": "1. Levering en uitvoering", "content": "01 Living zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van bestellingen van producten. Als plaats van levering geldt het adres dat de consument aan het bedrijf kenbaar heeft gemaakt." },
-        { "title": "2. Levertijden", "content": "Wij streven ernaar om bestellingen binnen 2-5 werkdagen te bezorgen, mits op voorraad. Voor maatwerkproducten geldt bir afwijkende levertijd die expliciet met de klant wordt gecommuniceerd." },
+        { "title": "2. Levertijden", "content": "Wij streven ernaar om bestellingen binnen 2-5 werkdagen te bezorgen, mits op voorraad. Voor maatwerkproducten geldt een afwijkende levertijd die expliciet met de klant wordt gecommuniceerd." },
         { "title": "3. Verzendkosten", "content": "Bestellingen boven de €500 worden gratis verzonden binnen Nederland. Voor bestellingen onder dit bedrag hanteren wij standaard verzendkosten die zichtbaar zijn in het afrekenproces." },
         { "title": "4. Retourneren", "content": "U heeft het recht uw bestelling tot 14 dagen na ontvangst zonder opgave van reden te annuleren. U heeft na annulering nogmaals 14 dagen om uw product retour te sturen. Het product dient met alle geleverde toebehoren en – indien redelijkerwijze mogelijk – in de originele staat en verpakking geretourneerd te worden." },
         { "title": "5. Uitzonderingen retour", "content": "Let op: Maatwerkproducten die volgens uw specificaties zijn gemaakt, kunnen niet worden geretourneerd. Dit geldt ook voor producten die om hygiënische redenen niet geschikt zijn om te worden teruggezonden." }
@@ -550,6 +550,6 @@
   },
   "WhatsApp": {
     "tooltip": "Contacteer ons via WhatsApp",
-    "message": "Hallo, ik heb bir vraag over bir product."
+    "message": "Hallo, ik heb een vraag over een product."
   }
 }
