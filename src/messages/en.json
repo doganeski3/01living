@@ -165,7 +165,8 @@
     "legal": "Legal",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
-    "shipping": "Shipping & Returns",
+    "shipping": "Shipping & Delivery",
+    "returns": "Return & Cancellation Policy",
     "cookies": "Cookie Policy",
     "copyright": "© 2026 01 Living. All rights reserved."
   },
@@ -470,6 +471,81 @@
         "link": "cookie policy",
         "accept": "Accept"
       }
+    },
+    "returns": {
+      "metaTitle": "Return & Cancellation Policy | 01 Living",
+      "metaDescription": "Discover our comprehensive return and cancellation policy, statutory 14-day right of withdrawal, and conditions for luxury handmade furniture and bespoke pieces.",
+      "title": "Return & Cancellation Policy",
+      "subtitle": "Right of Withdrawal, Cancellations & Return Guidelines",
+      "intro": "At 01 Living, we are dedicated to exceptional craftsmanship, timeless design, and complete customer satisfaction. We understand that a luxury furniture piece must harmonize perfectly with your space. That is why we provide a clear, fair, and transparent return and cancellation policy compliant with Dutch and EU consumer law.",
+      "highlights": {
+        "coolingOff": "14-Day Reflection Period",
+        "coolingOffDesc": "From the day of physical receipt",
+        "cancellation": "Free Cancellation",
+        "cancellationDesc": "Prior to dispatch for stock items",
+        "refund": "Prompt Reimbursement",
+        "refundDesc": "Within 14 days of inspection",
+        "customCare": "Bespoke Service",
+        "customCareDesc": "Tailored terms for custom pieces"
+      },
+      "stepsTitle": "The Return Process in 4 Steps",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Notification",
+          "desc": "Send an email within 14 days of receipt to info@01living.nl with your order number and return request."
+        },
+        {
+          "step": "02",
+          "title": "Confirmation & Logistics",
+          "desc": "Our concierge team confirms your request and schedules a freight pickup appointment with our specialized furniture courier."
+        },
+        {
+          "step": "03",
+          "title": "Quality Inspection",
+          "desc": "Upon arrival at our The Hague warehouse, our specialists inspect the furniture piece for condition and completeness."
+        },
+        {
+          "step": "04",
+          "title": "Refund",
+          "desc": "Once approved, your refund is processed within 14 days via your original payment method."
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Statutory Right of Withdrawal (14-Day Cooling-off Period)",
+          "content": "You have the right to withdraw from the contract within 14 days without giving any reason. The withdrawal period expires 14 days after the day on which you or a third party designated by you (other than the carrier) takes physical possession of the goods. To exercise your right of withdrawal, you must inform us of your decision by an unambiguous statement (e.g., via email to info@01living.nl). Following your notification, you have an additional 14 days to return the goods to us."
+        },
+        {
+          "title": "2. Cancellation Prior to Dispatch",
+          "content": "For standard in-stock furniture items, you may cancel your order free of charge at any time before it has been transferred to our logistics partner. Please contact our support team as soon as possible. For custom-made and made-to-order furniture (such as bespoke travertine dining tables or custom upholstery), cancellations are free of charge within 24 hours of order placement. Once artisanal crafting has commenced, orders cannot be cancelled free of charge."
+        },
+        {
+          "title": "3. Exceptions to the Right of Withdrawal (Bespoke & Custom Items)",
+          "content": "In accordance with article 6:230p of the Dutch Civil Code and EU consumer directives, goods manufactured to the consumer's custom specifications (such as custom dimensions, personalized stone cuts, or bespoke upholstery fabrics) are excluded from the statutory right of withdrawal. Note: Travertine marble and natural stone are authentic geological materials. Inherent variations in veins, mineral crystal deposits, and natural pores are distinctive hallmarks of genuine craftsmanship and do not constitute defects."
+        },
+        {
+          "title": "4. Condition of Returned Items",
+          "content": "During the reflection period, we ask that you handle the furniture piece and its packaging with the utmost care. You should only inspect and evaluate the item in the same manner as you would in an exclusive showroom. The item must be returned complete, undamaged, and – where reasonably possible – in its original protective packaging. If the item shows depreciation resulting from handling beyond what is necessary to establish its nature and characteristics, 01 Living reserves the right to deduct this from the refund."
+        },
+        {
+          "title": "5. Return Transport & Shipping Costs",
+          "content": "The direct cost of returning goods is borne by the customer, unless otherwise agreed in writing or in the event of an accepted defect. For large, delicate, or heavy items (such as travertine dining tables, coffee tables, and sofas), we can arrange professional two-man white-glove collection upon request. Transport rates will be communicated transparently in advance. You may also arrange to deliver the item free of charge directly to our central warehouse in The Hague."
+        },
+        {
+          "title": "6. Reimbursement & Payment Timeline",
+          "content": "If you withdraw from the contract, we will reimburse all payments received from you (including standard initial delivery charges) without undue delay and no later than 14 days from the day we were informed of your decision. We may withhold reimbursement until we have received the goods back or you have supplied evidence of having sent back the goods. Reimbursement will be carried out using the same payment method as your initial transaction (via Mollie: iDEAL, Credit Card, Bancontact, etc.), with no additional fees incurred."
+        },
+        {
+          "title": "7. Damaged or Incorrect Deliveries",
+          "content": "We take extraordinary precautions in packaging and freight delivery. We kindly ask you to inspect your items immediately upon arrival in the presence of the delivery team. If any transit damage or discrepancies are noted, please mark them on the consignment note and notify us within 48 hours at info@01living.nl with clear photos of the packaging and item. We will immediately arrange free repair, exchange, or an appropriate resolution at our expense."
+        }
+      ],
+      "contactCTA": "Have questions regarding a return or cancellation? Our design concierge is here to assist you.",
+      "emailButton": "Email Customer Care",
+      "whatsappButton": "WhatsApp Concierge",
+      "modelFormTitle": "European Model Withdrawal Form",
+      "modelFormText": "If you prefer to submit the standard withdrawal form, please contact info@01living.nl with the subject 'Withdrawal Model Form' alongside your order details."
     }
   },
   "WhatsApp": {

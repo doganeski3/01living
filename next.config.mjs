@@ -34,6 +34,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  transpilePackages: ['framer-motion'],
 };
 
 export default withNextIntl(nextConfig);

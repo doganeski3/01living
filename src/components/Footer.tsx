@@ -74,6 +74,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href={`/${locale}/retour-en-annulering`} className="hover:text-accent-oak transition-colors">
+                  {t('returns')}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${locale}/cookiebeleid`} className="hover:text-accent-oak transition-colors">
                   {t('cookies')}
                 </Link>

@@ -165,7 +165,8 @@
     "legal": "Juridisch",
     "terms": "Algemene Voorwaarden",
     "privacy": "Privacybeleid",
-    "shipping": "Verzending & Retour",
+    "shipping": "Verzending & Levering",
+    "returns": "Retour- & Annuleringsbeleid",
     "cookies": "Cookiebeleid",
     "copyright": "© 2026 01 Living. Alle rechten voorbehouden."
   },
@@ -458,11 +459,11 @@
     },
     "cookies": {
       "title": "Cookiebeleid",
-      "intro": "Wij maken gebruik van cookies om de website te optimaliseren ve uw gebruikerservaring te verbeteren.",
+      "intro": "Wij maken gebruik van cookies om de website te optimaliseren en uw gebruikerservaring te verbeteren.",
       "sections": [
-        { "title": "1. Wat are cookies?", "content": "Een cookie is bir klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van uw computer, tablet of smartphone." },
-        { "title": "2. Functionele cookies", "content": "Deze cookies zorgen ervoor dat de website naar behoren werkt en dat bijvoorbeeld uw voorkeursinstellingen onthouden worden. Deze cookies worden ook gebruikt om de website goed te laten werken ve deze te kunnen optimaliseren." },
-        { "title": "3. Analytische cookies", "content": "Wij gebruiken Google Analytics om bij te houden hoe gebruikers de website gebruiken. De aldus verkregen informatie wordt, met inbegrip van het adres van uw computer (IP-adres), overgebracht naar ve door Google opgeslagen op servers." },
+        { "title": "1. Wat zijn cookies?", "content": "Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van uw computer, tablet of smartphone." },
+        { "title": "2. Functionele cookies", "content": "Deze cookies zorgen ervoor dat de website naar behoren werkt en dat bijvoorbeeld uw voorkeursinstellingen onthouden worden. Deze cookies worden ook gebruikt om de website goed te laten werken en deze te kunnen optimaliseren." },
+        { "title": "3. Analytische cookies", "content": "Wij gebruiken Google Analytics om bij te houden hoe gebruikers de website gebruiken. De aldus verkregen informatie wordt, met inbegrip van het adres van uw computer (IP-adres), overgebracht naar en door Google opgeslagen op servers." },
         { "title": "4. Afmelden voor cookies", "content": "U kunt zich afmelden voor cookies door uw internetbrowser zo in te stellen dat deze geen cookies meer opslaat. Daarnaast kunt u ook alle informatie die eerder is opgeslagen via de instellingen van uw browser verwijderen." }
       ],
       "banner": {
@@ -470,6 +471,81 @@
         "link": "cookiebeleid",
         "accept": "Accepteren"
       }
+    },
+    "returns": {
+      "metaTitle": "Retour- & Annuleringsbeleid | 01 Living",
+      "metaDescription": "Lees alles over ons retour- en annuleringsbeleid, het wettelijke 14-dagen herroepingsrecht en de voorwaarden voor luxe meubels en maatwerk.",
+      "title": "Retour- & Annuleringsbeleid",
+      "subtitle": "Herroepingsrecht, Annuleringen & Retourvoorwaarden",
+      "intro": "Bij 01 Living streven wij naar de allerhoogste kwaliteit en klanttevredenheid. Wij begrijpen dat een meubelstuk perfect moet passen in uw leefruimte. Daarom hanteren wij een transparant en eerlijk retour- en annuleringsbeleid conform de Nederlandse en Europese consumentenwetgeving.",
+      "highlights": {
+        "coolingOff": "14 Dagen Bedenktijd",
+        "coolingOffDesc": "Vanaf de dag van fysieke ontvangst",
+        "cancellation": "Kosteloos Annuleren",
+        "cancellationDesc": "Vóór verzending van voorraadartikelen",
+        "refund": "Snelle Terugbetaling",
+        "refundDesc": "Binnen 14 dagen na ontvangst/controle",
+        "customCare": "Maatwerk Service",
+        "customCareDesc": "Specifieke voorwaarden voor maatwerk"
+      },
+      "stepsTitle": "Het Retourproces in 4 Stappen",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Aanmelding",
+          "desc": "Stuur binnen 14 dagen na ontvangst een e-mail naar info@01living.nl met uw ordernummer en eventueel de reden van retour."
+        },
+        {
+          "step": "02",
+          "title": "Bevestiging & Transport",
+          "desc": "Ons team bevestigt uw aanvraag en plant voor grote meubels een professionele ophaalafspraak met onze meubelkoerier."
+        },
+        {
+          "step": "03",
+          "title": "Kwaliteitscontrole",
+          "desc": "Bij aankomst in ons magazijn te Den Haag inspecteren onze specialisten het meubel zorgvuldig op staat en compleetheid."
+        },
+        {
+          "step": "04",
+          "title": "Terugbetaling",
+          "desc": "Na goedkeuring storten wij het volledige aankoopbedrag binnen 14 dagen terug via uw oorspronkelijke betaalmethode."
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Wettelijk Herroepingsrecht (14 Dagen Bedenktijd)",
+          "content": "U heeft het recht om binnen een termijn van 14 dagen zonder opgave van redenen de overeenkomst te herroepen. De herroepingstermijn verstrijkt 14 dagen na de dag waarop u of een door u aangewezen derde (niet de vervoerder) het product fysiek in bezit krijgt. Om het herroepingsrecht uit te oefenen, dient u ons via een ondubbelzinnige verklaring (bijvoorbeeld per e-mail via info@01living.nl) op de hoogte te stellen van uw beslissing de overeenkomst te herroepen. Na deze melding heeft u nog 14 dagen de tijd om het product daadwerkelijk aan ons te retourneren."
+        },
+        {
+          "title": "2. Annuleren Vóór Verzending",
+          "content": "Voor standaard voorraadartikelen geldt dat u uw bestelling kosteloos kunt annuleren zolang deze nog niet is overgedragen aan onze transporteur. Neem hiervoor zo spoedig mogelijk contact op met onze klantenservice. Voor maatwerk- en gepersonaliseerde meubels (zoals op maat gemaakte travertin tafels of speciale bekledingen) geldt dat u binnen 24 uur na het plaatsen van de bestelling kosteloos kunt annuleren. Zodra het ambachtelijke productieproces in gang is gezet, kan de bestelling niet meer kosteloos worden geannuleerd."
+        },
+        {
+          "title": "3. Uitzonderingen op het Herroepingsrecht (Maatwerk)",
+          "content": "Overeenkomstig artikel 6:230p van het Burgerlijk Wetboek zijn producten die speciaal volgens specificaties van de consument zijn vervaardigd (zoals aangepaste afmetingen, unieke steenselecties of specifieke stofferingen) uitgesloten van het herroepingsrecht. Let op: Natuursteen en travertin zijn natuurlijke materialen. Variaties in aders, kleurschakeringen en natuurlijke poriën zijn inherente kenmerken van het ambachtelijke materiaal en vormen geen grond voor een non-conformiteitsclaim."
+        },
+        {
+          "title": "4. Staat van het Geretourneerde Product",
+          "content": "Tijdens de bedenktijd vragen wij u zorgvuldig om te gaan met het meubelstuk en de verpakking. U mag het product slechts uitpakken en beoordelen zoals u dat in een fysieke showroom zou mogen doen. Het artikel dient compleet, onbeschadigd en – voor zover redelijkerwijs mogelijk – in de originele verpakking en staat te worden geretourneerd. Indien het product door gebruik meer beschadigd of versleten is dan nodig voor deze inspectie, kan 01 Living een passende waardevermindering in rekening brengen."
+        },
+        {
+          "title": "5. Retourkosten en Meubeltransport",
+          "content": "De rechtstreekse kosten voor het terugzenden van de goederen zijn voor rekening van de klant, tenzij vooraf schriftelijk anders overeengekomen of in het geval van een door ons erkend defect. Voor grote en zware meubelstukken (zoals eettafels, salontafels en zitmeubelen) kunnen wij op verzoek een gespecialiseerde meubeltransporteur inzetten voor ophaling aan huis. De actuele ophaalkosten worden vooraf transparant gecommuniceerd. U heeft tevens de mogelijkheid om het product na aanmelding kosteloos zelf in te leveren bij ons centrale magazijn in Den Haag."
+        },
+        {
+          "title": "6. Terugbetaling & Betaaltermijn",
+          "content": "Als u de overeenkomst herroept, ontvangt u alle betalingen die u tot op dat moment heeft gedaan (inclusief eventuele standaard leveringskosten voor de heenzending) onverwijld en in ieder geval niet later dan 14 dagen nadat wij op de hoogte zijn gesteld van uw beslissing om te herroepen, van ons terug. Wij mogen wachten met terugbetaling totdat wij de goederen hebben terugontvangen of u heeft aangetoond dat u de goederen heeft teruggezonden. De terugbetaling vindt plaats via hetzelfde betaalmiddel als waarmee u de oorspronkelijke transactie heeft verricht (via Mollie: iDEAL, Creditcard, Bancontact, etc.), tenzij uitdrukkelijk anders overeengekomen."
+        },
+        {
+          "title": "7. Beschadigde of Verkeerd Geleverde Producten",
+          "content": "Wij besteden uiterste zorg aan het transport en de verpakking van onze luxe meubels. Wij verzoeken u vriendelijk uw bestelling direct bij aflevering samen met de koerier te inspecteren. Mocht er sprake zijn van transportschade of een verkeerd artikel, maak hiervan dan melding op de vrachtbrief en neem binnen 48 uur contact met ons op via info@01living.nl inclusief duidelijke foto's van de schade en het verpakkingsmateriaal. Wij zorgen kosteloos voor een snelle vervanging, professionele reparatie of passende oplossing."
+        }
+      ],
+      "contactCTA": "Heeft u vragen over een retour of annulering? Onze klantenservice helpt u graag verder.",
+      "emailButton": "E-mail Klantenservice",
+      "whatsappButton": "WhatsApp Advies",
+      "modelFormTitle": "Europees Modelformulier voor Herroeping",
+      "modelFormText": "Wilt u liever het officiële herroepingsformulier invullen? Stuur een e-mail naar info@01living.nl onder vermelding van 'Herroeping Modelformulier' met uw bestelgegevens."
     }
   },
   "WhatsApp": {
