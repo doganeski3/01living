@@ -272,6 +272,75 @@ export async function sendContactEmail(formData: {
     return { success: true };
   } catch (error: any) {
     console.error('[MAIL] Failed to send contact email:', error);
-    return { success: false, error: error.message || 'Er is bir hata oluştu.' };
+    return { success: false, error: error.message || 'Er is een fout opgetreden.' };
+  }
+}
+
+export async function sendCustomOrderEmail(data: {
+  category: string;
+  productName: string;
+  quantity: string;
+  fullName: string;
+  email: string;
+  phone?: string;
+  message: string;
+}) {
+  try {
+    const html = `
+      <div style="font-family: sans-serif; max-width: 650px; margin: 0 auto; padding: 25px; border: 1px solid #e5e5e5; border-radius: 8px; background-color: #ffffff;">
+        <div style="border-bottom: 2px solid #C4A482; padding-bottom: 15px; margin-bottom: 20px;">
+          <h2 style="color: #1A1A1A; margin: 0; font-size: 20px; text-transform: uppercase; letter-spacing: 1px;">Nieuwe Aanvraag: Speciale Bestelling</h2>
+          <p style="color: #888; font-size: 13px; margin: 5px 0 0 0;">Ontvangen via 01living.nl</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px;">
+          <tr>
+            <td style="padding: 8px 0; color: #666; width: 160px; font-weight: bold;">Categorie:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;"><strong>${data.category}</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Gewenst Product:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;">${data.productName}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Aantal:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;">${data.quantity}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Klant / Bedrijf:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;">${data.fullName}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">E-mail:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;"><a href="mailto:${data.email}" style="color: #C4A482;">${data.email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Telefoon:</td>
+            <td style="padding: 8px 0; color: #1A1A1A;">${data.phone || '-'}</td>
+          </tr>
+        </table>
+
+        <div style="background-color: #F7F5F2; padding: 18px; border-left: 4px solid #C4A482; border-radius: 4px; margin-top: 15px;">
+          <p style="margin: 0 0 8px 0; font-weight: bold; color: #1A1A1A; font-size: 13px; text-transform: uppercase;">Projectdetails & Specificaties:</p>
+          <p style="margin: 0; white-space: pre-wrap; color: #333; font-size: 14px; line-height: 1.6;">${data.message}</p>
+        </div>
+
+        <hr style="margin-top: 30px; border: 0; border-top: 1px solid #eee;" />
+        <p style="font-size: 11px; color: #999; text-align: center; margin: 10px 0 0 0;">01 Living — Den Haag, Nederland</p>
+      </div>
+    `;
+
+    await dispatchEmail({
+      to: ADMIN_EMAIL,
+      fromEmail: FROM_EMAIL,
+      fromName: `Offerte: ${data.fullName}`,
+      subject: `[Speciale Bestelling] ${data.category} - ${data.fullName}`,
+      html: html,
+    });
+
+    return { success: true };
+  } catch (error: any) {
+    console.error('[MAIL] Failed to send custom order email:', error);
+    return { success: false, error: error.message || 'Er is een fout opgetreden.' };
   }
 }

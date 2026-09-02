@@ -2,6 +2,7 @@
   "Navbar": {
     "collections": "Collections",
     "showroom": "Showroom",
+    "customOrders": "Custom Orders",
     "about": "About Us",
     "contact": "Contact"
   },
@@ -551,5 +552,124 @@
   "WhatsApp": {
     "tooltip": "Contact us on WhatsApp",
     "message": "Hello, I have a question about a product."
+  },
+  "CustomOrders": {
+    "metaTitle": "Bespoke & Custom Project Solutions | 01 Living",
+    "metaDescription": "Discover our bespoke custom order solutions across electric mobility, smart electronics, modular containers, bespoke furniture, and B2B contract projects.",
+    "badge": "Bespoke Projects & Custom Manufacturing",
+    "title": "Her İhtiyaca Özel Çözümler",
+    "titleEn": "Tailored Solutions for Every Need",
+    "intro": "Standart ürünlerin ötesinde, bireysel ve kurumsal taleplere yönelik farklı ürün gruplarında özel sipariş ve proje çözümleri sunuyoruz. Her talep, ihtiyaçlara göre ayrı olarak değerlendirilir, fiyatlandırılır ve siparişe özel hazırlanır.",
+    "introEn": "Beyond our standard collections, we deliver bespoke orders and project solutions across diverse product categories for both individual and commercial clients. Every inquiry is custom assessed, priced, and crafted to order.",
+    "heroCta": "Request a Custom Quotation",
+    "heroExplore": "Explore Categories",
+    "process": {
+      "badge": "Our Methodology",
+      "title": "From Concept to Turnkey Delivery",
+      "steps": [
+        { "step": "01", "title": "Inquiry & Specifications", "desc": "Share your desired product, technical requirements, target quantity, and delivery timeline." },
+        { "step": "02", "title": "Engineering & Quotation", "desc": "Our project specialists prepare a thorough technical feasibility study and comprehensive transparent quote." },
+        { "step": "03", "title": "Precision Manufacturing", "desc": "Upon approval, bespoke production starts under rigorous quality assurance and milestone tracking." },
+        { "step": "04", "title": "Logistics & White-Glove Handover", "desc": "Insured freight shipping, customs clearance, and optional on-site assembly across Europe and globally." }
+      ]
+    },
+    "categoriesTitle": "Our Custom Solution Categories",
+    "categoriesSubtitle": "Select a category below to explore details or request a personalized quotation",
+    "categories": [
+      {
+        "id": "mobility",
+        "badge": "Mobility & Innovation",
+        "title": "Elektrikli Araçlar & Mobilite",
+        "titleEn": "Electric Vehicles & Mobility",
+        "description": "High-performance luxury electric golf carts, urban utility mobility, airport & resort shuttles, and commercial fleet solutions with lithium battery tech and bespoke bespoke branding.",
+        "tags": ["E-Golf Carts", "Urban Mobility", "Lithium Battery Tech", "Custom Livery"],
+        "image": "/images/custom-orders/mobility.jpg"
+      },
+      {
+        "id": "electronics",
+        "badge": "Smart Living & Tech",
+        "title": "Elektronik Ürünler",
+        "titleEn": "Consumer & Smart Electronics",
+        "description": "Integrated smart living ecosystems, architectural invisible audio, OLED cinema displays, and exclusive contract electronics tailored to modern interior specifications.",
+        "tags": ["Smart Home", "High-End Audio/Visual", "Interactive Displays", "Custom Tech"],
+        "image": "/images/custom-orders/electronics.jpg"
+      },
+      {
+        "id": "modular",
+        "badge": "Architecture & Modular",
+        "title": "Konteyner & Modüler Çözümler",
+        "titleEn": "Container & Modular Living Solutions",
+        "description": "High-end modular living units, bespoke architectural shipping container suites, luxury pop-up showrooms, glamping retreats, and prefabricated executive spaces.",
+        "tags": ["Modular Villas", "Luxury Container Suites", "Glamping Units", "Pop-up Showrooms"],
+        "image": "/images/custom-orders/modular.jpg"
+      },
+      {
+        "id": "furniture",
+        "badge": "Design & Craftsmanship",
+        "title": "Mobilya & Yaşam Ürünleri",
+        "titleEn": "Bespoke Furniture & Living Concepts",
+        "description": "Custom travertine and marble dining tables, bespoke sectional sofas in curated upholstery, architectural wall paneling, and unique one-of-a-kind furniture designs.",
+        "tags": ["Travertine Bespoke", "Luxury Upholstery", "Custom Dining Tables", "Architectural Wood"],
+        "image": "/kitchen_marble_detail.png"
+      },
+      {
+        "id": "project",
+        "badge": "Turnkey & Development",
+        "title": "Proje Bazlı Ürünler",
+        "titleEn": "Project-Based Developments",
+        "description": "Full-spectrum turnkey furnishings for boutique hotels, fine dining restaurants, multi-unit residential projects, and private luxury villas.",
+        "tags": ["Hospitality & Hotels", "Luxury Villa Projects", "Turnkey Fit-Outs", "Material Curation"],
+        "image": "/luxury_kitchen_hero.png"
+      },
+      {
+        "id": "corporate",
+        "badge": "B2B & Enterprise",
+        "title": "Kurumsal & Toplu Siparişler",
+        "titleEn": "Corporate & Bulk Procurement",
+        "description": "Large-scale commercial procurement, headquarters styling, executive gifting, and tiered volume discounts backed by a dedicated key account manager.",
+        "tags": ["Volume Discounts", "Corporate Fit-Outs", "Dedicated Account Manager", "B2B Invoicing"],
+        "image": "/showroom_consultation.png"
+      },
+      {
+        "id": "custom",
+        "badge": "Exclusive & Bespoke",
+        "title": "Diğer Özel Talepler",
+        "titleEn": "Other Bespoke Requests",
+        "description": "Have a distinct vision, rare stone requirement, or unique international sourcing requirement? We bring unconventional and exclusive design concepts to reality.",
+        "tags": ["Global Sourcing", "Rare Materials", "Prototype Engineering", "Custom Solutions"],
+        "image": "/showroom_materials.png"
+      }
+    ],
+    "bottomCTA": {
+      "badge": "Custom Quote Inquiry",
+      "title": "Aradığınız ürün listede yok mu?",
+      "titleEn": "Can't find the exact product you're looking for?",
+      "description": "Talebinizi bizimle paylaşın. Ürün, adet ve teslimat detaylarına göre size özel teklif hazırlayalım.",
+      "descriptionEn": "Share your requirements with us. We will prepare a personalized quotation based on your exact product, quantity, and delivery timeline.",
+      "formTitle": "Request a Tailored Quotation",
+      "formSubtitle": "Submit your project requirements below and our team will get back to you within 24 hours.",
+      "categoryLabel": "Product Category",
+      "categoryPlaceholder": "Select a category",
+      "productName": "Desired Product / Concept",
+      "productNamePlaceholder": "e.g. Luxury Modular Container Suite, Custom 320cm Travertine Table",
+      "quantity": "Required Quantity",
+      "quantityPlaceholder": "e.g. 1 unit / 20 units",
+      "fullName": "Full Name / Company Name",
+      "fullNamePlaceholder": "Your name or company name",
+      "email": "Email Address",
+      "emailPlaceholder": "name@company.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+31 6 12345678",
+      "message": "Project Details & Technical Specifications",
+      "messagePlaceholder": "Include target dimensions, finish materials, delivery destination, deadline...",
+      "submitButton": "Submit Inquiry",
+      "submitting": "Submitting Inquiry...",
+      "successTitle": "Inquiry Successfully Received!",
+      "successDesc": "Thank you for reaching out. Our project design consultant will review your specifications and follow up within 24 hours.",
+      "sendAnother": "Submit another inquiry",
+      "whatsappButton": "Instant WhatsApp Concierge",
+      "emailButton": "Email Us Directly",
+      "phoneButton": "Call Us Directly"
+    }
   }
 }

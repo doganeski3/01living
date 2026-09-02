@@ -2,6 +2,7 @@
   "Navbar": {
     "collections": "Collecties",
     "showroom": "Showroom",
+    "customOrders": "Speciale Bestellingen",
     "about": "Over Ons",
     "contact": "Contact"
   },
@@ -551,5 +552,124 @@
   "WhatsApp": {
     "tooltip": "Contacteer ons via WhatsApp",
     "message": "Hallo, ik heb een vraag over een product."
+  },
+  "CustomOrders": {
+    "metaTitle": "Speciale Bestellingen & Maatwerk Projecten | 01 Living",
+    "metaDescription": "Ontdek onze op maat gemaakte oplossingen voor elektrische mobiliteit, elektronica, modulaire containers, meubels en B2B projecten. Vraag direct een vrijblijvende offerte aan.",
+    "badge": "Exclusieve Projecten & Maatwerk",
+    "title": "Her İhtiyaca Özel Çözümler",
+    "titleNl": "Oplossingen op Maat voor Elke Behoefte",
+    "intro": "Standart ürünlerin ötesinde, bireysel ve kurumsal taleplere yönelik farklı ürün gruplarında özel sipariş ve proje çözümleri sunuyoruz. Her talep, ihtiyaçlara göre ayrı olarak değerlendirilir, fiyatlandırılır ve siparişe özel hazırlanır.",
+    "introNl": "Naast onze standaardcollectie bieden wij maatwerk- en projectoplossingen voor uiteenlopende productgroepen, gericht op zowel particuliere als zakelijke wensen. Elke aanvraag wordt individueel beoordeeld, gecalculeerd en op bestelling gerealiseerd.",
+    "heroCta": "Offerte op Maat Aanvragen",
+    "heroExplore": "Bekijk Categorieën",
+    "process": {
+      "badge": "Onze Werkwijze",
+      "title": "Van Aanvraag tot Sleutelklare Oplevering",
+      "steps": [
+        { "step": "01", "title": "Aanvraag & Specificatie", "desc": "U deelt uw gewenste product, specificaties, gewenste aantallen en levertermijn met ons team." },
+        { "step": "02", "title": "Calculatie & Concept", "desc": "Onze projectspecialisten voeren een technische en financiële haalbaarheidsstudie uit met een scherpe offerte." },
+        { "step": "03", "title": "Productie & Maatwerk", "desc": "Na goedkeuring start de gecertificeerde productie onder strikte kwaliteitscontrole en voortgangsrapportage." },
+        { "step": "04", "title": "Transport & Oplevering", "desc": "Veilig transport, douaneafhandeling en optionele montage op locatie in heel Nederland en Europa." }
+      ]
+    },
+    "categoriesTitle": "Onze Maatwerk Productgroepen",
+    "categoriesSubtitle": "Selecteer een categorie voor meer informatie of vraag direct een offerte aan",
+    "categories": [
+      {
+        "id": "mobility",
+        "badge": "Mobiliteit & Innovatie",
+        "title": "Elektrikli Araçlar & Mobilite",
+        "titleNl": "Elektrische Voertuigen & Mobiliteit",
+        "description": "Exclusieve elektrische golfkarren, stedelijke e-mobiliteitsvoertuigen, elektrische shuttles en bedrijfsmobiliteit op maat samengesteld met geavanceerde accutechnologie en custom branding.",
+        "tags": ["E-Golfkarren", "Stedelijke Mobiliteit", "Lithium Accu's", "Custom Branding"],
+        "image": "/images/custom-orders/mobility.jpg"
+      },
+      {
+        "id": "electronics",
+        "badge": "Smart Living & Tech",
+        "title": "Elektronik Ürünler",
+        "titleNl": "Elektronische Producten & Smart Tech",
+        "description": "Geavanceerde smart home ecosystemen, high-end audio/visuele apparatuur, interactieve displays en exclusieve consumentenelektronica op project- en specificatiebasis.",
+        "tags": ["Smart Home", "High-End Audio/Visueel", "Interactieve Displays", "Custom Tech"],
+        "image": "/images/custom-orders/electronics.jpg"
+      },
+      {
+        "id": "modular",
+        "badge": "Architectuur & Modulair",
+        "title": "Konteyner & Modüler Çözümler",
+        "titleNl": "Containers & Modulaire Oplossingen",
+        "description": "Luxe modulaire woonunits, architectonische containerconcepten, pop-up showrooms, glamping suites en geprefabriceerde kantoorruimtes met hoogwaardige isolatie en afwerking.",
+        "tags": ["Modulaire Woningen", "Luxe Container Suites", "Glamping Units", "Pop-up Showrooms"],
+        "image": "/images/custom-orders/modular.jpg"
+      },
+      {
+        "id": "furniture",
+        "badge": "Design & Vakmanschap",
+        "title": "Mobilya & Yaşam Ürünleri",
+        "titleNl": "Meubels & Interieurconcepten op Maat",
+        "description": "Maatwerk travertin en marmeren eettafels, exclusieve modulaire banken met custom stofferingen, wandpanelen en unieke meubelstukken naar exacte maatspecificaties.",
+        "tags": ["Travertin Maatwerk", "Luxe Bekleding", "Maatwerk Tafels", "Architecturaal Hout"],
+        "image": "/kitchen_marble_detail.png"
+      },
+      {
+        "id": "project",
+        "badge": "Turnkey & Ontwerp",
+        "title": "Proje Bazlı Ürünler",
+        "titleNl": "Projectmatige Producten & Inrichting",
+        "description": "Turnkey interieur- en exterieurproducten voor hotels, restaurants, residentiële projecten en luxe villa's inclusief specifieke materiaalkeuze en installatiebegeleiding.",
+        "tags": ["Hotel & Horeca", "Villa Projecten", "Turnkey Inrichting", "Materiaalselectie"],
+        "image": "/luxury_kitchen_hero.png"
+      },
+      {
+        "id": "corporate",
+        "badge": "B2B & Volume",
+        "title": "Kurumsal & Toplu Siparişler",
+        "titleNl": "Zakelijke & B2B Bulk Bestellingen",
+        "description": "Grootschalige inkoop, kantoorinrichtingen, relatiegeschenken en gestandaardiseerde leveringen met volumekortingen en toegewijd accountbeheer.",
+        "tags": ["Volumekorting", "Kantoorinrichting", "Dedicated Accountmanager", "Flexibele Facturatie"],
+        "image": "/showroom_consultation.png"
+      },
+      {
+        "id": "custom",
+        "badge": "Exclusief & Uniek",
+        "title": "Diğer Özel Talepler",
+        "titleNl": "Overige Exclusieve Aanvragen",
+        "description": "Heeft u een specifiek idee, uniek materiaal of een internationaal sourcingverzoek? Wij realiseren onconventionele en unieke productvragen over de hele wereld.",
+        "tags": ["Wereldwijde Sourcing", "Unieke Materialen", "Prototype Ontwikkeling", "Maatwerk Oplossingen"],
+        "image": "/showroom_materials.png"
+      }
+    ],
+    "bottomCTA": {
+      "badge": "Maatwerk Aanvraag",
+      "title": "Aradığınız ürün listede yok mu?",
+      "titleNl": "Staat het door u gezochte product niet in de lijst?",
+      "description": "Talebinizi bizimle paylaşın. Ürün, adet ve teslimat detaylarına göre size özel teklif hazırlayalım.",
+      "descriptionNl": "Deel uw wensen met ons. Wij stellen graag een op maat gemaakte offerte voor u op basis van uw productspecificaties, gewenste aantallen en levertijd.",
+      "formTitle": "Offerte op Maat Aanvragen",
+      "formSubtitle": "Vul het onderstaande formulier in en ontvang binnen 24 uur een vrijblijvend voorstel.",
+      "categoryLabel": "Productgroep / Categorie",
+      "categoryPlaceholder": "Selecteer een categorie",
+      "productName": "Gewenst Product / Omschrijving",
+      "productNamePlaceholder": "Bijv. Modulaire container unit, Travertin tafel 320cm, etc.",
+      "quantity": "Gewenst Aantal",
+      "quantityPlaceholder": "Bijv. 1 stuk / 20 stuks",
+      "fullName": "Volledige Naam / Bedrijfsnaam",
+      "fullNamePlaceholder": "Uw naam of bedrijfsnaam",
+      "email": "E-mailadres",
+      "emailPlaceholder": "naam@bedrijf.nl",
+      "phone": "Telefoonnummer",
+      "phonePlaceholder": "+31 6 12345678",
+      "message": "Projectdetails & Aanvullende Specificaties",
+      "messagePlaceholder": "Beschrijf afmetingen, gewenste materialen, locatie van levering, gewenste opleverdatum...",
+      "submitButton": "Verzend Aanvraag",
+      "submitting": "Aanvraag wordt verzonden...",
+      "successTitle": "Aanvraag Succesvol Ontvangen!",
+      "successDesc": "Hartelijk dank voor uw aanvraag. Onze projectadviseur neemt binnen 24 uur contact met u op met een passend voorstel.",
+      "sendAnother": "Nog een aanvraag indienen",
+      "whatsappButton": "Direct WhatsApp Contact",
+      "emailButton": "E-mail Ons Direct",
+      "phoneButton": "Bel Ons Direct"
+    }
   }
 }

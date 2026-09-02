@@ -55,9 +55,12 @@ export default function Navbar() {
     router.push(newPath);
   };
 
+  const customOrdersHref = locale === 'en' ? `/${locale}/custom-orders` : `/${locale}/speciale-bestellingen`;
+
   const navLinks = [
     { href: `/${locale}/collecties`, label: t('collections') },
     { href: `/${locale}/showroom`, label: t('showroom') },
+    { href: customOrdersHref, label: t('customOrders') },
     { href: `/${locale}/over-ons`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
   ];
@@ -65,6 +68,8 @@ export default function Navbar() {
   const isDarkHeroPage = pathname === `/${locale}` || 
                          pathname === `/${locale}/collecties` || 
                          pathname === `/${locale}/showroom` || 
+                         pathname === `/${locale}/speciale-bestellingen` ||
+                         pathname === `/${locale}/custom-orders` ||
                          pathname === `/${locale}/over-ons` || 
                          pathname === `/${locale}/contact`;
   const isTransparentWhiteTheme = isDarkHeroPage && !isScrolled && !isMobileMenuOpen;

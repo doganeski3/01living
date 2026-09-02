@@ -39,6 +39,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.5,
     });
+
+    // Add localized custom orders
+    sitemapEntries.push({
+      url: locale === 'en' 
+        ? `${baseUrl}/en/custom-orders`
+        : `${baseUrl}/nl/speciale-bestellingen`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    });
   });
 
   // 2. Dynamic Product Pages for each locale
