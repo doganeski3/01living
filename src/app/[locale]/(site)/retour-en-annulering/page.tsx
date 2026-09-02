@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import RetourClient from './RetourClient';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
@@ -31,7 +30,6 @@ export default function RetourEnAnnuleringPage() {
     <main className="min-h-screen bg-primary-ivory">
       <Navbar />
       <RetourClient />
-      <Footer />
     </main>
   );
 }
