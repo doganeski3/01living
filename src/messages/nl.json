@@ -3,6 +3,7 @@
     "collections": "Collecties",
     "showroom": "Showroom",
     "customOrders": "Speciale Bestellingen",
+    "b2bFulfillment": "B2B & Logistiek",
     "about": "Over Ons",
     "contact": "Contact"
   },
@@ -43,7 +44,16 @@
     }
   },
   "Marquee": {
-    "tags": ["Handgemaakt", "Tijdloos Design", "Duurzaam Hout", "Den Haag", "Meesterlijk Vakmanschap", "Exclusief", "Nederlands Interieur", "Luxe Meubels"]
+    "tags": [
+      "Handgemaakt",
+      "Tijdloos Design",
+      "Duurzaam Hout",
+      "Den Haag",
+      "Meesterlijk Vakmanschap",
+      "Exclusief",
+      "Nederlands Interieur",
+      "Luxe Meubels"
+    ]
   },
   "Hero": {
     "title": "Tijdloos Design voor Modern Wonen",
@@ -154,6 +164,8 @@
     "description": "Tijdloos design, meesterlijk vakmanschap en duurzame materialen. Exclusieve handgemaakte meubels uit Nederland.",
     "quickLinks": "Snelle Links",
     "collections": "Collecties",
+    "showroom": "Showroom",
+    "b2bFulfillment": "B2B & Logistiek",
     "about": "Over Ons",
     "contact": "Contact",
     "showroomTitle": "Showroom Den Haag",
@@ -427,45 +439,108 @@
       "title": "Algemene Voorwaarden",
       "intro": "Deze algemene voorwaarden zijn van toepassing op elk aanbod van 01 Living en op elke tot stand gekomen overeenkomst tussen ondernemer en consument. Wij raden u aan deze voorwaarden zorgvuldig door te lezen.",
       "sections": [
-        { "title": "1. Toepasselijkheid", "content": "Deze algemene voorwaarden zijn van toepassing op elk aanbod van 01 Living en op elke tot stand gekomen overeenkomst op afstand tussen 01 Living en de consument. Voordat de overeenkomst op afstand wordt gesloten, wordt de tekst van deze algemene voorwaarden aan de consument beschikbaar gesteld." },
-        { "title": "2. Het Aanbod", "content": "Indien een aanbod een beperkte geldigheidsduur heeft of onder voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld. Het aanbod bevat een volledige en nauwkeurige omschrijving van de aangeboden producten. Kennelijke vergissingen of fouten in het aanbod binden 01 Living niet." },
-        { "title": "3. De Overeenkomst", "content": "De overeenkomst komt tot stand op het moment van aanvaarding door de consument van het aanbod en het voldoen aan de daarbij gestelde voorwaarden. 01 Living bevestigt onverwijld langs elektronische weg de ontvangst van de aanvaarding van het aanbod." },
-        { "title": "4. Herroepingsrecht", "content": "Bij de aankoop van producten heeft de consument de mogelijkheid de overeenkomst zonder opgave van redenen te ontbinden gedurende 14 dagen. Deze bedenktermijn gaat in op de dag na ontvangst van het product door de consument. Tijdens de bedenktijd zal de consument zorgvuldig omgaan met het product en de verpakking." },
-        { "title": "5. Uitsluiting Herroepingsrecht", "content": "Het herroepingsrecht is niet van toepassing op producten die volgens specificaties van de consument zijn vervaardigd (maatwerk), die duidelijk persoonlijk van aard zijn, of die door hun aard niet kunnen worden teruggezonden." },
-        { "title": "6. De Prijs en Betaling", "content": "Gedurende de in het aanbod vermelde geldigheidsduur worden de prijzen van de aangeboden producten niet verhoogd, behoudens prijswijzigingen als gevolg van veranderingen in BTW-tarieven. Betaling dient te geschieden via de op de website aangeboden betaalmethoden." },
-        { "title": "7. Conformiteit en Garantie", "content": "01 Living staat er voor in dat de producten voldoen aan de overeenkomst, de in het aanbod vermelde specificaties, aan de redelijke eisen van deugdelijkheid en/of bruikbaarheid en de op de datum van de totstandkoming van de overeenkomst bestaande wettelijke bepalingen." }
+        {
+          "title": "1. Toepasselijkheid",
+          "content": "Deze algemene voorwaarden zijn van toepassing op elk aanbod van 01 Living en op elke tot stand gekomen overeenkomst op afstand tussen 01 Living en de consument. Voordat de overeenkomst op afstand wordt gesloten, wordt de tekst van deze algemene voorwaarden aan de consument beschikbaar gesteld."
+        },
+        {
+          "title": "2. Het Aanbod",
+          "content": "Indien een aanbod een beperkte geldigheidsduur heeft of onder voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld. Het aanbod bevat een volledige en nauwkeurige omschrijving van de aangeboden producten. Kennelijke vergissingen of fouten in het aanbod binden 01 Living niet."
+        },
+        {
+          "title": "3. De Overeenkomst",
+          "content": "De overeenkomst komt tot stand op het moment van aanvaarding door de consument van het aanbod en het voldoen aan de daarbij gestelde voorwaarden. 01 Living bevestigt onverwijld langs elektronische weg de ontvangst van de aanvaarding van het aanbod."
+        },
+        {
+          "title": "4. Herroepingsrecht",
+          "content": "Bij de aankoop van producten heeft de consument de mogelijkheid de overeenkomst zonder opgave van redenen te ontbinden gedurende 14 dagen. Deze bedenktermijn gaat in op de dag na ontvangst van het product door de consument. Tijdens de bedenktijd zal de consument zorgvuldig omgaan met het product en de verpakking."
+        },
+        {
+          "title": "5. Uitsluiting Herroepingsrecht",
+          "content": "Het herroepingsrecht is niet van toepassing op producten die volgens specificaties van de consument zijn vervaardigd (maatwerk), die duidelijk persoonlijk van aard zijn, of die door hun aard niet kunnen worden teruggezonden."
+        },
+        {
+          "title": "6. De Prijs en Betaling",
+          "content": "Gedurende de in het aanbod vermelde geldigheidsduur worden de prijzen van de aangeboden producten niet verhoogd, behoudens prijswijzigingen als gevolg van veranderingen in BTW-tarieven. Betaling dient te geschieden via de op de website aangeboden betaalmethoden."
+        },
+        {
+          "title": "7. Conformiteit en Garantie",
+          "content": "01 Living staat er voor in dat de producten voldoen aan de overeenkomst, de in het aanbod vermelde specificaties, aan de redelijke eisen van deugdelijkheid en/of bruikbaarheid en de op de datum van de totstandkoming van de overeenkomst bestaande wettelijke bepalingen."
+        }
       ]
     },
     "privacy": {
       "title": "Privacybeleid",
       "intro": "01 Living respecteert de privacy van alle gebruikers van haar site en draagt er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld. Wij gebruiken uw gegevens om de bestellingen zo snel en gemakkelijk mogelijk te laten verlopen.",
       "sections": [
-        { "title": "1. Gebruik van persoonsgegevens", "content": "Wanneer u onze website bezoekt of een bestelling plaatst, verzamelen wij gegevens zoals uw naam, adres, e-mailadres en betaalmethode. Belangrijk: Uw creditcardgegevens of andere gevoelige betaalinformatie worden rechtstreeks verwerkt door onze beveiligde partner Mollie; 01 Living slaat deze gegevens onder geen enkele omstandigheid op in haar eigen systemen." },
-        { "title": "2. Doeleinden van de verwerking", "content": "Wij verwerken uw gegevens voor de volgende doelen: het afhandelen van uw betaling, u te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren, en u te informeren over wijzigingen van onze diensten en producten." },
-        { "title": "3. Bewaartermijn", "content": "01 Living bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld, conform de wettelijke bewaartermijnen." },
-        { "title": "4. Delen met derden", "content": "Wij verkopen uw gegevens niet aan derden en verstrekken deze uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u (bijv. bezorgdiensten) of om te voldoen aan een wettelijke verplichting." },
-        { "title": "5. Gegevens inzien, aanpassen of verwijderen", "content": "U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door 01 Living." }
+        {
+          "title": "1. Gebruik van persoonsgegevens",
+          "content": "Wanneer u onze website bezoekt of een bestelling plaatst, verzamelen wij gegevens zoals uw naam, adres, e-mailadres en betaalmethode. Belangrijk: Uw creditcardgegevens of andere gevoelige betaalinformatie worden rechtstreeks verwerkt door onze beveiligde partner Mollie; 01 Living slaat deze gegevens onder geen enkele omstandigheid op in haar eigen systemen."
+        },
+        {
+          "title": "2. Doeleinden van de verwerking",
+          "content": "Wij verwerken uw gegevens voor de volgende doelen: het afhandelen van uw betaling, u te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren, en u te informeren over wijzigingen van onze diensten en producten."
+        },
+        {
+          "title": "3. Bewaartermijn",
+          "content": "01 Living bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld, conform de wettelijke bewaartermijnen."
+        },
+        {
+          "title": "4. Delen met derden",
+          "content": "Wij verkopen uw gegevens niet aan derden en verstrekken deze uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u (bijv. bezorgdiensten) of om te voldoen aan een wettelijke verplichting."
+        },
+        {
+          "title": "5. Gegevens inzien, aanpassen of verwijderen",
+          "content": "U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door 01 Living."
+        }
       ]
     },
     "shipping": {
       "title": "Verzending & Levering",
       "intro": "Wij streven naar een perfecte bezorging van uw handgemaakte meubels. Hieronder vindt u onze richtlijnen voor verzending en levering.",
       "sections": [
-        { "title": "1. Levering en uitvoering", "content": "01 Living zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van bestellingen van producten. Als plaats van levering geldt het adres dat de consument aan het bedrijf kenbaar heeft gemaakt." },
-        { "title": "2. Levertijden", "content": "Wij streven ernaar om bestellingen binnen 2-5 werkdagen te bezorgen, mits op voorraad. Voor maatwerkproducten geldt een afwijkende levertijd die expliciet met de klant wordt gecommuniceerd." },
-        { "title": "3. Verzendkosten", "content": "Bestellingen boven de €500 worden gratis verzonden binnen Nederland. Voor bestellingen onder dit bedrag hanteren wij standaard verzendkosten die zichtbaar zijn in het afrekenproces." },
-        { "title": "4. Retourneren", "content": "U heeft het recht uw bestelling tot 14 dagen na ontvangst zonder opgave van reden te annuleren. U heeft na annulering nogmaals 14 dagen om uw product retour te sturen. Het product dient met alle geleverde toebehoren en – indien redelijkerwijze mogelijk – in de originele staat en verpakking geretourneerd te worden." },
-        { "title": "5. Uitzonderingen retour", "content": "Let op: Maatwerkproducten die volgens uw specificaties zijn gemaakt, kunnen niet worden geretourneerd. Dit geldt ook voor producten die om hygiënische redenen niet geschikt zijn om te worden teruggezonden." }
+        {
+          "title": "1. Levering en uitvoering",
+          "content": "01 Living zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van bestellingen van producten. Als plaats van levering geldt het adres dat de consument aan het bedrijf kenbaar heeft gemaakt."
+        },
+        {
+          "title": "2. Levertijden",
+          "content": "Wij streven ernaar om bestellingen binnen 2-5 werkdagen te bezorgen, mits op voorraad. Voor maatwerkproducten geldt een afwijkende levertijd die expliciet met de klant wordt gecommuniceerd."
+        },
+        {
+          "title": "3. Verzendkosten",
+          "content": "Bestellingen boven de €500 worden gratis verzonden binnen Nederland. Voor bestellingen onder dit bedrag hanteren wij standaard verzendkosten die zichtbaar zijn in het afrekenproces."
+        },
+        {
+          "title": "4. Retourneren",
+          "content": "U heeft het recht uw bestelling tot 14 dagen na ontvangst zonder opgave van reden te annuleren. U heeft na annulering nogmaals 14 dagen om uw product retour te sturen. Het product dient met alle geleverde toebehoren en – indien redelijkerwijze mogelijk – in de originele staat en verpakking geretourneerd te worden."
+        },
+        {
+          "title": "5. Uitzonderingen retour",
+          "content": "Let op: Maatwerkproducten die volgens uw specificaties zijn gemaakt, kunnen niet worden geretourneerd. Dit geldt ook voor producten die om hygiënische redenen niet geschikt zijn om te worden teruggezonden."
+        }
       ]
     },
     "cookies": {
       "title": "Cookiebeleid",
       "intro": "Wij maken gebruik van cookies om de website te optimaliseren en uw gebruikerservaring te verbeteren.",
       "sections": [
-        { "title": "1. Wat zijn cookies?", "content": "Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van uw computer, tablet of smartphone." },
-        { "title": "2. Functionele cookies", "content": "Deze cookies zorgen ervoor dat de website naar behoren werkt en dat bijvoorbeeld uw voorkeursinstellingen onthouden worden. Deze cookies worden ook gebruikt om de website goed te laten werken en deze te kunnen optimaliseren." },
-        { "title": "3. Analytische cookies", "content": "Wij gebruiken Google Analytics om bij te houden hoe gebruikers de website gebruiken. De aldus verkregen informatie wordt, met inbegrip van het adres van uw computer (IP-adres), overgebracht naar en door Google opgeslagen op servers." },
-        { "title": "4. Afmelden voor cookies", "content": "U kunt zich afmelden voor cookies door uw internetbrowser zo in te stellen dat deze geen cookies meer opslaat. Daarnaast kunt u ook alle informatie die eerder is opgeslagen via de instellingen van uw browser verwijderen." }
+        {
+          "title": "1. Wat zijn cookies?",
+          "content": "Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van uw computer, tablet of smartphone."
+        },
+        {
+          "title": "2. Functionele cookies",
+          "content": "Deze cookies zorgen ervoor dat de website naar behoren werkt en dat bijvoorbeeld uw voorkeursinstellingen onthouden worden. Deze cookies worden ook gebruikt om de website goed te laten werken en deze te kunnen optimaliseren."
+        },
+        {
+          "title": "3. Analytische cookies",
+          "content": "Wij gebruiken Google Analytics om bij te houden hoe gebruikers de website gebruiken. De aldus verkregen informatie wordt, met inbegrip van het adres van uw computer (IP-adres), overgebracht naar en door Google opgeslagen op servers."
+        },
+        {
+          "title": "4. Afmelden voor cookies",
+          "content": "U kunt zich afmelden voor cookies door uw internetbrowser zo in te stellen dat deze geen cookies meer opslaat. Daarnaast kunt u ook alle informatie die eerder is opgeslagen via de instellingen van uw browser verwijderen."
+        }
       ],
       "banner": {
         "text": "Wij gebruiken cookies om uw ervaring te verbeteren. Door verder te gaan op onze site, gaat u akkoord met ons {link}.",
@@ -581,7 +656,12 @@
         "badge": "Mobiliteit & Innovatie",
         "title": "Elektrische Voertuigen & Mobiliteit",
         "description": "Exclusieve elektrische golfkarren, stedelijke e-mobiliteitsvoertuigen, elektrische shuttles en bedrijfsmobiliteit op maat samengesteld met geavanceerde accutechnologie en custom branding.",
-        "tags": ["E-Golfkarren", "Stedelijke Mobiliteit", "Lithium Accu's", "Custom Branding"],
+        "tags": [
+          "E-Golfkarren",
+          "Stedelijke Mobiliteit",
+          "Lithium Accu's",
+          "Custom Branding"
+        ],
         "highlight": "Custom Vloot & Luxe Specs",
         "image": "/images/custom-orders/mobility.jpg"
       },
@@ -590,7 +670,12 @@
         "badge": "Smart Living & Tech",
         "title": "Elektronische Producten & Smart Tech",
         "description": "Geavanceerde smart home ecosystemen, high-end audio/visuele apparatuur, interactieve displays en exclusieve consumentenelektronica op project- en specificatiebasis.",
-        "tags": ["Smart Home", "High-End Audio/Visueel", "Interactieve Displays", "Custom Tech"],
+        "tags": [
+          "Smart Home",
+          "High-End Audio/Visueel",
+          "Interactieve Displays",
+          "Custom Tech"
+        ],
         "highlight": "Architecturale Smart Integratie",
         "image": "/images/custom-orders/electronics.jpg"
       },
@@ -599,7 +684,12 @@
         "badge": "Architectuur & Modulair",
         "title": "Containers & Modulaire Oplossingen",
         "description": "Luxe modulaire woonunits, architectonische containerconcepten, pop-up showrooms, glamping suites en geprefabriceerde kantoorruimtes met hoogwaardige isolatie en afwerking.",
-        "tags": ["Modulaire Woningen", "Luxe Container Suites", "Glamping Units", "Pop-up Showrooms"],
+        "tags": [
+          "Modulaire Woningen",
+          "Luxe Container Suites",
+          "Glamping Units",
+          "Pop-up Showrooms"
+        ],
         "highlight": "Sleutelklare Prefab Bouw",
         "image": "/images/custom-orders/modular.jpg"
       },
@@ -608,7 +698,12 @@
         "badge": "Design & Vakmanschap",
         "title": "Meubels & Interieurconcepten op Maat",
         "description": "Maatwerk travertin en marmeren eettafels, exclusieve modulaire banken met custom stofferingen, wandpanelen en unieke meubelstukken naar exacte maatspecificaties.",
-        "tags": ["Travertin Maatwerk", "Luxe Bekleding", "Maatwerk Tafels", "Architecturaal Hout"],
+        "tags": [
+          "Travertin Maatwerk",
+          "Luxe Bekleding",
+          "Maatwerk Tafels",
+          "Architecturaal Hout"
+        ],
         "highlight": "100% Handgemaakt Maatwerk",
         "image": "/kitchen_marble_detail.png"
       },
@@ -617,7 +712,12 @@
         "badge": "Turnkey & Ontwerp",
         "title": "Projectmatige Producten & Inrichting",
         "description": "Turnkey interieur- en exterieurproducten voor hotels, restaurants, residentiële projecten en luxe villa's inclusief specifieke materiaalkeuze en installatiebegeleiding.",
-        "tags": ["Hotel & Horeca", "Villa Projecten", "Turnkey Inrichting", "Materiaalselectie"],
+        "tags": [
+          "Hotel & Horeca",
+          "Villa Projecten",
+          "Turnkey Inrichting",
+          "Materiaalselectie"
+        ],
         "highlight": "Totale Projectbegeleiding",
         "image": "/luxury_kitchen_hero.png"
       },
@@ -626,7 +726,12 @@
         "badge": "B2B & Volume",
         "title": "Zakelijke & B2B Bulk Bestellingen",
         "description": "Grootschalige inkoop, kantoorinrichtingen, relatiegeschenken en gestandaardiseerde leveringen met volumekortingen en toegewijd accountbeheer.",
-        "tags": ["Volumekorting", "Kantoorinrichting", "Dedicated Accountmanager", "Flexibele Facturatie"],
+        "tags": [
+          "Volumekorting",
+          "Kantoorinrichting",
+          "Dedicated Accountmanager",
+          "Flexibele Facturatie"
+        ],
         "highlight": "Staffelkortingen & B2B Facturatie",
         "image": "/showroom_consultation.png"
       },
@@ -635,7 +740,12 @@
         "badge": "Exclusief & Uniek",
         "title": "Overige Exclusieve Aanvragen",
         "description": "Heeft u een specifiek idee, uniek materiaal of een internationaal sourcingverzoek? Wij realiseren onconventionele en unieke productvragen over de hele wereld.",
-        "tags": ["Wereldwijde Sourcing", "Unieke Materialen", "Prototype Ontwikkeling", "Maatwerk Oplossingen"],
+        "tags": [
+          "Wereldwijde Sourcing",
+          "Unieke Materialen",
+          "Prototype Ontwikkeling",
+          "Maatwerk Oplossingen"
+        ],
         "highlight": "Wereldwijde Maatwerk Sourcing",
         "image": "/showroom_materials.png"
       }
@@ -645,10 +755,26 @@
       "badge": "4 Stappen naar Realisatie",
       "title": "Van Aanvraag tot Sleutelklare Oplevering",
       "steps": [
-        { "step": "01", "title": "Aanvraag & Specificatie", "desc": "Deel uw gewenste productconcept, gewenste aantallen en specifieke ontwerpcriteria met onze adviseurs." },
-        { "step": "02", "title": "Calculatie & Concept", "desc": "Onze specialisten voeren een technische haalbaarheidsstudie uit en leveren binnen 24 uur een transparante offerte." },
-        { "step": "03", "title": "Productie & Maatwerk", "desc": "Na goedkeuring start de gecertificeerde productie onder strikte kwaliteitscontrole en regelmatige rapportage." },
-        { "step": "04", "title": "Transport & Oplevering", "desc": "Verzekerd transport, douaneafhandeling en optionele professionele montage op locatie." }
+        {
+          "step": "01",
+          "title": "Aanvraag & Specificatie",
+          "desc": "Deel uw gewenste productconcept, gewenste aantallen en specifieke ontwerpcriteria met onze adviseurs."
+        },
+        {
+          "step": "02",
+          "title": "Calculatie & Concept",
+          "desc": "Onze specialisten voeren een technische haalbaarheidsstudie uit en leveren binnen 24 uur een transparante offerte."
+        },
+        {
+          "step": "03",
+          "title": "Productie & Maatwerk",
+          "desc": "Na goedkeuring start de gecertificeerde productie onder strikte kwaliteitscontrole en regelmatige rapportage."
+        },
+        {
+          "step": "04",
+          "title": "Transport & Oplevering",
+          "desc": "Verzekerd transport, douaneafhandeling en optionele professionele montage op locatie."
+        }
       ]
     },
     "bottomCTA": {
@@ -686,6 +812,289 @@
       "whatsappButton": "Direct WhatsApp Contact (+31 6 3823 0747)",
       "emailButton": "info@01living.nl",
       "showroom": "Showroom Den Haag"
+    }
+  },
+  "B2BFulfillment": {
+    "nav": {
+      "brandSubtitle": "Europees Logistiek & Vertegenwoordigingscentrum",
+      "services": "Diensten",
+      "pipeline": "Fulfillment Proces",
+      "showroom": "Showroom",
+      "advantages": "Waarom 01 Living",
+      "contact": "Contact & Hub",
+      "ctaQuote": "Vraag B2B Offerte Aan"
+    },
+    "hero": {
+      "badge": "Nederlands Operatiecentrum • 1.600 m² Logistieke Hub",
+      "titleStart": "Breid Zonder Grenzen Uit Naar Europa: ",
+      "titleHighlight": "1.600 m² Warehousing,",
+      "titleEnd": " Fulfillment & B2B Vertegenwoordiging",
+      "subtitle": "Elimineer de kosten en risico’s van een eigen dochteronderneming, lokaal personeel en langlopende huurcontracten. Wij bieden Turkse en internationale fabrikanten een kant-en-klaar commercieel verkoopteam, hoogbouwopslag in Den Haag en pan-Europese distributie.",
+      "primaryCta": "Vraag B2B Voorstel Aan",
+      "secondaryCta": "Ontdek Ons Logistiek Proces",
+      "liveBadge": "DEN HAAG HUB • ACTIEVE OPERATIES",
+      "videoTitle": "01 Living Logistiek Centrum • Den Haag, Nederland",
+      "stats": {
+        "stat1": {
+          "value": "1.600 m²",
+          "label": "Overdekte Opslagruimte",
+          "desc": "Moderne hoogbouwstellingen voor pallets en dozen"
+        },
+        "stat2": {
+          "value": "Bol.com & EU",
+          "label": "Marktplaats Koppeling",
+          "desc": "Naadloze groothandel- en e-commerce integratie"
+        },
+        "stat3": {
+          "value": "Den Haag",
+          "label": "Strategische Distributiehub",
+          "desc": "Snelle levertijden naar NL, BE, DE, FR en het VK"
+        },
+        "stat4": {
+          "value": "0 €",
+          "label": "Vaste Oprichtingskosten",
+          "desc": "Geen juridische entiteits- of personeelsrisico’s"
+        }
+      }
+    },
+    "pipeline": {
+      "badge": "VOLLEDIGE KETENBEHEERSING",
+      "title": "Stap-voor-Stap Logistiek & Fulfillment Proces",
+      "subtitle": "Van douanevrijgave in Europese havens tot aflevering bij B2B- en retailklanten in heel Europa: elke schakel wordt gecontroleerd met maximale snelheid en transparantie.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Inslag & 1.600 m² Opslag",
+          "badge": "Ontvangst & Controle",
+          "description": "Aankomst van containers/vrachtwagens, verificatie van douanedocumenten, kwaliteitsinspectie, SKU-barcodering en efficiënte plaatsing in onze stellingen in Den Haag.",
+          "highlights": [
+            "Grondige fysieke controle op schades en aantallen",
+            "GS1 / EAN barcode etikettering en registratie",
+            "Plaatsing op speciale pallet- en dooslocaties"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Verkoopkanalen & Commerciële Vertegenwoordiging",
+          "badge": "Actieve B2B Verkoop",
+          "description": "Commerciële vertegenwoordiging in de Benelux en DACH-regio. Wij presenteren uw collectie aan inkopers, architecten en beheren geautomatiseerde Bol.com catalogi.",
+          "highlights": [
+            "Direct contact met groothandels en contractonderhandelingen",
+            "Officieel beheer van Bol.com verkopersaccount en fulfillment",
+            "Presentaties voor architecten en projectinrichters in onze showroom"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Geautomatiseerde Pick, Pack & Etikettering",
+          "badge": "Fulfillment Uitvoering",
+          "description": "Zodra een bestelling binnenkomt, wordt deze via geoptimaliseerde routes verzameld, schokbestendig verpakt volgens Europese normen en verzendklaar gemaakt.",
+          "highlights": [
+            "Snelle orderverwerking binnen Europese verzendtijden",
+            "Professionele beschermende verpakking en palletsealing",
+            "Automatische aanmaak van verzendlabels (PostNL, DHL, DPD, GLS)"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Europese Levering & Transparante Rapportage",
+          "badge": "Bezorging & Inzicht",
+          "description": "Snelle levering binnen 24-48 uur in de belangrijkste Europese markten. Volledige retourlogistiek, kwaliteitsbeoordeling en wekelijkse voorraad- en omzetrapportages.",
+          "highlights": [
+            "24 tot 48 uur levering in Nederland, België, Duitsland en Frankrijk",
+            "Professionele retourverwerking en kwaliteitscontrole",
+            "Transparante rapportages van voorraadniveaus en verkoopcijfers"
+          ]
+        }
+      ]
+    },
+    "services": {
+      "badge": "ONZE DIENSTEN",
+      "title": "Complete B2B Infrastructuur Modules",
+      "subtitle": "Kies de modulaire diensten die aansluiten bij uw groeistrategie: van flexibele palletopslag tot volledige commerciële verkoop en marktplaatsautomatisering.",
+      "items": [
+        {
+          "id": "fulfillment",
+          "badge": "Infrastructuur",
+          "title": "Fulfillment & Hoogbouwopslag",
+          "description": "Onze moderne 1.600 m² logistieke faciliteit in Den Haag biedt flexibele opslag voor standaard Europallets (80x120), blokpallets (100x120) en bulkdozen met geavanceerde reachtrucks.",
+          "specs": [
+            "1.600 m² droge, beveiligde ruimte met 24/7 cameratoezicht",
+            "Zware reachtrucks en elektrische stapelaars",
+            "Flexibele palletcapaciteit die meegroeit met uw vraag",
+            "Douaneafhandeling en professioneel lossen van containers"
+          ],
+          "icon": "Boxes",
+          "bgGradient": "from-amber-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "representation",
+          "badge": "Commerciële Groei",
+          "title": "Europese B2B Vertegenwoordiging & Sales",
+          "description": "Nederlands- en Engelstalige accountmanagers vertegenwoordigen uw merk in Nederland, België, Duitsland en omstreken. Wij bouwen een duurzaam dealernetwerk op.",
+          "specs": [
+            "Toegewijde commerciële vertegenwoordiger voor klantbezoeken",
+            "Prijsstrategieën en contractonderhandelingen met groothandels",
+            "Lokale communicatie en facturatieondersteuning in het Nederlands",
+            "Gerichte acquisitie bij retailers, projectontwikkelaars en designers"
+          ],
+          "icon": "Briefcase",
+          "bgGradient": "from-blue-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "showroom",
+          "badge": "Fysieke Presentatie",
+          "title": "Luxe Showroom & Monsterbeheer",
+          "description": "Bied Europese zakelijke beslissers tastbaar vertrouwen. Toon uw interieurproducten, architectonische monsters en meubilair in onze professionele showroom in Den Haag.",
+          "specs": [
+            "Fysieke presentatie van monsters en stalenbibliotheek",
+            "Vergaderruimtes beschikbaar voor VIP-klanten en projectbesprekingen",
+            "Vakkundige producttoelichting door ons lokale team",
+            "Gelegen op bedrijventerrein De Werf met uitstekende bereikbaarheid"
+          ],
+          "icon": "Sparkles",
+          "bgGradient": "from-emerald-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "ecommerce",
+          "badge": "Online Marktplaatsen",
+          "title": "E-Commerce & Bol.com Operatie",
+          "description": "Volledige ontzorging van uw verkoop op Bol.com, Amazon Europa en zakelijke portals met geautomatiseerde voorraadsynchronisatie en snelle levering.",
+          "specs": [
+            "Aanmaken en optimaliseren van Bol.com productvermeldingen",
+            "Same-day fulfillment conform strenge marktplaats-normen (SLA)",
+            "Eerstelijns klantenservice in het Nederlands en Engels",
+            "Gezamenlijke btw-conforme facturatie en uitbetalingen"
+          ],
+          "icon": "ShoppingCart",
+          "bgGradient": "from-purple-500/10 via-neutral-900 to-neutral-950"
+        }
+      ]
+    },
+    "comparison": {
+      "badge": "STRATEGISCH VOORDEEL",
+      "title": "Waarom Kiezen Voor 01 Living?",
+      "subtitle": "Een directe vergelijking tussen het zelfstandig oprichten van een Europese dochteronderneming versus samenwerken met 01 Living B.V.",
+      "traditionalTitle": "Traditionele Europese Expansie",
+      "traditionalSubtitle": "Hoge Kosten & Complexe Regelgeving",
+      "traditionalPoints": [
+        "Hoge notariskosten en oprichtingskosten voor een Nederlandse BV (€5.000 - €15.000+)",
+        "Verplichte lokale salarisadministratie, pensioenen en sociale lasten",
+        "Langlopende huurcontracten voor opslagruimte (vaak 3 tot 5 jaar vast)",
+        "Complexe lokale boekhouding, btw-aangiftes en juridische risico’s",
+        "Taal- en cultuurbarrières bij onderhandelingen met Benelux inkopers"
+      ],
+      "zeroOneTitle": "01 Living Samenwerkingsmodel",
+      "zeroOneSubtitle": "Directe Markttoegang Zonder Vaste Risico’s",
+      "zeroOneBadge": "AANBEVOLEN VOOR EXPORTEURS",
+      "zeroOnePoints": [
+        "Direct operationeel gebruik van de Nederlandse infrastructuur van 01 Living B.V.",
+        "1.600 m² modern magazijn en showroom in Den Haag per direct beschikbaar",
+        "Vaste maandelijkse beheervergoeding + prestatiecommissie over behaalde omzet",
+        "Nederlands- en Engelstalig verkoopteam voor directe marktbenadering",
+        "Geen langetermijn vastgoedverplichtingen; flexibel meegroeien met uw volume"
+      ],
+      "summaryNote": "Bespaar meer dan €120.000 aan vaste opstartkosten in het eerste jaar en start direct met verkopen in heel Europa."
+    },
+    "leadForm": {
+      "badge": "START UW EXPANSIE",
+      "title": "Vraag een B2B Offerte & Capaciteitscheck Aan",
+      "subtitle": "Deel uw productassortiment en logistieke wensen met ons. Ons commerciële management in Nederland neemt binnen 24 werkuren contact met u op voor een voorstel op maat.",
+      "labels": {
+        "fullName": "Naam Bevoegde Contactpersoon",
+        "companyName": "Bedrijfsnaam / Merk",
+        "email": "Zakelijk E-mailadres",
+        "phone": "Telefoonnummer",
+        "services": "Gewenste Diensten (Meerdere keuzes mogelijk)",
+        "volume": "Geschat Maandelijks Opslag- of Verzendvolume",
+        "message": "Productdetails & Specifieke Vereisten"
+      },
+      "placeholders": {
+        "fullName": "bijv. Jan de Vries",
+        "companyName": "bijv. Anatolia Design Meubels B.V.",
+        "email": "jandevries@bedrijf.nl",
+        "phone": "6 38 23 07 47",
+        "message": "Geef een korte toelichting op uw producten, verpakkingsafmetingen, gewenste doellanden of planning..."
+      },
+      "serviceOptions": [
+        {
+          "id": "storage",
+          "label": "Warehousing & Palletopslag"
+        },
+        {
+          "id": "fulfillment",
+          "label": "Orderpicking, Verpakken & Distributie"
+        },
+        {
+          "id": "bol_ecommerce",
+          "label": "Bol.com & E-Commerce Beheer"
+        },
+        {
+          "id": "b2b_sales",
+          "label": "B2B Verkoop & Commerciële Vertegenwoordiging"
+        },
+        {
+          "id": "showroom",
+          "label": "Showroom Presentatie & Monsterbeheer"
+        },
+        {
+          "id": "customs",
+          "label": "Douanevrijgave & Container Inslag"
+        }
+      ],
+      "volumeOptions": [
+        {
+          "value": "1-10",
+          "label": "1 - 10 Pallets (Start / Eerste Inslag)"
+        },
+        {
+          "value": "11-50",
+          "label": "11 - 50 Pallets (Middelgrote Voorraad)"
+        },
+        {
+          "value": "51-150",
+          "label": "51 - 150 Pallets (Volledige Opslagruimte)"
+        },
+        {
+          "value": "150+",
+          "label": "150+ Pallets (Toegewijde Halcapaciteit)"
+        },
+        {
+          "value": "parcel-only",
+          "label": "Pakketgoed / Snel roterende E-Commerce"
+        }
+      ],
+      "buttonIdle": "Verstuur B2B Aanvraag",
+      "buttonLoading": "Verwerken van aanvraag...",
+      "successTitle": "Aanvraag Succesvol Ontvangen",
+      "successMessage": "Hartelijk dank voor uw aanvraag. Ons directieteam in Den Haag heeft uw gegevens ontvangen en neemt binnen 24 uur contact met u op met een passend capaciteits- en tariefvoorstel.",
+      "resetButton": "Nieuwe Aanvraag Indienen",
+      "errorMessage": "Er is een probleem opgetreden bij het versturen. Probeer het opnieuw of neem direct contact op via WhatsApp of telefoon.",
+      "privacyNote": "Uw bedrijfsgegevens worden strikt vertrouwelijk behandeld conform de Nederlandse en Europese AVG/GDPR wetgeving."
+    },
+    "sidebarContact": {
+      "title": "Den Haag Logistieke Hub",
+      "subtitle": "Bezoek ons operatiecentrum of bespreek uw expansieplannen direct met onze directie.",
+      "warehouse1Title": "Operatiecentrum & Magazijn 1",
+      "warehouse1Address": "De Werf 15, Zinkwerf 24 A, 2544 EH Den Haag, Nederland",
+      "warehouse2Title": "Showroom & Magazijn 2",
+      "warehouse2Address": "De Werf 10, 2544 EK Den Haag, Nederland",
+      "nlPhoneLabel": "Nederland Direct (Hoofdkantoor)",
+      "nlPhoneValue": "+31 6 38 23 07 47",
+      "trPhoneLabel": "Turkije Commercieel Contact",
+      "trPhoneValue": "+90 543 340 82 64",
+      "emailLabel": "Informatie & Offertes",
+      "emailValue": "info@01living.nl",
+      "hoursTitle": "Openingstijden (CET)",
+      "hoursValue": "Maandag – Vrijdag: 09:00 – 18:00 | Zaterdag: 10:00 – 16:00",
+      "whatsappButton": "Chat Direct met Ons Team via WhatsApp"
+    },
+    "footer": {
+      "company": "01 Living B.V. • Gevestigd in Nederland (Opgericht 2021)",
+      "description": "Hoogwaardige Europese fulfillment, commerciële vertegenwoordiging en logistieke hub die internationale fabrikanten verbindt met West-Europese markten.",
+      "rights": "Alle rechten voorbehouden.",
+      "locations": "Logistieke Hub: Den Haag | Haven van Rotterdam Corridors",
+      "compliance": "Ingeschreven bij de Kamer van Koophandel (KVK) & Btw-geregistreerd"
     }
   }
 }

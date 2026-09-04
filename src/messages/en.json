@@ -3,6 +3,7 @@
     "collections": "Collections",
     "showroom": "Showroom",
     "customOrders": "Custom Orders",
+    "b2bFulfillment": "B2B & Fulfillment",
     "about": "About Us",
     "contact": "Contact"
   },
@@ -43,7 +44,16 @@
     }
   },
   "Marquee": {
-    "tags": ["Handmade", "Timeless Design", "Sustainable Wood", "The Hague", "Masterful Craftsmanship", "Exclusive", "Dutch Interior", "Luxury Furniture"]
+    "tags": [
+      "Handmade",
+      "Timeless Design",
+      "Sustainable Wood",
+      "The Hague",
+      "Masterful Craftsmanship",
+      "Exclusive",
+      "Dutch Interior",
+      "Luxury Furniture"
+    ]
   },
   "Hero": {
     "title": "Timeless Design for Modern Living",
@@ -154,6 +164,8 @@
     "description": "Timeless design, masterful craftsmanship, and sustainable materials. Exclusive handmade furniture from the Netherlands.",
     "quickLinks": "Quick Links",
     "collections": "Collections",
+    "showroom": "Showroom",
+    "b2bFulfillment": "B2B & Fulfillment",
     "about": "About Us",
     "contact": "Contact",
     "showroomTitle": "Showroom The Hague",
@@ -427,45 +439,108 @@
       "title": "Terms & Conditions",
       "intro": "These terms and conditions apply to every offer from 01 Living and to every agreement concluded between the entrepreneur and the consumer. We recommend that you read these terms carefully.",
       "sections": [
-        { "title": "1. Applicability", "content": "These general terms and conditions apply to every offer from 01 Living and to every distance agreement concluded between 01 Living and the consumer. Before the distance agreement is concluded, the text of these general terms and conditions will be made available to the consumer." },
-        { "title": "2. The Offer", "content": "If an offer has a limited period of validity or is made subject to conditions, this will be explicitly stated in the offer. The offer contains a complete and accurate description of the products offered. Obvious mistakes or errors in the offer do not bind 01 Living." },
-        { "title": "3. The Agreement", "content": "The agreement is concluded at the moment the consumer accepts the offer and complies with the conditions set. 01 Living will immediately confirm receipt of the acceptance of the offer electronically." },
-        { "title": "4. Right of Withdrawal", "content": "When purchasing products, the consumer has the option to dissolve the agreement without giving reasons for 14 days. This reflection period starts on the day after receipt of the product by the consumer. During this period, the consumer will handle the product and packaging with care." },
-        { "title": "5. Exclusion of Withdrawal", "content": "The right of withdrawal does not apply to products manufactured according to the consumer's specifications (custom-made), which are clearly personal in nature, or which by their nature cannot be returned." },
-        { "title": "6. Price and Payment", "content": "During the validity period stated in the offer, the prices of the products offered will not be increased, except for price changes resulting from changes in VAT rates. Payment must be made via the payment methods offered on the website." },
-        { "title": "7. Conformity and Warranty", "content": "01 Living guarantees that the products comply with the agreement, the specifications stated in the offer, the reasonable requirements of reliability and/or usability, and the legal provisions existing on the date the agreement was concluded." }
+        {
+          "title": "1. Applicability",
+          "content": "These general terms and conditions apply to every offer from 01 Living and to every distance agreement concluded between 01 Living and the consumer. Before the distance agreement is concluded, the text of these general terms and conditions will be made available to the consumer."
+        },
+        {
+          "title": "2. The Offer",
+          "content": "If an offer has a limited period of validity or is made subject to conditions, this will be explicitly stated in the offer. The offer contains a complete and accurate description of the products offered. Obvious mistakes or errors in the offer do not bind 01 Living."
+        },
+        {
+          "title": "3. The Agreement",
+          "content": "The agreement is concluded at the moment the consumer accepts the offer and complies with the conditions set. 01 Living will immediately confirm receipt of the acceptance of the offer electronically."
+        },
+        {
+          "title": "4. Right of Withdrawal",
+          "content": "When purchasing products, the consumer has the option to dissolve the agreement without giving reasons for 14 days. This reflection period starts on the day after receipt of the product by the consumer. During this period, the consumer will handle the product and packaging with care."
+        },
+        {
+          "title": "5. Exclusion of Withdrawal",
+          "content": "The right of withdrawal does not apply to products manufactured according to the consumer's specifications (custom-made), which are clearly personal in nature, or which by their nature cannot be returned."
+        },
+        {
+          "title": "6. Price and Payment",
+          "content": "During the validity period stated in the offer, the prices of the products offered will not be increased, except for price changes resulting from changes in VAT rates. Payment must be made via the payment methods offered on the website."
+        },
+        {
+          "title": "7. Conformity and Warranty",
+          "content": "01 Living guarantees that the products comply with the agreement, the specifications stated in the offer, the reasonable requirements of reliability and/or usability, and the legal provisions existing on the date the agreement was concluded."
+        }
       ]
     },
     "privacy": {
       "title": "Privacy Policy",
       "intro": "01 Living respects the privacy of all users of its site and ensures that the personal information you provide to us is treated confidentially. We use your data to process orders as quickly and easily as possible.",
       "sections": [
-        { "title": "1. Use of Personal Data", "content": "When you visit our website or place an order, we collect data such as your name, address, email address, and payment method. Important: Your credit card details or other sensitive payment information are processed directly by our secure partner Mollie; 01 Living does not store this information in its own systems under any circumstances." },
-        { "title": "2. Purposes of Processing", "content": "We process your data for the following purposes: handling your payment, being able to call or email you if necessary to carry out our services, and informing you about changes to our services and products." },
-        { "title": "3. Retention Period", "content": "01 Living does not store your personal data longer than strictly necessary to achieve the purposes for which your data is collected, in accordance with legal retention periods." },
-        { "title": "4. Sharing with Third Parties", "content": "We do not sell your data to third parties and only provide it if necessary for the execution of our agreement with you (e.g., delivery services) or to comply with a legal obligation." },
-        { "title": "5. View, Modify, or Delete Data", "content": "You have the right to view, correct, or delete your personal data. You also have the right to withdraw your consent for data processing or object to the processing of your personal data by 01 Living." }
+        {
+          "title": "1. Use of Personal Data",
+          "content": "When you visit our website or place an order, we collect data such as your name, address, email address, and payment method. Important: Your credit card details or other sensitive payment information are processed directly by our secure partner Mollie; 01 Living does not store this information in its own systems under any circumstances."
+        },
+        {
+          "title": "2. Purposes of Processing",
+          "content": "We process your data for the following purposes: handling your payment, being able to call or email you if necessary to carry out our services, and informing you about changes to our services and products."
+        },
+        {
+          "title": "3. Retention Period",
+          "content": "01 Living does not store your personal data longer than strictly necessary to achieve the purposes for which your data is collected, in accordance with legal retention periods."
+        },
+        {
+          "title": "4. Sharing with Third Parties",
+          "content": "We do not sell your data to third parties and only provide it if necessary for the execution of our agreement with you (e.g., delivery services) or to comply with a legal obligation."
+        },
+        {
+          "title": "5. View, Modify, or Delete Data",
+          "content": "You have the right to view, correct, or delete your personal data. You also have the right to withdraw your consent for data processing or object to the processing of your personal data by 01 Living."
+        }
       ]
     },
     "shipping": {
       "title": "Shipping & Returns",
       "intro": "We strive for perfect delivery of your handmade furniture. Below you will find our guidelines for shipping and the return process.",
       "sections": [
-        { "title": "1. Delivery and Execution", "content": "01 Living will take the greatest possible care when receiving and executing orders for products. The delivery address is the address that the consumer has made known to the company." },
-        { "title": "2. Delivery Times", "content": "We aim to deliver orders within 2-5 business days, provided they are in stock. For custom products, a different delivery time applies, which is explicitly communicated to the customer." },
-        { "title": "3. Shipping Costs", "content": "Orders over €500 are shipped free of charge within the Netherlands. For orders below this amount, we apply standard shipping costs visible in the checkout process." },
-        { "title": "4. Returns", "content": "You have the right to cancel your order up to 14 days after receipt without giving a reason. After cancellation, you have another 14 days to return your product. The product must be returned with all accessories and – if reasonably possible – in its original state and packaging." },
-        { "title": "5. Return Exceptions", "content": "Please note: Custom-made products manufactured according to your specifications cannot be returned. This also applies to products that are not suitable for return for hygiene reasons." }
+        {
+          "title": "1. Delivery and Execution",
+          "content": "01 Living will take the greatest possible care when receiving and executing orders for products. The delivery address is the address that the consumer has made known to the company."
+        },
+        {
+          "title": "2. Delivery Times",
+          "content": "We aim to deliver orders within 2-5 business days, provided they are in stock. For custom products, a different delivery time applies, which is explicitly communicated to the customer."
+        },
+        {
+          "title": "3. Shipping Costs",
+          "content": "Orders over €500 are shipped free of charge within the Netherlands. For orders below this amount, we apply standard shipping costs visible in the checkout process."
+        },
+        {
+          "title": "4. Returns",
+          "content": "You have the right to cancel your order up to 14 days after receipt without giving a reason. After cancellation, you have another 14 days to return your product. The product must be returned with all accessories and – if reasonably possible – in its original state and packaging."
+        },
+        {
+          "title": "5. Return Exceptions",
+          "content": "Please note: Custom-made products manufactured according to your specifications cannot be returned. This also applies to products that are not suitable for return for hygiene reasons."
+        }
       ]
     },
     "cookies": {
       "title": "Cookie Policy",
       "intro": "We use cookies to optimize the website and improve your user experience.",
       "sections": [
-        { "title": "1. What are cookies?", "content": "A cookie is a small text file that is stored in the browser of your computer, tablet, or smartphone when you first visit this website." },
-        { "title": "2. Functional Cookies", "content": "These cookies ensure that the website works properly and that, for example, your preferred settings are remembered. These cookies are also used to make the website work well and to optimize it." },
-        { "title": "3. Analytical Cookies", "content": "We use Google Analytics to track how users use the website. The information obtained, including your computer's IP address, is transferred to and stored by Google on servers." },
-        { "title": "4. Opting out of Cookies", "content": "You can opt out of cookies by setting your internet browser so that it no longer stores cookies. You can also delete all information previously stored via your browser settings." }
+        {
+          "title": "1. What are cookies?",
+          "content": "A cookie is a small text file that is stored in the browser of your computer, tablet, or smartphone when you first visit this website."
+        },
+        {
+          "title": "2. Functional Cookies",
+          "content": "These cookies ensure that the website works properly and that, for example, your preferred settings are remembered. These cookies are also used to make the website work well and to optimize it."
+        },
+        {
+          "title": "3. Analytical Cookies",
+          "content": "We use Google Analytics to track how users use the website. The information obtained, including your computer's IP address, is transferred to and stored by Google on servers."
+        },
+        {
+          "title": "4. Opting out of Cookies",
+          "content": "You can opt out of cookies by setting your internet browser so that it no longer stores cookies. You can also delete all information previously stored via your browser settings."
+        }
       ],
       "banner": {
         "text": "We use cookies to improve your experience. By continuing on our site, you agree to our {link}.",
@@ -581,7 +656,12 @@
         "badge": "Mobility & Innovation",
         "title": "Electric Vehicles & Mobility",
         "description": "High-performance luxury electric golf carts, urban utility mobility, airport & resort shuttles, and commercial fleet solutions with lithium battery tech and custom branding.",
-        "tags": ["E-Golf Carts", "Urban Mobility", "Lithium Battery Tech", "Custom Livery"],
+        "tags": [
+          "E-Golf Carts",
+          "Urban Mobility",
+          "Lithium Battery Tech",
+          "Custom Livery"
+        ],
         "highlight": "Custom Fleet & Luxury Specs",
         "image": "/images/custom-orders/mobility.jpg"
       },
@@ -590,7 +670,12 @@
         "badge": "Smart Living & Tech",
         "title": "Consumer & Smart Electronics",
         "description": "Integrated smart living ecosystems, architectural invisible audio, OLED cinema displays, and exclusive contract electronics tailored to modern interior specifications.",
-        "tags": ["Smart Home", "High-End Audio/Visual", "Interactive Displays", "Custom Tech"],
+        "tags": [
+          "Smart Home",
+          "High-End Audio/Visual",
+          "Interactive Displays",
+          "Custom Tech"
+        ],
         "highlight": "Architectural Smart Integration",
         "image": "/images/custom-orders/electronics.jpg"
       },
@@ -599,7 +684,12 @@
         "badge": "Architecture & Modular",
         "title": "Container & Modular Living Solutions",
         "description": "High-end modular living units, bespoke architectural shipping container suites, luxury pop-up showrooms, glamping retreats, and prefabricated executive spaces.",
-        "tags": ["Modular Villas", "Luxury Container Suites", "Glamping Units", "Pop-up Showrooms"],
+        "tags": [
+          "Modular Villas",
+          "Luxury Container Suites",
+          "Glamping Units",
+          "Pop-up Showrooms"
+        ],
         "highlight": "Turnkey Prefab Architecture",
         "image": "/images/custom-orders/modular.jpg"
       },
@@ -608,7 +698,12 @@
         "badge": "Design & Craftsmanship",
         "title": "Bespoke Furniture & Living Concepts",
         "description": "Custom travertine and marble dining tables, bespoke sectional sofas in curated upholstery, architectural wall paneling, and unique one-of-a-kind furniture designs.",
-        "tags": ["Travertine Bespoke", "Luxury Upholstery", "Custom Dining Tables", "Architectural Wood"],
+        "tags": [
+          "Travertine Bespoke",
+          "Luxury Upholstery",
+          "Custom Dining Tables",
+          "Architectural Wood"
+        ],
         "highlight": "100% Handcrafted Bespoke",
         "image": "/kitchen_marble_detail.png"
       },
@@ -617,7 +712,12 @@
         "badge": "Turnkey & Development",
         "title": "Project-Based Developments",
         "description": "Full-spectrum turnkey furnishings for boutique hotels, fine dining restaurants, multi-unit residential projects, and private luxury villas with curated materials.",
-        "tags": ["Hospitality & Hotels", "Luxury Villa Projects", "Turnkey Fit-Outs", "Material Curation"],
+        "tags": [
+          "Hospitality & Hotels",
+          "Luxury Villa Projects",
+          "Turnkey Fit-Outs",
+          "Material Curation"
+        ],
         "highlight": "End-to-End Project Execution",
         "image": "/luxury_kitchen_hero.png"
       },
@@ -626,7 +726,12 @@
         "badge": "B2B & Enterprise",
         "title": "Corporate & Bulk Procurement",
         "description": "Large-scale commercial procurement, headquarters styling, executive gifting, and tiered volume discounts backed by a dedicated key account manager.",
-        "tags": ["Volume Discounts", "Corporate Fit-Outs", "Dedicated Account Manager", "B2B Invoicing"],
+        "tags": [
+          "Volume Discounts",
+          "Corporate Fit-Outs",
+          "Dedicated Account Manager",
+          "B2B Invoicing"
+        ],
         "highlight": "Tiered B2B Volume Pricing",
         "image": "/showroom_consultation.png"
       },
@@ -635,7 +740,12 @@
         "badge": "Exclusive & Bespoke",
         "title": "Other Bespoke Requests",
         "description": "Have a distinct vision, rare stone requirement, or unique international sourcing requirement? We bring unconventional and exclusive design concepts to reality.",
-        "tags": ["Global Sourcing", "Rare Materials", "Prototype Engineering", "Custom Solutions"],
+        "tags": [
+          "Global Sourcing",
+          "Rare Materials",
+          "Prototype Engineering",
+          "Custom Solutions"
+        ],
         "highlight": "Global Bespoke Sourcing",
         "image": "/showroom_materials.png"
       }
@@ -645,10 +755,26 @@
       "badge": "4-Step Execution Process",
       "title": "From Concept to Turnkey Delivery",
       "steps": [
-        { "step": "01", "title": "Inquiry & Specifications", "desc": "Share your desired product concept, required volumes, and design/technical criteria with our concierge." },
-        { "step": "02", "title": "Engineering & Quotation", "desc": "Our project specialists perform a feasibility study and prepare a comprehensive transparent quote within 24 hours." },
-        { "step": "03", "title": "Precision Manufacturing", "desc": "Production starts upon approval under rigorous European quality standards with regular milestone updates." },
-        { "step": "04", "title": "Logistics & Handover", "desc": "Insured freight shipping, customs clearance, and optional on-site white-glove installation." }
+        {
+          "step": "01",
+          "title": "Inquiry & Specifications",
+          "desc": "Share your desired product concept, required volumes, and design/technical criteria with our concierge."
+        },
+        {
+          "step": "02",
+          "title": "Engineering & Quotation",
+          "desc": "Our project specialists perform a feasibility study and prepare a comprehensive transparent quote within 24 hours."
+        },
+        {
+          "step": "03",
+          "title": "Precision Manufacturing",
+          "desc": "Production starts upon approval under rigorous European quality standards with regular milestone updates."
+        },
+        {
+          "step": "04",
+          "title": "Logistics & Handover",
+          "desc": "Insured freight shipping, customs clearance, and optional on-site white-glove installation."
+        }
       ]
     },
     "bottomCTA": {
@@ -686,6 +812,289 @@
       "whatsappButton": "Instant WhatsApp Concierge (+31 6 3823 0747)",
       "emailButton": "info@01living.nl",
       "showroom": "Showroom The Hague"
+    }
+  },
+  "B2BFulfillment": {
+    "nav": {
+      "brandSubtitle": "European Logistics & Representation Hub",
+      "services": "Services",
+      "pipeline": "Fulfillment Pipeline",
+      "showroom": "Showroom",
+      "advantages": "Why 01 Living",
+      "contact": "Contact & Hub",
+      "ctaQuote": "Request B2B Proposal"
+    },
+    "hero": {
+      "badge": "Netherlands Operations Center • 1,600 m² Logistics Hub",
+      "titleStart": "Expand Into Europe Without Boundaries: ",
+      "titleHighlight": "1,600 m² Warehousing,",
+      "titleEnd": " Fulfillment & B2B Representation",
+      "subtitle": "Eliminate European subsidiary setup, local payroll overhead, and storage lease liabilities. We provide Turkish and international manufacturers with a turnkey commercial sales force, high-rack warehousing in The Hague, and pan-European distribution channels.",
+      "primaryCta": "Request Custom Proposal",
+      "secondaryCta": "Explore Fulfillment Pipeline",
+      "liveBadge": "THE HAGUE HUB • ACTIVE OPERATIONS",
+      "videoTitle": "01 Living Logistics Center • Den Haag, Netherlands",
+      "stats": {
+        "stat1": {
+          "value": "1,600 m²",
+          "label": "Indoor Warehouse Area",
+          "desc": "High-rack pallet & carton storage facility"
+        },
+        "stat2": {
+          "value": "Bol.com & EU",
+          "label": "Marketplace Integration",
+          "desc": "Seamless wholesale & online merchant operations"
+        },
+        "stat3": {
+          "value": "Den Haag",
+          "label": "Strategic EU Gateway",
+          "desc": "Fast delivery reach to NL, BE, DE, FR & UK"
+        },
+        "stat4": {
+          "value": "0 €",
+          "label": "Entity & Hiring Costs",
+          "desc": "Zero legal company formation or staffing risk"
+        }
+      }
+    },
+    "pipeline": {
+      "badge": "END-TO-END SUPPLY CHAIN",
+      "title": "Step-by-Step Logistics & Fulfillment Pipeline",
+      "subtitle": "From customs discharge at European ports to final doorstep delivery across 27 EU member states, every phase is managed with precision, speed, and real-time tracking.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Inbound & 1,600 m² Storage",
+          "badge": "Reception & Inspection",
+          "description": "Container arrival, customs clearance verification, quality audit, SKU barcoding, pallet allocation, and precision high-rack placement in our secure The Hague facility.",
+          "highlights": [
+            "Damage & quantity protocol verification",
+            "GS1 / EAN barcode integration & labeling",
+            "Dedicated pallet rack & carton zone assignment"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Sales Channels & Commercial Representation",
+          "badge": "Active B2B Sales",
+          "description": "Active commercial representation in the Benelux and DACH regions. We present your catalog to wholesale buyers, interior designers, and execute automated Bol.com catalog operations.",
+          "highlights": [
+            "Direct B2B buyer outreach & contract negotiation",
+            "Bol.com official vendor & fulfillment management",
+            "Architect & project contractor showroom presentations"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Automated Pick, Pack & Labeling",
+          "badge": "Fulfillment Execution",
+          "description": "Upon automated order injection, goods are picked via optimized warehouse pathing, packed according to European transport standards, and labeled for courier dispatch.",
+          "highlights": [
+            "Fast order dispatch within European cut-off times",
+            "Shock-proof protective packaging & pallet wrapping",
+            "Automated carrier label printing (PostNL, DHL, DPD, GLS)"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "European Delivery & Transparent Reporting",
+          "badge": "Final Mile & Analytics",
+          "description": "24 to 48-hour delivery across key European markets. Reverse logistics handling, returned item inspection, and transparent weekly inventory & revenue reporting.",
+          "highlights": [
+            "24-48h expedited delivery across NL, BE, DE, FR",
+            "Comprehensive return logistics & quality grading",
+            "Transparent inventory status & sales disbursement audits"
+          ]
+        }
+      ]
+    },
+    "services": {
+      "badge": "CORE B2B CAPABILITIES",
+      "title": "Turnkey Infrastructure Modules",
+      "subtitle": "Choose modular services tailored to your expansion stage: from pallet-only storage to full commercial agency and marketplace automation.",
+      "items": [
+        {
+          "id": "fulfillment",
+          "badge": "Infrastructure",
+          "title": "Fulfillment & High-Rack Storage",
+          "description": "Our 1,600 m² covered logistics facility in Den Haag offers modular storage for standard Euro-pallets (80x120), industrial pallets (100x120), and carton volume with modern reach trucks.",
+          "specs": [
+            "1,600 m² dry, heated, and 24/7 CCTV monitored space",
+            "Heavy-duty reach trucks & electric pallet stackers",
+            "Flexible pay-as-you-grow pallet capacity",
+            "Customs bonded handling & container unbagging"
+          ],
+          "icon": "Boxes",
+          "bgGradient": "from-amber-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "representation",
+          "badge": "Commercial Expansion",
+          "title": "European B2B Representation & Field Sales",
+          "description": "Native Dutch and English speaking commercial specialists represent your brand in the Netherlands, Belgium, Germany, and beyond. We establish wholesale buyer and distributor channels.",
+          "specs": [
+            "Dedicated field commercial manager for buyer meetings",
+            "Wholesale pricing strategy & contract negotiations",
+            "Bilingual customer communication and invoicing support",
+            "Active outreach to retail chains, hotels, and designers"
+          ],
+          "icon": "Briefcase",
+          "bgGradient": "from-blue-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "showroom",
+          "badge": "Physical Presence",
+          "title": "Luxury Architectural Showroom & Samples",
+          "description": "Give European decision-makers tangible confidence. Exhibit your architectural products, furniture, or design materials inside our Den Haag corporate design showroom.",
+          "specs": [
+            "Physical sample display & material library",
+            "Meeting rooms available for VIP client presentations",
+            "Professional product presentation by our on-site team",
+            "Located in De Werf business park with easy highway access"
+          ],
+          "icon": "Sparkles",
+          "bgGradient": "from-emerald-500/10 via-neutral-900 to-neutral-950"
+        },
+        {
+          "id": "ecommerce",
+          "badge": "Online Growth",
+          "title": "E-Commerce & Bol.com Marketplace Ops",
+          "description": "Full management of your European marketplace footprint on Bol.com, Amazon EU, and proprietary B2B merchant portals with automated stock synchronization.",
+          "specs": [
+            "Official Bol.com vendor onboarding & SEO listings",
+            "Same-day pick-and-pack fulfillment adhering to marketplace SLAs",
+            "First-line Dutch and English customer service management",
+            "Consolidated VAT invoicing & payment clearing"
+          ],
+          "icon": "ShoppingCart",
+          "bgGradient": "from-purple-500/10 via-neutral-900 to-neutral-950"
+        }
+      ]
+    },
+    "comparison": {
+      "badge": "STRATEGIC ADVANTAGE",
+      "title": "Why Partner with 01 Living?",
+      "subtitle": "A side-by-side comparison between setting up an independent European subsidiary versus partnering with 01 Living B.V.",
+      "traditionalTitle": "Traditional European Expansion",
+      "traditionalSubtitle": "High Capital Expenditure & Heavy Legal Burden",
+      "traditionalPoints": [
+        "Mandatory Dutch BV incorporation & notary fees (€5,000 - €15,000+)",
+        "Compulsory local employment contracts, pension plans, and Dutch labor tax",
+        "Long-term warehouse lease commitments (minimum 3 to 5-year lock-in)",
+        "Complex local bookkeeping, VAT compliance, and legal liability risk",
+        "Language and cultural barriers negotiating with Benelux B2B buyers"
+      ],
+      "zeroOneTitle": "01 Living Turnkey Partnership",
+      "zeroOneSubtitle": "Immediate Market Entry with Performance Alignment",
+      "zeroOneBadge": "RECOMMENDED BY EXPORTERS",
+      "zeroOnePoints": [
+        "Instant operational launch using 01 Living B.V. Dutch infrastructure",
+        "1,600 m² modern warehouse & showroom ready in Den Haag from Day 1",
+        "Transparent fixed operational service fee + performance success commission",
+        "Native Dutch & English commercial team handling sales and customer care",
+        "Zero long-term real estate lock-in; flexible scaling based on inventory volume"
+      ],
+      "summaryNote": "Save over €120,000 in first-year fixed overhead while beginning immediate sales across the European Union."
+    },
+    "leadForm": {
+      "badge": "START YOUR EXPANSION",
+      "title": "Request a B2B Proposal & Capacity Check",
+      "subtitle": "Tell us about your product categories and operational requirements. Our Dutch commercial leadership will review your requirements and provide a customized proposal within 24 business hours.",
+      "labels": {
+        "fullName": "Authorized Contact Name",
+        "companyName": "Company / Brand Name",
+        "email": "Corporate Email Address",
+        "phone": "Phone Number",
+        "services": "Required Solutions (Select all that apply)",
+        "volume": "Estimated Monthly Storage / Shipment Volume",
+        "message": "Product Details & Special Requirements"
+      },
+      "placeholders": {
+        "fullName": "e.g. Alexander van den Berg",
+        "companyName": "e.g. Nordic Ceramics Ltd.",
+        "email": "alexander@company.com",
+        "phone": "6 38 23 07 47",
+        "message": "Please describe your product catalog, packaging dimensions, target European markets, or timeline..."
+      },
+      "serviceOptions": [
+        {
+          "id": "storage",
+          "label": "Warehousing & Pallet Storage"
+        },
+        {
+          "id": "fulfillment",
+          "label": "Pick, Pack & Pan-EU Delivery"
+        },
+        {
+          "id": "bol_ecommerce",
+          "label": "Bol.com & E-Commerce Integration"
+        },
+        {
+          "id": "b2b_sales",
+          "label": "B2B Sales & Field Representation"
+        },
+        {
+          "id": "showroom",
+          "label": "Showroom Sample Display"
+        },
+        {
+          "id": "customs",
+          "label": "Customs Clearance & Inbound Receiving"
+        }
+      ],
+      "volumeOptions": [
+        {
+          "value": "1-10",
+          "label": "1 - 10 Pallets (Trial / Initial Inbound)"
+        },
+        {
+          "value": "11-50",
+          "label": "11 - 50 Pallets (Medium Stock)"
+        },
+        {
+          "value": "51-150",
+          "label": "51 - 150 Pallets (Full Scale Storage)"
+        },
+        {
+          "value": "150+",
+          "label": "150+ Pallets (Dedicated Storage Bay)"
+        },
+        {
+          "value": "parcel-only",
+          "label": "Parcel / Carton High-Turnover E-Commerce"
+        }
+      ],
+      "buttonIdle": "Submit B2B Capacity Request",
+      "buttonLoading": "Processing Request...",
+      "successTitle": "Inquiry Successfully Received",
+      "successMessage": "Thank you for reaching out. Our Dutch logistics directorate has received your details and will get in touch with a customized quote and capacity breakdown within 24 hours.",
+      "resetButton": "Submit Another Inquiry",
+      "errorMessage": "There was an issue submitting your request. Please try again or reach out directly via WhatsApp or telephone.",
+      "privacyNote": "Your business information is strictly confidential and protected under Dutch and European GDPR data regulations."
+    },
+    "sidebarContact": {
+      "title": "Den Haag Logistics Hub",
+      "subtitle": "Visit our operations center or discuss your project directly with our leadership.",
+      "warehouse1Title": "Operations Hub & Warehouse 1",
+      "warehouse1Address": "De Werf 15, Zinkwerf 24 A, 2544 EH Den Haag, Netherlands",
+      "warehouse2Title": "Showroom & Warehouse 2",
+      "warehouse2Address": "De Werf 10, 2544 EK Den Haag, Netherlands",
+      "nlPhoneLabel": "Netherlands Direct (HQ)",
+      "nlPhoneValue": "+31 6 38 23 07 47",
+      "trPhoneLabel": "Turkey Commercial Liaison",
+      "trPhoneValue": "+90 543 340 82 64",
+      "emailLabel": "Inquiries & Proposals",
+      "emailValue": "info@01living.nl",
+      "hoursTitle": "Operating Hours (CET)",
+      "hoursValue": "Monday – Friday: 09:00 – 18:00 | Saturday: 10:00 – 16:00",
+      "whatsappButton": "Chat with Commercial Team on WhatsApp"
+    },
+    "footer": {
+      "company": "01 Living B.V. • Registered in the Netherlands (Est. 2021)",
+      "description": "Premium European fulfillment, commercial representation, and logistics hub bridging global manufacturing with Western European markets.",
+      "rights": "All rights reserved.",
+      "locations": "Logistics Hub: Den Haag | Port of Rotterdam Corridor",
+      "compliance": "Dutch Chamber of Commerce (KVK) & EU VAT Registered"
     }
   }
 }

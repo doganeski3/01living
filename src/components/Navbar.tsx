@@ -61,6 +61,7 @@ export default function Navbar() {
     { href: `/${locale}/collecties`, label: t('collections') },
     { href: `/${locale}/showroom`, label: t('showroom') },
     { href: customOrdersHref, label: t('customOrders') },
+    { href: `/${locale}/b2b-fulfillment`, label: t('b2bFulfillment') },
     { href: `/${locale}/over-ons`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
   ];
@@ -70,6 +71,7 @@ export default function Navbar() {
                          pathname === `/${locale}/showroom` || 
                          pathname === `/${locale}/speciale-bestellingen` ||
                          pathname === `/${locale}/custom-orders` ||
+                         pathname === `/${locale}/b2b-fulfillment` ||
                          pathname === `/${locale}/over-ons` || 
                          pathname === `/${locale}/contact`;
   const isTransparentWhiteTheme = isDarkHeroPage && !isScrolled && !isMobileMenuOpen;

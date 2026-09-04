@@ -344,3 +344,83 @@ export async function sendCustomOrderEmail(data: {
     return { success: false, error: error.message || 'Er is een fout opgetreden.' };
   }
 }
+
+export async function sendB2BLeadEmail(data: {
+  fullName: string;
+  companyName: string;
+  email: string;
+  phone: string;
+  services: string[];
+  volume: string;
+  message: string;
+  locale?: string;
+}) {
+  try {
+    const servicesList = data.services && data.services.length > 0 
+      ? data.services.join(', ') 
+      : 'Algemene B2B & Fulfillment';
+
+    const html = `
+      <div style="font-family: sans-serif; max-width: 680px; margin: 0 auto; padding: 25px; border: 1px solid #e5e5e5; border-radius: 8px; background-color: #ffffff;">
+        <div style="border-bottom: 2px solid #f59e0b; padding-bottom: 15px; margin-bottom: 20px;">
+          <span style="background-color: #1a1a1a; color: #f59e0b; font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;">01 Living B2B Hub</span>
+          <h2 style="color: #1a1a1a; margin: 10px 0 0 0; font-size: 22px;">Nieuwe B2B Offerte & Capaciteitsaanvraag</h2>
+          <p style="color: #666; font-size: 13px; margin: 4px 0 0 0;">Ontvangen via B2B Fulfillment & Logistiek Portal</p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px;">
+          <tr>
+            <td style="padding: 8px 0; color: #666; width: 180px; font-weight: bold;">Contactpersoon:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;"><strong>${data.fullName}</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Bedrijfsnaam:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;"><strong>${data.companyName}</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">E-mail:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;"><a href="mailto:${data.email}" style="color: #f59e0b; font-weight: bold;">${data.email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Telefoonnummer:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;"><a href="tel:${data.phone}" style="color: #1a1a1a;">${data.phone}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Gewenste Diensten:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;">${servicesList}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Geschat Maandvolume:</td>
+            <td style="padding: 8px 0; color: #1a1a1a;">${data.volume || '-'}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #666; font-weight: bold;">Taal van aanvraag:</td>
+            <td style="padding: 8px 0; color: #1a1a1a; text-transform: uppercase;">${data.locale || 'nl'}</td>
+          </tr>
+        </table>
+
+        <div style="background-color: #f8fafc; padding: 18px; border-left: 4px solid #f59e0b; border-radius: 4px; margin-top: 15px;">
+          <p style="margin: 0 0 8px 0; font-weight: bold; color: #1a1a1a; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Productdetails & Logistieke Specificaties:</p>
+          <p style="margin: 0; white-space: pre-wrap; color: #334155; font-size: 14px; line-height: 1.6;">${data.message}</p>
+        </div>
+
+        <hr style="margin-top: 30px; border: 0; border-top: 1px solid #eee;" />
+        <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 10px 0 0 0;">01 Living B.V. • De Werf 15 / Zinkwerf 24 A & De Werf 10, 2544 Den Haag, Nederland</p>
+      </div>
+    `;
+
+    await dispatchEmail({
+      to: ADMIN_EMAIL,
+      fromEmail: FROM_EMAIL,
+      fromName: `B2B Lead: ${data.companyName}`,
+      subject: `[B2B Aanvraag] ${data.companyName} (${data.fullName})`,
+      html: html,
+    });
+
+    return { success: true };
+  } catch (error: any) {
+    console.error('[MAIL] Failed to send B2B lead email:', error);
+    return { success: false, error: error.message || 'Er is een fout opgetreden bij het verzenden.' };
+  }
+}
+

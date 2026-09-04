@@ -37,6 +37,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href={`/${locale}/showroom`} className="hover:text-accent-oak transition-colors">
+                  {t('showroom')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/b2b-fulfillment`} className="hover:text-accent-oak transition-colors">
+                  {t('b2bFulfillment')}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${locale}/over-ons`} className="hover:text-accent-oak transition-colors">
                   {t('about')}
                 </Link>
@@ -44,11 +54,6 @@ export default function Footer() {
               <li>
                 <Link href={`/${locale}/contact`} className="hover:text-accent-oak transition-colors">
                   {t('contact')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/showroom`} className="hover:text-accent-oak transition-colors">
-                  Showroom
                 </Link>
               </li>
             </ul>
