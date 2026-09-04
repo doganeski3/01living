@@ -7,8 +7,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  // 1. Core Shared Pages (Same slug for both locales)
-  const sharedPages = [
+  // 1. Core Shared Pages for both locales
+  const pages = [
     { path: '', priority: 1.0, changeFrequency: 'daily' as const },
     { path: '/collecties', priority: 0.9, changeFrequency: 'daily' as const },
     { path: '/showroom', priority: 0.9, changeFrequency: 'weekly' as const },
@@ -21,67 +21,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/cookiebeleid', priority: 0.4, changeFrequency: 'monthly' as const },
   ];
 
-  sharedPages.forEach(({ path, priority, changeFrequency }) => {
-    locales.forEach((locale) => {
+  locales.forEach((locale) => {
+    pages.forEach((page) => {
       sitemapEntries.push({
-        url: `${baseUrl}/${locale}${path}`,
+        url: `${baseUrl}/${locale}${page.path}`,
         lastModified: new Date(),
-        changeFrequency,
-        priority,
-        alternates: {
-          languages: {
-            nl: `${baseUrl}/nl${path}`,
-            en: `${baseUrl}/en${path}`,
-            'x-default': `${baseUrl}/nl${path}`,
-          },
-        },
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
       });
     });
-  });
 
-  // 2. Localized Custom Orders Page
-  const customOrdersMapping = {
-    nl: `${baseUrl}/nl/speciale-bestellingen`,
-    en: `${baseUrl}/en/custom-orders`,
-  };
-
-  locales.forEach((locale) => {
+    // Localized Return & Cancellation Policy
     sitemapEntries.push({
-      url: customOrdersMapping[locale],
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.85,
-      alternates: {
-        languages: {
-          ...customOrdersMapping,
-          'x-default': customOrdersMapping.nl,
-        },
-      },
-    });
-  });
-
-  // 3. Localized Return & Cancellation Policy Page
-  const returnPolicyMapping = {
-    nl: `${baseUrl}/nl/retour-en-annulering`,
-    en: `${baseUrl}/en/return-and-cancellation-policy`,
-  };
-
-  locales.forEach((locale) => {
-    sitemapEntries.push({
-      url: returnPolicyMapping[locale],
+      url: locale === 'en'
+        ? `${baseUrl}/en/return-and-cancellation-policy`
+        : `${baseUrl}/nl/retour-en-annulering`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
-      alternates: {
-        languages: {
-          ...returnPolicyMapping,
-          'x-default': returnPolicyMapping.nl,
-        },
-      },
+    });
+
+    // Localized Custom Orders
+    sitemapEntries.push({
+      url: locale === 'en'
+        ? `${baseUrl}/en/custom-orders`
+        : `${baseUrl}/nl/speciale-bestellingen`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
     });
   });
 
-  // 4. Dynamic Products with Alternates
+  // 2. Dynamic Product Pages for each locale
   try {
     const products = await prisma.product.findMany({
       where: {
@@ -93,20 +64,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
     });
 
-    products.forEach((product) => {
-      locales.forEach((locale) => {
+    locales.forEach((locale) => {
+      products.forEach((product) => {
         sitemapEntries.push({
           url: `${baseUrl}/${locale}/collecties/${product.slug}`,
           lastModified: product.updatedAt,
           changeFrequency: 'weekly',
           priority: 0.7,
-          alternates: {
-            languages: {
-              nl: `${baseUrl}/nl/collecties/${product.slug}`,
-              en: `${baseUrl}/en/collecties/${product.slug}`,
-              'x-default': `${baseUrl}/nl/collecties/${product.slug}`,
-            },
-          },
         });
       });
     });
